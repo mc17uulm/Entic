@@ -1,0 +1,15 @@
+{
+  "app": {
+      "title": "Plastic Game",
+      "background": "lib/map.svg"
+  },
+  "map": {
+    "countries": [
+      {
+        "id": "de",
+        "name": "Germany",
+        "src": "lib/countried/de.svg"
+      }
+    ]
+  }
+}
