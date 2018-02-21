@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4a515b4-43ba-463e-879f-34163b38886b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Classes.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/HELP-US-OUT.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/css/font-awesome.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/animated.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/bordered-pulled.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/core.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/fixed-width.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/font-awesome.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/icons.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/larger.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/list.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/mixins.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/path.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/rotated-flipped.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/screen-reader.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/stacked.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/less/variables.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_animated.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_core.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_fixed-width.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_icons.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_larger.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_list.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_path.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_screen-reader.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_stacked.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/_variables.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/font-awesome-4.7.0/scss/font-awesome.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/phaser.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/phaser.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test.html" afterPath="" />
-    </list>
+    <list default="true" id="f4a515b4-43ba-463e-879f-34163b38886b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -176,18 +133,17 @@
       <workItem from="1517588335568" duration="2211000" />
       <workItem from="1518198977503" duration="1422000" />
       <workItem from="1519246960781" duration="91000" />
-      <workItem from="1519247286739" duration="119000" />
+      <workItem from="1519247286739" duration="840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3843000" />
+    <option name="totallyTimeSpent" value="4564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
