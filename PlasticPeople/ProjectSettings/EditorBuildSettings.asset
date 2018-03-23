@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: 9f453be8ae524c443bfcd9dbb0f3f7f6
   - enabled: 1
-    path: Assets/Map.unity
-    guid: f66708f14fcce084fad32cd5ff48afd5
+    path: Assets/Game.unity
+    guid: f88c62f814c1dc84f9dbbc6d153e4013
