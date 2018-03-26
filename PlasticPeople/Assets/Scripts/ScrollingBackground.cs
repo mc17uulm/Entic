@@ -7,7 +7,7 @@ public class ScrollingBackground : MonoBehaviour
 
     public float Speed = 1;
     public List<SpriteRenderer> sprites = new List<SpriteRenderer>();
-    public Direction Dir = Direction.Right;
+    public Direction Dir = Direction.Down;
 
 
     private float heightCamera;
@@ -23,7 +23,12 @@ public class ScrollingBackground : MonoBehaviour
         widthCamera = heightCamera * cam.aspect;
     }
 
-    void Update()
+    private void Start()
+    {
+        Update();
+    }
+
+    private void Update()
     {
         foreach (var item in sprites)
         {
@@ -59,6 +64,7 @@ public class ScrollingBackground : MonoBehaviour
             {
                 if (item.transform.position.y + item.bounds.size.y / 2 < cam.transform.position.y - heightCamera / 2)
                 {
+                    Debug.Log("actually going down");
                     SpriteRenderer sprite = sprites[0];
                     foreach (var i in sprites)
                     {
@@ -86,13 +92,22 @@ public class ScrollingBackground : MonoBehaviour
 
 
             if (Dir == Direction.Left)
+            {
                 item.transform.Translate(new Vector2(Time.deltaTime * Speed * -1, 0));
+            }
             else if (Dir == Direction.Right)
+            {
                 item.transform.Translate(new Vector2(Time.deltaTime * Speed, 0));
+            }
             else if (Dir == Direction.Down)
+            {
+                Debug.Log("really actually scrolling down");
                 item.transform.Translate(new Vector2(0, Time.deltaTime * Speed * -1));
+            }
             else if (Dir == Direction.Up)
+            {
                 item.transform.Translate(new Vector2(0, Time.deltaTime * Speed));
+            }
         }
 
     }

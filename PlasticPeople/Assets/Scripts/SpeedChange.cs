@@ -10,7 +10,7 @@ public class SpeedChange : MonoBehaviour {
     public Sprite pauseImage;
     public Sprite playImage;
     public Sprite fastplayImage;
-    public float speedOfTime;
+    public float fastTimeScale;
     public Text dateText;
     private float startTime;
     private DateTime date;
@@ -34,26 +34,21 @@ public class SpeedChange : MonoBehaviour {
 
     public void OnChange()
     {
-        Debug.Log("triggered");
         if(slider.value == 0)
         {
-            Debug.Log("pause");
             slider.handleRect.gameObject.GetComponent<Image>().sprite = pauseImage;
             Time.timeScale = 0f;
         }
         else if(slider.value == 1)
         {
-            Debug.Log("play");
             slider.handleRect.gameObject.GetComponent<Image>().sprite = playImage;
             Time.timeScale = 1f;
         }
         else
         {
-            Debug.Log("gotta go fast");
             slider.handleRect.gameObject.GetComponent<Image>().sprite = fastplayImage;
-            Time.timeScale = speedOfTime;
+            Time.timeScale = fastTimeScale;
         }
-
     }
 
 }
