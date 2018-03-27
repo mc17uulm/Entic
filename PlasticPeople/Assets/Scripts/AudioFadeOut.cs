@@ -1,0 +1,27 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public static class AudioFadeOut
+{
+
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, AudioSource playNext)
+    {
+        if(audioSource != null)
+        {
+            float startVolume = audioSource.volume;
+        
+        
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+        playNext.Play();
+        }
+    }
+
+}

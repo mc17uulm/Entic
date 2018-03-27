@@ -28,14 +28,16 @@ public class GameManager : MonoBehaviour {
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        float fadeTime = GameObject.Find("Fade").GetComponent<Fading>().BeginFade(1);
         Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void EndGame()
     {
-        SceneManager.LoadSceneAsync(0);
+        float fadeTime = GameObject.Find("Fade").GetComponent<Fading>().BeginFade(1);
         Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void SetMusicVolume(float musicVolume)

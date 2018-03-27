@@ -26,7 +26,6 @@ public class SpeedChange : MonoBehaviour {
     void Update()
     {
         float currentTime = Time.time - startTime;
-        Debug.Log(currentTime);
         DateTime ingameDate = date.AddDays(6 * currentTime);
         dateText.text = ingameDate.ToString("dd.MM.yyyy");
         yearBar.value = ingameDate.DayOfYear;

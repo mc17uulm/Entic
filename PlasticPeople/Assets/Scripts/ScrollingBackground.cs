@@ -25,7 +25,7 @@ public class ScrollingBackground : MonoBehaviour
 
     private void Start()
     {
-        Update();
+       
     }
 
     private void Update()
