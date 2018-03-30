@@ -16,7 +16,7 @@ public class DrawMap : MonoBehaviour {
             GameObject NewObj = new GameObject(); //Create the GameObject
             Image NewImage = NewObj.AddComponent<Image>(); //Add the Image Component script
             NewImage.sprite = currentSprite; //Set the Sprite of the Image Component on the new GameObject
-            //NewImage.SetNativeSize();
+            NewImage.transform.localScale = ParentPanel.transform.localScale;
             NewObj.GetComponent<RectTransform>().SetParent(ParentPanel.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel.
             NewObj.name = currentSprite.name;
             NewObj.SetActive(true); //Activate the GameObject
