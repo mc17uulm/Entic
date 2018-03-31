@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour {
 
@@ -13,6 +14,8 @@ public class SettingsMenu : MonoBehaviour {
     public GameObject blurEffect;
     public GameObject darkenEffect;
 
+    private bool soundToggle = true;
+
 	public void SetMusicVolume (float musicVolume)
     {
         audioMixer.SetFloat("MusicVolume", musicVolume);
@@ -21,6 +24,31 @@ public class SettingsMenu : MonoBehaviour {
     public void SetSoundVolume (float soundVolume)
     {
         audioMixer.SetFloat("SoundVolume", soundVolume);
+    }
+
+    public void ToggleVolume(bool isMusic)
+    {
+
+        if (isMusic && soundToggle)
+        {
+            audioMixer.SetFloat("MusicVolume", -80);
+            soundToggle = false;
+        }
+        else if (isMusic && !soundToggle)
+        {
+            audioMixer.SetFloat("MusicVolume", 0);
+            soundToggle = true;
+        }
+        else if (!isMusic && soundToggle)
+        {
+            audioMixer.SetFloat("SoundVolume", -80);
+            soundToggle = false;
+        }
+        else
+        {
+            audioMixer.SetFloat("SoundVolume", 0);
+            soundToggle = true;
+        }
     }
 
     public void Resume()

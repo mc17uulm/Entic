@@ -8,9 +8,11 @@ using TMPro;
 
 public class MapClick : MonoBehaviour, IPointerClickHandler {
 
-    public string path;
+    private string path;
     public string jsonString;
-    public Country[] countrylist;
+    public GameObject rootElement;
+    private Country[] countrylist;
+    private string lastClickedCountry = "XX";
 
     public GameObject nameText;
     public Image countryImage;
@@ -81,6 +83,25 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
             efficiency.value = (float)(countrylist[cint].rate * 100);
             
             Sprite flagTexture = Resources.Load <Sprite> ("Flags/"+countrylist[cint].code.ToLower());
+
+            if(lastClickedCountry == "XX")
+            {
+                Debug.Log("First time clicked");
+                GameObject clickedCountry = GameObject.Find("/UI/Map/" + countrylist[cint].code);
+                clickedCountry.GetComponent<Image>().color = new Color32(152, 152, 152, 255);
+                lastClickedCountry = countrylist[cint].code;
+            }
+            else 
+            {
+                Debug.Log("Last time you clicked: "+lastClickedCountry);
+                Image lastClickedCountryObject = GameObject.Find("/UI/Map/"+lastClickedCountry).GetComponent<Image>();
+                lastClickedCountryObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                Debug.Log("The GameObject you clicked was: "+GameObject.Find("/UI/Map/" + countrylist[cint].code).name);
+                Image clickedCountry = GameObject.Find("/UI/Map/" + countrylist[cint].code).GetComponent<Image>();
+                clickedCountry.GetComponent<Image>().color = new Color32(152, 152, 152, 255);
+                lastClickedCountry = countrylist[cint].code;
+            }
+            
 
             if (flagTexture != null)
             {
