@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class SpeedChange : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class SpeedChange : MonoBehaviour {
     public Sprite playImage;
     public Sprite fastplayImage;
     public float fastTimeScale;
-    public Text dateText;
+    public TextMeshProUGUI dateText;
     private float startTime;
     private DateTime date;
     public Slider yearBar;
