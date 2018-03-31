@@ -6,8 +6,8 @@
       "name": "Romania",
       "inhabitans": "19638000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 1,
@@ -15,8 +15,8 @@
       "name": "Qatar",
       "inhabitans": "2641669",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 2,
@@ -24,8 +24,8 @@
       "name": "State of Palestine",
       "inhabitans": "4550368",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 3,
@@ -33,8 +33,8 @@
       "name": "Israel",
       "inhabitans": "4550368",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 4,
@@ -42,8 +42,8 @@
       "name": "Paraguay",
       "inhabitans": "6897384",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 5,
@@ -51,8 +51,8 @@
       "name": "Portugal",
       "inhabitans": "10379573",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 6,
@@ -60,8 +60,8 @@
       "name": "North Korea",
       "inhabitans": "25368620",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 7,
@@ -69,8 +69,8 @@
       "name": "Puerto Rico",
       "inhabitans": "3411307",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 8,
@@ -78,8 +78,8 @@
       "name": "Poland",
       "inhabitans": "38422346",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 9,
@@ -87,8 +87,8 @@
       "name": "Papua New Guinea",
       "inhabitans": "8084999",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 10,
@@ -96,8 +96,8 @@
       "name": "Philippines",
       "inhabitans": "100981437",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 11,
@@ -105,8 +105,8 @@
       "name": "Peru",
       "inhabitans": "32553697",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 12,
@@ -114,8 +114,8 @@
       "name": "Panama",
       "inhabitans": "4034119",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 13,
@@ -123,8 +123,8 @@
       "name": "Pakistan",
       "inhabitans": "209970000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 14,
@@ -132,8 +132,8 @@
       "name": "Oman",
       "inhabitans": "4424762",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 15,
@@ -141,8 +141,8 @@
       "name": "New Zealand",
       "inhabitans": "4868420",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 16,
@@ -150,8 +150,8 @@
       "name": "Nepal",
       "inhabitans": "28982771",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 17,
@@ -159,8 +159,8 @@
       "name": "Norway",
       "inhabitans": "5267146",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 18,
@@ -168,8 +168,8 @@
       "name": "Netherlands",
       "inhabitans": "17200671",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 19,
@@ -177,8 +177,8 @@
       "name": "Nicaragua",
       "inhabitans": "6167237",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 20,
@@ -186,8 +186,8 @@
       "name": "Nigeria",
       "inhabitans": "185989640",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 21,
@@ -195,8 +195,8 @@
       "name": "Niger",
       "inhabitans": "20672987",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 22,
@@ -204,8 +204,8 @@
       "name": "New Caledonia",
       "inhabitans": "268767",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 23,
@@ -213,8 +213,8 @@
       "name": "Namibia",
       "inhabitans": "2606971",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 24,
@@ -222,8 +222,8 @@
       "name": "Malaysia",
       "inhabitans": "31899000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 25,
@@ -231,8 +231,8 @@
       "name": "Malawi",
       "inhabitans": "18091575",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 26,
@@ -240,8 +240,8 @@
       "name": "Mauritania",
       "inhabitans": "4301018",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 27,
@@ -249,8 +249,8 @@
       "name": "Mozambique",
       "inhabitans": "28829476",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 28,
@@ -258,8 +258,8 @@
       "name": "Mongolia",
       "inhabitans": "3081677",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 29,
@@ -267,8 +267,8 @@
       "name": "Montenegro",
       "inhabitans": "642550",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 30,
@@ -276,8 +276,8 @@
       "name": "Myanmar",
       "inhabitans": "53582855",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 31,
@@ -285,8 +285,8 @@
       "name": "Mali",
       "inhabitans": "14517176",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 32,
@@ -294,8 +294,8 @@
       "name": "Macedonia",
       "inhabitans": "2103721",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 33,
@@ -303,8 +303,8 @@
       "name": "Mexico",
       "inhabitans": "123675325",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 34,
@@ -312,8 +312,8 @@
       "name": "Madagascar",
       "inhabitans": "24894551",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 35,
@@ -321,8 +321,8 @@
       "name": "Moldova",
       "inhabitans": "2998235",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 36,
@@ -330,8 +330,8 @@
       "name": "Morocco",
       "inhabitans": "33848242",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 37,
@@ -339,8 +339,8 @@
       "name": "Latvia",
       "inhabitans": "1953200",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 38,
@@ -348,8 +348,8 @@
       "name": "Luxembourg",
       "inhabitans": "590667",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 39,
@@ -357,8 +357,8 @@
       "name": "Lithuania",
       "inhabitans": "2810865",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 40,
@@ -366,8 +366,8 @@
       "name": "Lesotho",
       "inhabitans": "2203821",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 41,
@@ -375,8 +375,8 @@
       "name": "Sri Lanka",
       "inhabitans": "21444000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 42,
@@ -384,8 +384,8 @@
       "name": "Libya",
       "inhabitans": "6293253",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 43,
@@ -393,8 +393,8 @@
       "name": "Liberia",
       "inhabitans": "4503000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 44,
@@ -402,8 +402,8 @@
       "name": "Lebanon",
       "inhabitans": "6006668",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 45,
@@ -411,8 +411,8 @@
       "name": "Laos",
       "inhabitans": "6758353",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 46,
@@ -420,8 +420,8 @@
       "name": "Kuwait",
       "inhabitans": "4052584",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 47,
@@ -429,8 +429,8 @@
       "name": "Kosovo",
       "inhabitans": "1920079",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 48,
@@ -438,8 +438,8 @@
       "name": "South Korea",
       "inhabitans": "51446201",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 49,
@@ -447,8 +447,8 @@
       "name": "Cambodia",
       "inhabitans": "15762370",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 50,
@@ -456,8 +456,8 @@
       "name": "Kyrgyzstan",
       "inhabitans": "6019480",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 51,
@@ -465,8 +465,8 @@
       "name": "Kenya",
       "inhabitans": "49125325",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 52,
@@ -474,8 +474,8 @@
       "name": "Kazakhstan",
       "inhabitans": "17987736",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 53,
@@ -483,8 +483,8 @@
       "name": "Japan",
       "inhabitans": "126672000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 54,
@@ -492,8 +492,8 @@
       "name": "Jordan",
       "inhabitans": "10011820",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 55,
@@ -501,8 +501,8 @@
       "name": "Jamaica",
       "inhabitans": "2881355",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 56,
@@ -510,8 +510,8 @@
       "name": "Italy",
       "inhabitans": "60589445",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 57,
@@ -519,8 +519,8 @@
       "name": "Iceland",
       "inhabitans": "348580",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 58,
@@ -528,8 +528,8 @@
       "name": "Iraq",
       "inhabitans": "37202572",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 59,
@@ -537,8 +537,8 @@
       "name": "Iran",
       "inhabitans": "81000000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 60,
@@ -546,8 +546,8 @@
       "name": "Ireland",
       "inhabitans": "4761865",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 61,
@@ -555,8 +555,8 @@
       "name": "India",
       "inhabitans": "1324171354",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 62,
@@ -564,8 +564,8 @@
       "name": "Indonesia",
       "inhabitans": "261115456",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 63,
@@ -573,8 +573,8 @@
       "name": "Hungary",
       "inhabitans": "9797561",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 64,
@@ -582,8 +582,8 @@
       "name": "Haiti",
       "inhabitans": "10847334",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 65,
@@ -591,8 +591,8 @@
       "name": "Croatia",
       "inhabitans": "4154200",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 66,
@@ -600,8 +600,8 @@
       "name": "Honduras",
       "inhabitans": "9112867",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 67,
@@ -609,8 +609,8 @@
       "name": "Guyana",
       "inhabitans": "773303",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 68,
@@ -618,8 +618,8 @@
       "name": "Guatemala",
       "inhabitans": "17263239",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 69,
@@ -627,8 +627,8 @@
       "name": "Greenland",
       "inhabitans": "56483",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 70,
@@ -636,8 +636,8 @@
       "name": "Greece",
       "inhabitans": "10768477",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 71,
@@ -645,8 +645,8 @@
       "name": "Equatorial Guinea",
       "inhabitans": "1221490",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 72,
@@ -654,8 +654,8 @@
       "name": "Guinea-Bissau",
       "inhabitans": "1815698",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 73,
@@ -663,8 +663,8 @@
       "name": "The Gambia",
       "inhabitans": "2051363",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 74,
@@ -672,8 +672,8 @@
       "name": "Guinea",
       "inhabitans": "12395924",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 75,
@@ -681,8 +681,8 @@
       "name": "Ghana",
       "inhabitans": "27043093",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 76,
@@ -690,8 +690,8 @@
       "name": "Georgia",
       "inhabitans": "3718200",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 77,
@@ -699,8 +699,8 @@
       "name": "United Kingdom",
       "inhabitans": "65648100",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 78,
@@ -708,8 +708,8 @@
       "name": "Gabon",
       "inhabitans": "1979786",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 79,
@@ -717,8 +717,8 @@
       "name": "France",
       "inhabitans": "67201000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 80,
@@ -726,8 +726,8 @@
       "name": "Falkland Islands",
       "inhabitans": "3398",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 81,
@@ -735,8 +735,8 @@
       "name": "Fiji",
       "inhabitans": "898760",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 82,
@@ -744,8 +744,8 @@
       "name": "Finland",
       "inhabitans": "5509717",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 83,
@@ -753,8 +753,8 @@
       "name": "Ethiopia",
       "inhabitans": "38422346",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 84,
@@ -762,8 +762,8 @@
       "name": "Estonia",
       "inhabitans": "1318705",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 85,
@@ -771,8 +771,8 @@
       "name": "Spain",
       "inhabitans": "46354321",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 86,
@@ -780,8 +780,8 @@
       "name": "Eritrea",
       "inhabitans": "4954645",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 87,
@@ -789,8 +789,8 @@
       "name": "Egypt",
       "inhabitans": "96706000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 88,
@@ -798,8 +798,8 @@
       "name": "Ecuador",
       "inhabitans": "16385068",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 89,
@@ -807,8 +807,8 @@
       "name": "Algeria",
       "inhabitans": "40400000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 90,
@@ -816,8 +816,8 @@
       "name": "Dominican Republic",
       "inhabitans": "10800857",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 91,
@@ -825,8 +825,8 @@
       "name": "Denmark",
       "inhabitans": "5748769",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 92,
@@ -834,8 +834,8 @@
       "name": "Djibouti",
       "inhabitans": "942333",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 93,
@@ -843,8 +843,8 @@
       "name": "Germany",
       "inhabitans": "82800000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 94,
@@ -852,8 +852,8 @@
       "name": "Czech Republic",
       "inhabitans": "10610947",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 95,
@@ -861,8 +861,8 @@
       "name": "",
       "inhabitans": "",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 96,
@@ -870,8 +870,8 @@
       "name": "Cyprus",
       "inhabitans": "1170125",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 97,
@@ -879,8 +879,8 @@
       "name": "Cuba",
       "inhabitans": "11239224",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 98,
@@ -888,8 +888,8 @@
       "name": "Costa Rica",
       "inhabitans": "4857274",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 99,
@@ -897,8 +897,8 @@
       "name": "Colombia",
       "inhabitans": "49587941",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 100,
@@ -906,8 +906,8 @@
       "name": "West Congo",
       "inhabitans": "5125821",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 101,
@@ -915,8 +915,8 @@
       "name": " East Congo",
       "inhabitans": "78736153",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 102,
@@ -924,8 +924,8 @@
       "name": "Cameroon",
       "inhabitans": "23439189",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 103,
@@ -933,8 +933,8 @@
       "name": "Ivory Coast",
       "inhabitans": "23740424",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 104,
@@ -942,8 +942,8 @@
       "name": "China",
       "inhabitans": "1403500365",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 105,
@@ -951,8 +951,8 @@
       "name": "Chile",
       "inhabitans": "17574003",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 106,
@@ -960,8 +960,8 @@
       "name": "Switzerland",
       "inhabitans": "8401120",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 107,
@@ -969,8 +969,8 @@
       "name": "Canada",
       "inhabitans": "35151728",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 108,
@@ -978,8 +978,8 @@
       "name": "Central African Republic",
       "inhabitans": "4594621",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 109,
@@ -987,8 +987,8 @@
       "name": "Botswana",
       "inhabitans": "2250260",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 110,
@@ -996,8 +996,8 @@
       "name": "Bhutan",
       "inhabitans": "797765",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 111,
@@ -1005,8 +1005,8 @@
       "name": "Brunei",
       "inhabitans": "417200",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 112,
@@ -1014,8 +1014,8 @@
       "name": "Brazil",
       "inhabitans": "208733102",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 113,
@@ -1023,8 +1023,8 @@
       "name": "Bolivia",
       "inhabitans": "11217864",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 114,
@@ -1032,8 +1032,8 @@
       "name": "Belize",
       "inhabitans": "387879",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 115,
@@ -1041,8 +1041,8 @@
       "name": "Belarus",
       "inhabitans": "9498700",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 116,
@@ -1050,8 +1050,8 @@
       "name": "Bosnia and Herzegovina",
       "inhabitans": "3531159",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 117,
@@ -1059,8 +1059,8 @@
       "name": "The Bahamas",
       "inhabitans": "391232",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 118,
@@ -1068,8 +1068,8 @@
       "name": "Azerbaijan",
       "inhabitans": "9867250",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 119,
@@ -1077,8 +1077,8 @@
       "name": "Austria",
       "inhabitans": "8823054",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 120,
@@ -1086,8 +1086,8 @@
       "name": "Australia",
       "inhabitans": "24872800",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 121,
@@ -1095,8 +1095,8 @@
       "name": "Armenia",
       "inhabitans": "2924816",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 122,
@@ -1104,17 +1104,17 @@
       "name": "Argentina",
       "inhabitans": "43847430",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 123,
       "code": "AE",
-      "name": "United Arab Emirates",
+      "name": "United Arab Emiproductions",
       "inhabitans": "9269612",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 124,
@@ -1122,8 +1122,8 @@
       "name": "Albania",
       "inhabitans": "2876591",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 125,
@@ -1131,8 +1131,8 @@
       "name": "Angola",
       "inhabitans": "25789024",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 126,
@@ -1140,8 +1140,8 @@
       "name": "Afghanistan",
       "inhabitans": "34656032",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 127,
@@ -1149,8 +1149,8 @@
       "name": "Bulgaria",
       "inhabitans": "7101859",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 128,
@@ -1158,8 +1158,8 @@
       "name": "Bangladesh",
       "inhabitans": "162951560",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 129,
@@ -1167,8 +1167,8 @@
       "name": "Burkina Faso",
       "inhabitans": "20107509",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 130,
@@ -1176,8 +1176,8 @@
       "name": "Benin",
       "inhabitans": "10872298",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 131,
@@ -1185,8 +1185,8 @@
       "name": "Belgium",
       "inhabitans": "11358357",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 132,
@@ -1194,8 +1194,8 @@
       "name": "Burundi",
       "inhabitans": "10524117",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 133,
@@ -1203,8 +1203,8 @@
       "name": "Zimbabwe",
       "inhabitans": "16150362",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 134,
@@ -1212,8 +1212,8 @@
       "name": "Zambia",
       "inhabitans": "16591390",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 135,
@@ -1221,8 +1221,8 @@
       "name": "South Africa",
       "inhabitans": "54956900",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 136,
@@ -1230,8 +1230,8 @@
       "name": "Yemen",
       "inhabitans": "27584213",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 137,
@@ -1239,8 +1239,8 @@
       "name": "Vanuatu",
       "inhabitans": "270402",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 138,
@@ -1248,8 +1248,8 @@
       "name": "Vietnam",
       "inhabitans": "94569072",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 139,
@@ -1257,8 +1257,8 @@
       "name": "Venezuela",
       "inhabitans": "31568179",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 140,
@@ -1266,8 +1266,8 @@
       "name": "Uzbekistan",
       "inhabitans": "32979000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 141,
@@ -1275,8 +1275,8 @@
       "name": "United States",
       "inhabitans": "325719178",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 142,
@@ -1284,8 +1284,8 @@
       "name": "Uruguay",
       "inhabitans": "3444006",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 143,
@@ -1293,8 +1293,8 @@
       "name": "Ukraine",
       "inhabitans": "42418235",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 144,
@@ -1302,8 +1302,8 @@
       "name": "Uganda",
       "inhabitans": "41487965",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 145,
@@ -1311,8 +1311,8 @@
       "name": "Tanzania",
       "inhabitans": "55572201",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 146,
@@ -1320,8 +1320,8 @@
       "name": "Taiwan",
       "inhabitans": "23550077",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 147,
@@ -1329,8 +1329,8 @@
       "name": "Turkey",
       "inhabitans": "80810525",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 148,
@@ -1338,8 +1338,8 @@
       "name": "Tunisia",
       "inhabitans": "11304482",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 149,
@@ -1347,8 +1347,8 @@
       "name": "Trinidad and Tobago",
       "inhabitans": "1353895",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 150,
@@ -1356,8 +1356,8 @@
       "name": "East Timor",
       "inhabitans": "1167242",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 151,
@@ -1365,8 +1365,8 @@
       "name": "Turkmenistan",
       "inhabitans": "5662544",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 152,
@@ -1374,8 +1374,8 @@
       "name": "Tajikistan",
       "inhabitans": "8734951",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 153,
@@ -1383,8 +1383,8 @@
       "name": "Thailand",
       "inhabitans": "68863514",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 154,
@@ -1392,8 +1392,8 @@
       "name": "Togo",
       "inhabitans": "7965055",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 155,
@@ -1401,8 +1401,8 @@
       "name": "Chad",
       "inhabitans": "13670084",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 156,
@@ -1410,8 +1410,8 @@
       "name": "Syria",
       "inhabitans": "38422346",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 157,
@@ -1419,8 +1419,8 @@
       "name": "Swaziland",
       "inhabitans": "1343098",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 158,
@@ -1428,8 +1428,8 @@
       "name": "Sweden",
       "inhabitans": "10120242",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 159,
@@ -1437,8 +1437,8 @@
       "name": "Slovenia",
       "inhabitans": "2065895",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 160,
@@ -1446,8 +1446,8 @@
       "name": "Slovakia",
       "inhabitans": "5435343",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 161,
@@ -1455,8 +1455,8 @@
       "name": "Suriname",
       "inhabitans": "558368",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 162,
@@ -1464,8 +1464,8 @@
       "name": "Serbia",
       "inhabitans": "7058322",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 163,
@@ -1473,8 +1473,8 @@
       "name": "Somalia",
       "inhabitans": "14317996",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 164,
@@ -1482,8 +1482,8 @@
       "name": "",
       "inhabitans": "",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 165,
@@ -1491,8 +1491,8 @@
       "name": "El Salvador",
       "inhabitans": "6344722",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 166,
@@ -1500,8 +1500,8 @@
       "name": "Slovenia",
       "inhabitans": "2065895",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 167,
@@ -1509,8 +1509,8 @@
       "name": "Senegal",
       "inhabitans": "15411614",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 168,
@@ -1518,8 +1518,8 @@
       "name": "South Sudan",
       "inhabitans": "12230730",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 169,
@@ -1527,8 +1527,8 @@
       "name": "Sudan",
       "inhabitans": "39578828",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 170,
@@ -1536,8 +1536,8 @@
       "name": "Saudi Arabia",
       "inhabitans": "33000000",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 171,
@@ -1545,8 +1545,8 @@
       "name": "Saint Helena",
       "inhabitans": "5633",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 172,
@@ -1554,8 +1554,8 @@
       "name": "Rwanda",
       "inhabitans": "11262564",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     },
     {
       "id": 173,
@@ -1563,8 +1563,8 @@
       "name": "Russia",
       "inhabitans": "144526636",
       "desc": "",
-      "waste": 0,
-      "rate": 1
+      "amount": 0,
+      "production": 1
     }
   ]
 }

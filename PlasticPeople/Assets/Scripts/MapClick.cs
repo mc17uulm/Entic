@@ -7,11 +7,8 @@ using System.IO;
 using TMPro;
 
 public class MapClick : MonoBehaviour, IPointerClickHandler {
-
-    private string path;
-    public string jsonString;
+    
     public GameObject rootElement;
-    private Country[] countrylist;
     private string lastClickedCountry = "XX";
 
     public GameObject nameText;
@@ -39,10 +36,6 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
 
         //Debug.Log("CameraDim: x=" + cameraDim.x + " y=" + cameraDim.y);
         //Debug.Log("MapDim: x=" + cameraDim.x + " y=" + cameraDim.y);
-
-        path = Application.streamingAssetsPath + "/countries.json";
-        string countries = File.ReadAllText(path);
-        countrylist = JsonHelper.FromJson<Country>(countries);
     }
 	
 	// Update is called once per frame
@@ -73,33 +66,34 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
 
         if (cint != 255)
         {
+            Logic.Country country = Game.play.GetCountry(cint);
             countryInfo.SetActive(true);
 
-            nameText.GetComponent<TextMeshProUGUI>().text = countrylist[cint].name;
-            codeText.GetComponent<TextMeshProUGUI>().text = countrylist[cint].code;
-            Debug.Log(countrylist[cint].population);
-            populationText.GetComponent<TextMeshProUGUI>().text = "Population: "+countrylist[cint].population;
-            Debug.Log(countrylist[cint].rate * 100);
-            efficiency.value = (float)(countrylist[cint].rate * 100);
+            nameText.GetComponent<TextMeshProUGUI>().text = country.GetName();
+            codeText.GetComponent<TextMeshProUGUI>().text = country.GetCode();
+            Debug.Log(country.GetPopulation());
+            populationText.GetComponent<TextMeshProUGUI>().text = "Population: " + country.GetPopulation();
+            Debug.Log(country.GetProduction() * 100);
+            efficiency.value = (float)(country.GetProduction() * 100);
             
-            Sprite flagTexture = Resources.Load <Sprite> ("Flags/"+countrylist[cint].code.ToLower());
+            Sprite flagTexture = Resources.Load <Sprite> ("Flags/"+ country.GetCode().ToLower());
 
             if(lastClickedCountry == "XX")
             {
                 Debug.Log("First time clicked");
-                GameObject clickedCountry = GameObject.Find("/UI/Map/" + countrylist[cint].code);
+                GameObject clickedCountry = GameObject.Find("/UI/Map/" + country.GetCode());
                 clickedCountry.GetComponent<Image>().color = new Color32(152, 152, 152, 255);
-                lastClickedCountry = countrylist[cint].code;
+                lastClickedCountry = country.GetCode();
             }
             else 
             {
                 Debug.Log("Last time you clicked: "+lastClickedCountry);
                 Image lastClickedCountryObject = GameObject.Find("/UI/Map/"+lastClickedCountry).GetComponent<Image>();
                 lastClickedCountryObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-                Debug.Log("The GameObject you clicked was: "+GameObject.Find("/UI/Map/" + countrylist[cint].code).name);
-                Image clickedCountry = GameObject.Find("/UI/Map/" + countrylist[cint].code).GetComponent<Image>();
+                Debug.Log("The GameObject you clicked was: "+GameObject.Find("/UI/Map/" + country.GetCode()).name);
+                Image clickedCountry = GameObject.Find("/UI/Map/" + country.GetCode()).GetComponent<Image>();
                 clickedCountry.GetComponent<Image>().color = new Color32(152, 152, 152, 255);
-                lastClickedCountry = countrylist[cint].code;
+                lastClickedCountry = country.GetCode();
             }
             
 
@@ -109,7 +103,7 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
                 countryImage.preserveAspect = true;
             }
 
-            Debug.Log("You clicked : " + countrylist[cint].name + ". They are in trouble now!");
+            Debug.Log("You clicked : " + country.GetName() + ". They are in trouble now!");
         }
     }
 
