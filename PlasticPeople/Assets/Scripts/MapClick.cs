@@ -19,6 +19,8 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
     public Slider efficiency;
 
     private Camera camera;
+    private Vector2 pos;
+    private Vector2 infoPos;
     private Texture2D map;
     private Vector2 cameraDim;
     private Vector2 mapDim;
@@ -45,17 +47,24 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //Debug.Log("Mouse clicked");
+        Debug.Log("Mouse clicked");
         //Debug.Log("Scale: " + ZoomIn.scale);
         
-        Vector2 pos = eventData.position;
+        pos = eventData.position;
 
+        infoPos = Camera.main.ScreenToWorldPoint(eventData.position);
         //Debug.Log("Click pos: " + pos);
         //Debug.Log("MapDim: x=" + mapDim.x + " y=" + mapDim.y);
 
         float x = (pos.x / cameraDim.x) * mapDim.x;
         float y = (pos.y / cameraDim.y) * mapDim.y;
 
+        //Debug.Log("clicked position: "+pos.x+","+pos.y);
+        //Debug.Log("InfoPanelPosLocalPosition: "+countryInfo.GetComponent<RectTransform>().localPosition.x+", "+countryInfo.GetComponent<RectTransform>().localPosition.y);
+
+        countryInfo.SetActive(true);
+        PositionCountryInfo(x, y);
+        
         //Debug.Log("Absoult click position on image. x=" + x + " y=" + y);
 
         Color c = map.GetPixel((int)x, (int)y);
@@ -67,7 +76,7 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
         if (cint != 255)
         {
             Logic.Country country = Game.play.GetCountry(cint);
-            countryInfo.SetActive(true);
+            
 
             nameText.GetComponent<TextMeshProUGUI>().text = country.GetName();
             codeText.GetComponent<TextMeshProUGUI>().text = country.GetCode();
@@ -104,6 +113,52 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
             }
 
             Debug.Log("You clicked : " + country.GetName() + ". They are in trouble now!");
+        }
+        else
+        {
+            if (lastClickedCountry == "XX")
+            {
+                Debug.Log("First time clicked Water");
+                countryInfo.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Last time you clicked: " + lastClickedCountry);
+                Image lastClickedCountryObject = GameObject.Find("/UI/Map/" + lastClickedCountry).GetComponent<Image>();
+                lastClickedCountryObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                countryInfo.SetActive(false);
+                lastClickedCountry = "XX";
+            }
+        }
+    }
+
+    public void PositionCountryInfo(float x, float y)
+    {
+        
+        if (pos.x <= cameraDim.x/2 && pos.y > mapDim.y/2)
+        {
+            Debug.Log("1. Quadrant");
+            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(0f,1f);
+            countryInfo.GetComponent<RectTransform>().position = infoPos;
+
+        }
+        else if(pos.x > cameraDim.x / 2 && pos.y > mapDim.y / 2)
+        {
+            Debug.Log("2. Quadrant");
+            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(1f, 1f);
+            countryInfo.GetComponent<RectTransform>().position = infoPos;
+        }
+        else if(pos.x > cameraDim.x / 2 && pos.y <= mapDim.y / 2)
+        {
+            Debug.Log("3. Quadrant");
+            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(1f, 0f);
+            countryInfo.GetComponent<RectTransform>().position = infoPos;
+        }
+        else
+        {
+            Debug.Log("4. Quadrant");
+            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(0f, 0f);
+            countryInfo.GetComponent<RectTransform>().position = infoPos;
         }
     }
 

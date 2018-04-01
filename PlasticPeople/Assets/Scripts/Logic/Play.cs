@@ -21,7 +21,7 @@ namespace Logic
 
         public void Tick()
         {
-            Debug.Log("Tick!");
+            //Debug.Log("Tick!");
 
             // Ab hier auskommentieren um Logik nicht laufen zu lassen
             foreach(Action action in this.actions)
