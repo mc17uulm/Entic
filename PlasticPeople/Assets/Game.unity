@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 75756425}
   - component: {fileID: 75756424}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ClickObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3816,6 +3816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434803248}
   - component: {fileID: 434803249}
+  - component: {fileID: 434803250}
   m_Layer: 5
   m_Name: SoundVolume
   m_TagString: Untagged
@@ -3903,6 +3904,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &434803250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 434803247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f754720e9cac949a0d7d5fe1077d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMusic: 0
+  mixer: {fileID: 24100000, guid: 941e75ba5f7a06a42a47c41822ee6a2a, type: 2}
 --- !u!1 &444317767
 GameObject:
   m_ObjectHideFlags: 0
@@ -8187,8 +8201,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17576,6 +17590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900048954}
   - component: {fileID: 1900048955}
+  - component: {fileID: 1900048956}
   m_Layer: 5
   m_Name: MusicVolume
   m_TagString: Untagged
@@ -17663,6 +17678,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1900048956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900048953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f754720e9cac949a0d7d5fe1077d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMusic: 1
+  mixer: {fileID: 24100000, guid: 941e75ba5f7a06a42a47c41822ee6a2a, type: 2}
 --- !u!1 &1903572430
 GameObject:
   m_ObjectHideFlags: 0
