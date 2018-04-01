@@ -22,7 +22,8 @@ namespace Logic
         public void Tick()
         {
             Debug.Log("Tick!");
-            /**
+
+            // Ab hier auskommentieren um Logik nicht laufen zu lassen
             foreach(Action action in this.actions)
             {
                 action.Tick();
@@ -48,19 +49,19 @@ namespace Logic
 
             if(newAmount < this.amount)
             {
-                
+                // weniger Plastik
             }
             else if(newAmount == this.amount)
             {
-                
+                // gleich viel Plastik
             }
             else
             {
-               
+               // mehr Plastik
             }
 
             this.amount = newAmount;
-            this.production = newProduction;*/
+            this.production = newProduction;
 
         }
 
