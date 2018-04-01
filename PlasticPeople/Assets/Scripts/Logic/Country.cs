@@ -27,7 +27,8 @@ namespace Logic
             this.description = description;
             this.amount = amount;
             this.production = production;
-            this.influence = 1.0f;
+            System.Random random = new System.Random();
+            this.influence = (float) random.NextDouble();
             this.actions = new LinkedList<Action>();
         }
 

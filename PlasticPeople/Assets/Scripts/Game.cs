@@ -15,16 +15,31 @@ public class Game : MonoBehaviour {
         Debug.Log("Loaded Game.cs");
         string path = Application.streamingAssetsPath + "/countries.json";
         string countries = File.ReadAllText(path);
-        Logic.Country[] countryarr = JsonHelper.FromJson<Logic.Country>(countries);
+        Country[] countryarr = JsonHelper.FromJson<Country>(countries);
         LinkedList<Logic.Country> countrylist = new LinkedList<Logic.Country>();
         Debug.Log("Arr Size:" + countryarr.Length);
-        foreach(Logic.Country country in countryarr)
+        System.Random random = new System.Random();
+        foreach(Country country in countryarr)
         {
-            Debug.Log(country.GetName());
-            countrylist.AddLast(country);
+            try
+            {
+                countrylist.AddLast(new Logic.Country(
+                    Int32.Parse(country.id),
+                    country.code,
+                    country.name,
+                    Int32.Parse(country.population.Replace(",", "")),
+                    country.description,
+                    Int32.Parse(country.waste),
+                    country.rate
+                ));
+            }
+            catch (FormatException e)
+            {
+                Debug.Log(e.Message);
+            }
         }
-        //Debug.Log("List:");
-        //Debug.Log(countrylist);
+        Debug.Log("List:");
+        Debug.Log(countrylist.Count);
         play = new Play(countrylist);
         last = DateTime.Now;
 	}
@@ -33,7 +48,7 @@ public class Game : MonoBehaviour {
 	void Update () {
         if(last.AddSeconds(1.0) <= DateTime.Now)
         {
-            //play.Tick();
+            play.Tick();
         }
 	}
 }
