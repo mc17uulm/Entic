@@ -10,6 +10,7 @@ public class CountryDisplay : MonoBehaviour {
     public Image countryImage;
     public GameObject populationText;
     public GameObject codeText;
+    public GameObject wasteText;
 
 
 

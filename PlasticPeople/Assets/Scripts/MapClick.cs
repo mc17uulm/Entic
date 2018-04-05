@@ -15,6 +15,7 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
     public Image countryImage;
     public GameObject populationText;
     public GameObject codeText;
+    public GameObject wasteText;
     public GameObject countryInfo;
     public Slider efficiency;
 
@@ -81,9 +82,10 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
             nameText.GetComponent<TextMeshProUGUI>().text = country.GetName();
             codeText.GetComponent<TextMeshProUGUI>().text = country.GetCode();
             Debug.Log(country.GetPopulation());
-            populationText.GetComponent<TextMeshProUGUI>().text = "Population: " + country.GetPopulation();
-            Debug.Log(country.GetProduction() * 100);
-            efficiency.value = (float)(country.GetProduction() * 100);
+            populationText.GetComponent<TextMeshProUGUI>().text = "Population: " + country.PrintPopulation();
+            Debug.Log(country.GetProduction() / country.GetPopulation() / 0.0337f * 50);
+            efficiency.value = (float)(country.GetProduction()/country.GetPopulation()/0.0337f*50);
+            wasteText.GetComponent<TextMeshProUGUI>().text = country.PrintValues();
             
             Sprite flagTexture = Resources.Load <Sprite> ("Flags/"+ country.GetCode().ToLower());
 

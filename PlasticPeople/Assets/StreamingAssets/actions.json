@@ -1,0 +1,13 @@
+{
+  "Items": [
+    {
+      "id": 1,
+      "name": "Weltweites Plastikpfand",
+      "descr": "",
+      "cost": 200000000,
+      "type": "once",
+      "development": 36,
+      "factor":  500000
+    }
+  ]
+}

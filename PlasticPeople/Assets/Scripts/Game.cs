@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using Logic;
 using System.IO;
@@ -7,7 +9,12 @@ using System.IO;
 public class Game : MonoBehaviour {
 
     public static Play play;
-    public static DateTime last; 
+    public static DateTime last;
+    public static DateTime print;
+    public static SpeedChange change;
+    public static Newsticker news;
+    public int i;
+    private bool c;
 
 
 	// Use this for initialization
@@ -17,9 +24,11 @@ public class Game : MonoBehaviour {
         string countries = File.ReadAllText(path);
         Country[] countryarr = JsonHelper.FromJson<Country>(countries);
         LinkedList<Logic.Country> countrylist = new LinkedList<Logic.Country>();
-        Debug.Log("Arr Size:" + countryarr.Length);
         System.Random random = new System.Random();
-        foreach(Country country in countryarr)
+        float amount = 0, production = 0;
+        InfoPanel panel = FindObjectOfType<InfoPanel>();
+        Newsticker news = FindObjectOfType<Newsticker>();
+        foreach (Country country in countryarr)
         {
             try
             {
@@ -29,26 +38,51 @@ public class Game : MonoBehaviour {
                     country.name,
                     Int32.Parse(country.population.Replace(",", "")),
                     country.description,
-                    Int32.Parse(country.waste),
+                    float.Parse(country.waste, CultureInfo.InvariantCulture.NumberFormat),
                     country.rate
                 ));
+                amount += float.Parse(country.waste, CultureInfo.InvariantCulture.NumberFormat);
+                production += country.rate;
             }
             catch (FormatException e)
             {
                 Debug.Log(e.Message);
             }
         }
-        Debug.Log("List:");
-        Debug.Log(countrylist.Count);
         play = new Play(countrylist);
         last = DateTime.Now;
-	}
+        print = DateTime.Parse("2019-01-01 00:00:00");
+        change = FindObjectOfType<SpeedChange>();
+        i = 1;
+        panel.changeWaste(amount, production);
+        panel.changeCapital(30000000, 2500000);
+        change.yearBar.maxValue = DateTime.DaysInMonth(print.Year, print.Month);
+        news.AddNews(new News("Start", "Wenn die Menschheit weiterhin soviel Plastik produziert wie jetzt, werden große Teile der Erde bis 2070 total verschmutz sein.", NewsType.Emergency));
+        c = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if(last.AddSeconds(1.0) <= DateTime.Now)
+        if((change.factor != 0) && (!c) && (last.AddSeconds(1.0/7/ change.GetFactor()) <= DateTime.Now))
         {
-            play.Tick();
+            c = true;
+            int daysInMonth = DateTime.DaysInMonth(print.Year, print.Month);
+            change.changeDate(print.ToString("dd.MM.yyyy"));
+            change.yearBar.maxValue = daysInMonth;
+            change.yearBar.value = i;
+            if (i == daysInMonth)
+            {
+                i = 1;
+                play.Tick();
+            }
+            else
+            {
+                i++;
+            }
+            print = print.AddDays(1);
+            last = DateTime.Now;
+            c = false;
         }
 	}
+    
 }

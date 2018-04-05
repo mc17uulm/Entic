@@ -5,18 +5,22 @@ using UnityEngine;
 namespace Logic
 {
 
-    public class Play
+    public class Play : MonoBehaviour
     {
 
-        private float amount;
-        private float production;
+        private double amount;
+        private double production;
         private LinkedList<Country> countries;
         private LinkedList<Action> actions;
+        private Capital capital;
+        private InfoPanel panel;
 
         public Play(LinkedList<Country> countries)
         {
             this.countries = countries;
             this.actions = new LinkedList<Action>();
+            this.capital = new Capital(30000000, 2500000);
+            this.panel = FindObjectOfType<InfoPanel>();
         }
 
         public void Tick()
@@ -29,8 +33,8 @@ namespace Logic
                 action.Tick();
             }
 
-            float newAmount = 0.0f;
-            float newProduction = 0.0f;
+            double newAmount = 0.0f;
+            double newProduction = 0.0f;
 
             foreach(Country country in this.countries)
             {
@@ -43,9 +47,8 @@ namespace Logic
                 }
                 country.Tick();
                 newAmount += country.GetAmount();
+                newProduction += country.GetProduction();
             }
-
-            newProduction = 1 - (this.amount / newAmount);
 
             if(newAmount < this.amount)
             {
@@ -59,6 +62,12 @@ namespace Logic
             {
                // mehr Plastik
             }
+
+            Debug.Log("HERE");
+            this.capital.Tick();
+
+            this.panel.changeWaste(newAmount, newProduction);
+            this.panel.changeCapital(this.capital.GetAmount(), this.capital.GetRate());
 
             this.amount = newAmount;
             this.production = newProduction;

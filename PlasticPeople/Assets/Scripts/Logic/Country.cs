@@ -13,12 +13,14 @@ namespace Logic
         private string name;
         private int population;
         private string description;
-        private float amount;
-        private float production;
-        private float influence;
+        private double amount;
+        private double production;
+        private double influence;
         private LinkedList<Action> actions;
+        private bool rateBetter;
+        private bool sumBetter;
 
-        public Country(int id, string code, string name, int population, string description, float amount, float production)
+        public Country(int id, string code, string name, int population, string description, double amount, double production)
         {
             this.id = id;
             this.code = code;
@@ -28,21 +30,43 @@ namespace Logic
             this.amount = amount;
             this.production = production;
             System.Random random = new System.Random();
-            this.influence = (float) random.NextDouble();
+            this.influence = (double) random.NextDouble();
             this.actions = new LinkedList<Action>();
+            this.rateBetter = true;
+            this.sumBetter = true;
         }
 
         public void Tick()
         {
-            foreach(Action action in this.actions)
+            double prod = this.production;
+            double am = this.amount;
+            this.production = this.production + ((this.production/12) * 0.01f * (1.01f - this.influence));
+            foreach (Action action in this.actions)
             {
+                Debug.Log("Execute Actions");
                 action.Tick();
                 if (action.IsFinished())
                 {
                     this.ExecuteAction(action);
                 }
             }
-            this.amount = this.amount + (this.amount * this.production);
+            this.amount = this.amount + (this.production/12);
+            if(prod > this.production)
+            {
+                this.rateBetter = false;
+            }
+            else
+            {
+                this.rateBetter = true;
+            }
+            if (am > this.amount)
+            {
+                this.sumBetter = false;
+            }
+            else
+            {
+                this.sumBetter = true;
+            }
         }
 
         public void AddAction(Action action)
@@ -55,25 +79,25 @@ namespace Logic
             this.actions.Remove(action);
         }
 
-        public float AddToAmount(float factor)
+        public double AddToAmount(double factor)
         {
             this.amount = this.amount + factor;
             return this.amount;
         }
 
-        public float RemoveAmount(float factor)
+        public double RemoveAmount(double factor)
         {
             this.amount = this.amount - (this.amount * this.influence * factor);
             return this.amount;
         }
 
-        public float RaiseProduction(float factor)
+        public double RaiseProduction(double factor)
         {
             this.production = this.production + (this.production * this.influence * factor);
             return this.production;
         }
 
-        public float ReduceProduction(float factor)
+        public double ReduceProduction(double factor)
         {
             this.production = this.production - (this.production * this.influence * factor);
             return this.production;
@@ -130,19 +154,47 @@ namespace Logic
             return this.population;
         }
 
+        public string PrintPopulation()
+        {
+            return this.population.ToString("N");
+        }
+
         public string GetDescription()
         {
             return this.description;
         }
 
-        public float GetAmount()
+        public double GetAmount()
         {
             return this.amount;
         }
 
-        public float GetProduction()
+        public double GetProduction()
         {
             return this.production;
+        }
+
+        public string PrintValues()
+        {
+            Debug.Log("Amount: " + this.amount);
+            string o = "";
+            if (sumBetter)
+            {
+                o += "" + this.amount.ToString("N") + " t";
+            }
+            else
+            {
+                o += "" + this.amount.ToString("N") + " t";
+            }
+            if (rateBetter)
+            {
+                o += " | " + this.production.ToString("N") + " t";
+            }
+            else
+            {
+                o += " | " + this.production.ToString("N") + " t";
+            }
+            return o;
         }
 
         public LinkedList<Action> GetActions()
