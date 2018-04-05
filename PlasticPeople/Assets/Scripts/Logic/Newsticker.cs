@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 using TMPro;
 
 namespace Logic
@@ -11,7 +12,7 @@ namespace Logic
     public class Newsticker : MonoBehaviour
     {
 
-        private LinkedList<News> news;
+        public LinkedList<News> news = new LinkedList<News>();
         public bool open;
         public Image background;
         public TextMeshProUGUI infoText;
@@ -20,7 +21,6 @@ namespace Logic
         {
             Debug.Log("Awake Newsticker");
             open = false;
-            news = new LinkedList<News>();
         }
 
         public void AddNews(News news)

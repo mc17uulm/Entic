@@ -57,7 +57,7 @@ public class Game : MonoBehaviour {
         panel.changeWaste(amount, production);
         panel.changeCapital(30000000, 2500000);
         change.yearBar.maxValue = DateTime.DaysInMonth(print.Year, print.Month);
-        news.AddNews(new News("Start", "Wenn die Menschheit weiterhin soviel Plastik produziert wie jetzt, werden große Teile der Erde bis 2070 total verschmutz sein.", NewsType.Emergency));
+        news.AddNews(new News("Start", "Producing this much of plastic waste will exterminate humans til 2070.", NewsType.Emergency));
         c = false;
     }
 	

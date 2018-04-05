@@ -21,9 +21,9 @@ public class ZoomIn : MonoBehaviour
         if (Input.GetKey(KeyCode.KeypadPlus))
         {
             transform.localScale *= factor;
-            if (transform.localScale.x > 20)
+            if (transform.localScale.x > 10)
             {
-                transform.localScale = new Vector3(20.0f, 20.0f, 20.0f);
+                transform.localScale = new Vector3(10.0f, 10.0f, 10.0f);
             }
             scale = transform.localScale;
             Debug.Log("Scale Now: " + transform.localScale);
