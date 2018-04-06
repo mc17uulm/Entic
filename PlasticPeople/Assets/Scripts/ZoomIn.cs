@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoomIn : MonoBehaviour
 {
@@ -6,7 +7,6 @@ public class ZoomIn : MonoBehaviour
     private GameObject map;
     private float factor;
     public static Vector3 scale;
-
     // Use this for initialization
     void Start()
     {
