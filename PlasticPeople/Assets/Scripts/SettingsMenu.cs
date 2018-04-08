@@ -53,8 +53,9 @@ public class SettingsMenu : MonoBehaviour {
 
     public void Resume()
     {
+        SpeedChange change = FindObjectOfType<SpeedChange>();
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        change.Resume();
         GameIsPaused = false;
         blurEffect.SetActive(false);
         darkenEffect.SetActive(false);
@@ -62,8 +63,9 @@ public class SettingsMenu : MonoBehaviour {
 
     public void Pause()
     {
+        SpeedChange change = FindObjectOfType<SpeedChange>();
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        change.Pause();
         GameIsPaused = true;
         blurEffect.SetActive(true);
         darkenEffect.SetActive(true);

@@ -41,7 +41,7 @@ public class InfoPanel : MonoBehaviour {
             ColorUtility.TryParseHtmlString("#18b518", out color);
             capitalIndicator.color = color;
         }
-        string changeText = "daily:  " + prefix + c + "  " + prefix + number;
+        string changeText = "monthly:  " + prefix + c + "  " + prefix + number;
 
         capitalText.text = amount;
         capitalChangeText.text = changeText;
@@ -75,7 +75,7 @@ public class InfoPanel : MonoBehaviour {
             ColorUtility.TryParseHtmlString("#b51818", out color);
             wasteIndicator.color = color;
         }
-        string changeText = "daily:  " + prefix + c + "  " + prefix + number;
+        string changeText = "monthly:  " + prefix + c + "  " + prefix + number;
 
         wasteText.text = amount;
         wasteChangeText.text = changeText;

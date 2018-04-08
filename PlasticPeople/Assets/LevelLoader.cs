@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Diagnostics;
 
 public class LevelLoader : MonoBehaviour {
 
@@ -10,25 +11,38 @@ public class LevelLoader : MonoBehaviour {
 
     public void LoadLevel(int sceneIndex)
     {
+        Stopwatch watch = Stopwatch.StartNew();
         StartCoroutine(LoadAsynchronously(sceneIndex));
+        UnityEngine.Debug.Log("Load Level: " + (watch.ElapsedMilliseconds / 1000) + " seconds");
     }
 
     IEnumerator LoadAsynchronously (int sceneIndex)
     {
+        Stopwatch watch = Stopwatch.StartNew();
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         loadingScreen.SetActive(true);
 
-        while (!operation.isDone)
+        bool test = true;
+        while (test)
         {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            if (!operation.isDone)
+            {
+                float progress = Mathf.Clamp01(operation.progress / 0.9f);
 
-            slider.value = progress;
+                slider.value = progress;
 
-            Debug.Log("Load: " + progress);
-            
-            yield return null;
+                //Debug.Log("Load: " + progress);
+
+                yield return null;
+            }
+            else
+            {
+                test = false;
+                UnityEngine.Debug.Log("Load Level While: " + (watch.ElapsedMilliseconds / 1000) + " seconds");
+            }
         }
+        
     }
 	
 }

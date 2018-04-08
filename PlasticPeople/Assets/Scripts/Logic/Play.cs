@@ -62,8 +62,7 @@ namespace Logic
             {
                // mehr Plastik
             }
-
-            Debug.Log("HERE");
+            
             this.capital.Tick();
 
             this.panel.changeWaste(newAmount, newProduction);

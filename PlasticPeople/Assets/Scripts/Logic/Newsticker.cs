@@ -13,14 +13,14 @@ namespace Logic
     {
 
         public LinkedList<News> news = new LinkedList<News>();
-        public bool open;
         public Image background;
         public TextMeshProUGUI infoText;
+        public TextMeshProUGUI newsFeed;
+        public GameObject openTicker;
 
         void Awake()
         {
             Debug.Log("Awake Newsticker");
-            open = false;
         }
 
         public void AddNews(News news)
@@ -34,7 +34,7 @@ namespace Logic
             this.PrintLastNews();
         }
 
-        public void PrintNews()
+        public string PrintNews()
         {
             string o = "";
             foreach(News n in news)
@@ -42,7 +42,7 @@ namespace Logic
                 o += this.MakeNewsString(n) + "\r\n";
             }
 
-            infoText.text = o;
+            return o;
         }
 
         public void PrintLastNews()
@@ -71,18 +71,15 @@ namespace Logic
             return o;
         }
 
-        public void Click()
+        public void Open()
         {
-            Debug.Log("Newsticker Btn clicked");
-            if (open)
-            {
+            openTicker.SetActive(true);
+            newsFeed.text = this.PrintNews();
+        }
 
-            }
-            else
-            {
-
-            }
-            open = !open;
+        public void Close()
+        {
+            openTicker.SetActive(false);
         }
 
     }

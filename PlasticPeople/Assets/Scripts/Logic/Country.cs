@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,10 +18,10 @@ namespace Logic
         private double production;
         private double influence;
         private LinkedList<Action> actions;
-        private bool rateBetter;
-        private bool sumBetter;
+        private double amountBefore;
+        private double productionBefore;
 
-        public Country(int id, string code, string name, int population, string description, double amount, double production)
+        public Country(int id, string code, string name, int population, string description, double amount, double production, System.Random random)
         {
             this.id = id;
             this.code = code;
@@ -29,18 +30,17 @@ namespace Logic
             this.description = description;
             this.amount = amount;
             this.production = production;
-            System.Random random = new System.Random();
             this.influence = (double) random.NextDouble();
             this.actions = new LinkedList<Action>();
-            this.rateBetter = true;
-            this.sumBetter = true;
+            this.amountBefore = amount;
+            this.productionBefore = production;
         }
 
         public void Tick()
         {
-            double prod = this.production;
-            double am = this.amount;
-            this.production = this.production + ((this.production/12) * 0.01f * (1.01f - this.influence));
+            this.productionBefore = this.production;
+            this.amountBefore = this.amount;
+            this.production = this.production + ((this.production/12) * (1.01f - this.influence));
             foreach (Action action in this.actions)
             {
                 Debug.Log("Execute Actions");
@@ -51,22 +51,6 @@ namespace Logic
                 }
             }
             this.amount = this.amount + (this.production/12);
-            if(prod > this.production)
-            {
-                this.rateBetter = false;
-            }
-            else
-            {
-                this.rateBetter = true;
-            }
-            if (am > this.amount)
-            {
-                this.sumBetter = false;
-            }
-            else
-            {
-                this.sumBetter = true;
-            }
         }
 
         public void AddAction(Action action)
@@ -174,26 +158,53 @@ namespace Logic
             return this.production;
         }
 
-        public string PrintValues()
+        public string PrintWaste()
         {
-            Debug.Log("Amount: " + this.amount);
-            string o = "";
-            if (sumBetter)
+            Debug.Log("Influence: " + this.influence);
+            string o;
+
+            double rate = Math.Round((this.amount / this.amountBefore) - 1.0, 4);
+            string exponential = string.Format("{0:E2}", this.amount);
+            string[] parts = exponential.Split('E');
+            string sum = Math.Round((Double.Parse(parts[0]) * 100), 0) + " * 10<sup>" + (Int32.Parse(parts[1].Substring(1)) - 2) + "</sup>";
+
+            if (rate > 0)
             {
-                o += "" + this.amount.ToString("N") + " t";
+                o = "Total: <b>" + sum + "</b> tons <color=#b51818>+" + rate + "%</color>";
+            } else if(rate == 0)
+            {
+                o = "Total: <b>" + sum + "</b> tons +/-" + rate + "%";
             }
             else
             {
-                o += "" + this.amount.ToString("N") + " t";
+                o = "Total: <b>" + sum + "</b> tons <color=#18b518>-" + rate + "%</color>";
             }
-            if (rateBetter)
+
+            return o;
+        }
+
+        public string PrintProduction()
+        {
+            string o;
+
+            double rate = Math.Round((this.production / this.productionBefore) - 1.0, 4);
+            string exponential = string.Format("{0:E2}", this.production);
+            string[] parts = exponential.Split('E');
+            string prod = Math.Round((Double.Parse(parts[0]) * 100), 0) + " * 10<sup>" + (Int32.Parse(parts[1].Substring(1)) - 2) + "</sup>";
+
+            if (rate > 0)
             {
-                o += " | " + this.production.ToString("N") + " t";
+                o = "monthly: <b>" + prod + "</b> tons <color=#b51818>+" + rate + "%</color>";
+            }
+            else if (rate == 0)
+            {
+                o = "monthly: <b>" + prod + "</b> tons +/-" + rate + "%";
             }
             else
             {
-                o += " | " + this.production.ToString("N") + " t";
+                o = "monthly: <b>" + prod + "</b> tons <color=#18b518>-" + rate + "%</color>";
             }
+
             return o;
         }
 

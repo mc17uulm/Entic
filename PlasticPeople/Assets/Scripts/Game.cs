@@ -5,6 +5,7 @@ using System.Globalization;
 using UnityEngine;
 using Logic;
 using System.IO;
+using System.Diagnostics;
 
 public class Game : MonoBehaviour {
 
@@ -15,19 +16,21 @@ public class Game : MonoBehaviour {
     public static Newsticker news;
     public int i;
     private bool c;
+    private Stopwatch watch;
 
 
 	// Use this for initialization
 	void Awake () {
-        Debug.Log("Loaded Game.cs");
+        watch = Stopwatch.StartNew();
+        //UnityEngine.Debug.Log("Loaded Game.cs");
         string path = Application.streamingAssetsPath + "/countries.json";
         string countries = File.ReadAllText(path);
         Country[] countryarr = JsonHelper.FromJson<Country>(countries);
         LinkedList<Logic.Country> countrylist = new LinkedList<Logic.Country>();
-        System.Random random = new System.Random();
         float amount = 0, production = 0;
         InfoPanel panel = FindObjectOfType<InfoPanel>();
         Newsticker news = FindObjectOfType<Newsticker>();
+        System.Random random = new System.Random();
         foreach (Country country in countryarr)
         {
             try
@@ -39,14 +42,15 @@ public class Game : MonoBehaviour {
                     Int32.Parse(country.population.Replace(",", "")),
                     country.description,
                     float.Parse(country.waste, CultureInfo.InvariantCulture.NumberFormat),
-                    country.rate
+                    country.rate,
+                    random
                 ));
                 amount += float.Parse(country.waste, CultureInfo.InvariantCulture.NumberFormat);
                 production += country.rate;
             }
             catch (FormatException e)
             {
-                Debug.Log(e.Message);
+                UnityEngine.Debug.Log(e.Message);
             }
         }
         play = new Play(countrylist);
@@ -59,6 +63,8 @@ public class Game : MonoBehaviour {
         change.yearBar.maxValue = DateTime.DaysInMonth(print.Year, print.Month);
         news.AddNews(new News("Start", "Producing this much of plastic waste will exterminate humans til 2070.", NewsType.Emergency));
         c = false;
+        double now = watch.ElapsedMilliseconds;
+        UnityEngine.Debug.Log("Load Awake: " + (now / 1000) + " seconds");
     }
 	
 	// Update is called once per frame

@@ -17,18 +17,8 @@ public class Skilltree : MonoBehaviour
     public void Resume()
     {
         skilltreeUI.SetActive(false);
-        if(speedControl.value == 0f)
-        {
-            Time.timeScale = 0f;
-        }
-        else if (speedControl.value == 2f)
-        {
-            Time.timeScale = 5f;
-        }
-        else
-        {
-            Time.timeScale = 1f;
-        }
+        SpeedChange change = FindObjectOfType<SpeedChange>();
+        change.Resume();
         GameIsPaused = false;
         blurEffect.SetActive(false);
         darkenEffect.SetActive(false);
@@ -37,7 +27,8 @@ public class Skilltree : MonoBehaviour
     public void Pause()
     {
         skilltreeUI.SetActive(true);
-        Time.timeScale = 0f;
+        SpeedChange change = FindObjectOfType<SpeedChange>();
+        change.Pause();
         GameIsPaused = true;
         blurEffect.SetActive(true);
         darkenEffect.SetActive(true);
