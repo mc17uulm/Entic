@@ -29,11 +29,11 @@ namespace Logic
             foreach (Action action in this.actions)
             {
                 Debug.Log("Execute Actions");
-                action.Tick();
+                /*action.Tick();
                 if (action.IsFinished())
                 {
                     this.ExecuteAction(action);
-                }
+                }*/
             }
 
             this.amount += this.rate;
@@ -52,7 +52,7 @@ namespace Logic
 
         public void ExecuteAction(Action action)
         {
-            switch (action.GetType())
+            /*switch (action.GetType())
             {
                 case Type.Once:
                     this.amount += action.GetFactor();
@@ -64,7 +64,7 @@ namespace Logic
 
                 default:
                     break;
-            }
+            }*/
         }
 
         public double GetAmount()

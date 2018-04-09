@@ -35,7 +35,13 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
         if(lastClicked == null)
         {
             lastClicked = data.pointerEnter;
-            lastClicked.GetComponent<Image>().sprite = clicked;
+            lastClicked.GetComponent<Image>().color = new Color32(234, 206, 87, 255);
+        }
+        else
+        {
+            lastClicked.GetComponent<Image>().color = new Color32(194, 194, 194, 255);
+            lastClicked = data.pointerEnter;
+            lastClicked.GetComponent<Image>().color = new Color32(234, 206, 87, 255);
         }
 
         

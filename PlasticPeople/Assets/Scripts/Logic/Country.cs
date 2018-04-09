@@ -44,11 +44,11 @@ namespace Logic
             foreach (Action action in this.actions)
             {
                 Debug.Log("Execute Actions");
-                action.Tick();
+                /*action.Tick();
                 if (action.IsFinished())
                 {
                     this.ExecuteAction(action);
-                }
+                }*/
             }
             this.amount = this.amount + (this.production/12);
         }
@@ -89,7 +89,7 @@ namespace Logic
 
         public void ExecuteAction(Action action)
         {
-            switch (action.GetType())
+            /*switch (action.GetType())
             {
                 case Type.Once:
                     if (action.GetAdd())
@@ -115,7 +115,7 @@ namespace Logic
                 case Type.Influence:
                     this.influence = this.influence * action.GetFactor();
                     break;
-            }
+            }*/
         }
 
         public int GetId()

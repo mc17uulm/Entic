@@ -5,52 +5,57 @@ using UnityEngine;
 namespace Logic
 {
 
-    public enum Type
+    public enum Category
     {
-        Once,
-        Unlimited,
-        Influence
+        Politics,
+        Society,
+        Sience
     }
 
     public class Action
     {
 
+        private int id;
         private string name;
-        private int start;
-        private int developed;
-        private bool finished;
-        private Type type;
+        private int development;
+        private Category category;
         private double price;
+        private int points;
         private string descr;
-        private float factor;
-        private bool add;
+        private string img;
+        private LinkedList<Effect> effects;
+        private int[] needed;
+
+        private int start;
         private bool activated;
 
-        public Action(string name, int developed, Type type, double price, string descr, float factor, bool add)
+        public Action(int id, string name, int development, Category category, double price, int points, string descr, string img, LinkedList<Effect> effects, int[] needed)
         {
+            this.id = id;
             this.name = name;
-            this.start = 0;
-            this.developed = developed;
-            this.type = type;
+            this.development = development;
+            this.category = category;
             this.price = price;
-            this.finished = false;
+            this.points = points;
             this.descr = descr;
-            this.factor = factor;
-            this.add = add;
+            this.img = img;
+            this.effects = effects;
+            this.needed = needed;
+
+            this.start = 0;
             this.activated = false;
         }
 
         public void Activate()
         {
-
+            this.activated = true;
         }
 
-        public void Tick()
+        public void DevelopTick()
         {
-            if (!this.finished)
+            if (start != this.development)
             {
                 this.start += 1;
-                this.finished = (this.start == this.developed);
             }
         }
 
@@ -59,14 +64,14 @@ namespace Logic
             return this.name;
         }
 
-        public bool IsFinished()
+        public float GetProgress()
         {
-            return this.finished;
+            return (this.start / this.development);
         }
-
-        public Type GetType()
+        
+        public Category GetCategory()
         {
-            return this.type;
+            return this.category;
         }
 
         public double GetPrice()
@@ -79,14 +84,42 @@ namespace Logic
             return this.descr;
         }
 
-        public float GetFactor()
+        public string GetImg()
         {
-            return this.factor;
+            return this.img;
         }
 
-        public bool GetAdd()
+        public LinkedList<Effect> GetEffects()
         {
-            return this.add;
+            return this.effects;
+        }
+
+        public int[] GetNeeded()
+        {
+            return this.needed;
+        }
+
+        public bool Unlocked(int[] developed)
+        {
+            bool o = true;
+            foreach (int n in this.needed)
+            {
+                bool i = false;
+                foreach(int a in developed)
+                {
+                    if(!i)
+                    {
+                        i = (n == a);
+                    }
+                }
+                o = (o && i);
+            }
+            return o;
+        }
+
+        public bool IsInDevelopment()
+        {
+            return (this.start != 0);
         }
 
         public bool IsActivated()

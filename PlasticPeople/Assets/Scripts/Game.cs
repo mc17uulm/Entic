@@ -6,6 +6,8 @@ using UnityEngine;
 using Logic;
 using System.IO;
 using System.Diagnostics;
+using Newtonsoft.Json;
+using System.Data;
 
 public class Game : MonoBehaviour {
 
@@ -31,6 +33,7 @@ public class Game : MonoBehaviour {
         InfoPanel panel = FindObjectOfType<InfoPanel>();
         Newsticker news = FindObjectOfType<Newsticker>();
         System.Random random = new System.Random();
+        ReadInActions(File.ReadAllText(Application.streamingAssetsPath + "/actions.json"));
         foreach (Country country in countryarr)
         {
             try
@@ -90,5 +93,23 @@ public class Game : MonoBehaviour {
             c = false;
         }
 	}
+
+    public LinkedList<Logic.Action> ReadInActions(string json)
+    {
+        LinkedList<Logic.Action> o = new LinkedList<Logic.Action>();
+
+        /*UnityEngine.Debug.Log(json);
+        DataSet data = JsonConvert.DeserializeObject<DataSet>(json);
+        DataTable table = data.Tables["Items"];
+
+        foreach(DataRow row in table.Rows)
+        {
+            UnityEngine.Debug.Log(row["name"]);
+            UnityEngine.Debug.Log(row["effects"]);
+            UnityEngine.Debug.Log(row["needs"]);
+        }*/
+
+        return o;
+    }
     
 }

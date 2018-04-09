@@ -30,7 +30,7 @@ namespace Logic
             // Ab hier auskommentieren um Logik nicht laufen zu lassen
             foreach(Action action in this.actions)
             {
-                action.Tick();
+                action.DevelopTick();
             }
 
             double newAmount = 0.0f;
@@ -40,10 +40,7 @@ namespace Logic
             {
                 foreach(Action action in this.actions)
                 {
-                    if (action.IsFinished())
-                    {
-                        country.ExecuteAction(action);
-                    }
+                    
                 }
                 country.Tick();
                 newAmount += country.GetAmount();
