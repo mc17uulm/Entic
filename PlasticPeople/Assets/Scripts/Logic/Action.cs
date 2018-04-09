@@ -20,19 +20,29 @@ namespace Logic
         private int developed;
         private bool finished;
         private Type type;
+        private double price;
         private string descr;
         private float factor;
         private bool add;
+        private bool activated;
 
-        public Action(string name, int developed, Type type, string descr, float factor, bool add)
+        public Action(string name, int developed, Type type, double price, string descr, float factor, bool add)
         {
             this.name = name;
             this.start = 0;
             this.developed = developed;
+            this.type = type;
+            this.price = price;
             this.finished = false;
             this.descr = descr;
             this.factor = factor;
             this.add = add;
+            this.activated = false;
+        }
+
+        public void Activate()
+        {
+
         }
 
         public void Tick()
@@ -59,6 +69,11 @@ namespace Logic
             return this.type;
         }
 
+        public double GetPrice()
+        {
+            return this.price;
+        }
+
         public string GetDescr()
         {
             return this.descr;
@@ -72,6 +87,11 @@ namespace Logic
         public bool GetAdd()
         {
             return this.add;
+        }
+
+        public bool IsActivated()
+        {
+            return this.activated;
         }
 
     }
