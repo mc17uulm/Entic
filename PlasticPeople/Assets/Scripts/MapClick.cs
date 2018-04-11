@@ -21,7 +21,8 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
 
     private Camera camera;
     private Vector2 pos;
-    private Vector2 infoPos;
+    private Vector3 clickedPositionInWorldSpace;
+    private Vector3 infoPos;
     private Texture2D map;
     private Vector2 cameraDim;
     private Vector2 mapDim;
@@ -53,7 +54,11 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
         
         pos = eventData.position;
 
-        infoPos = Camera.main.ScreenToWorldPoint(eventData.position);
+        Vector2 clickPosition = eventData.position;
+        clickedPositionInWorldSpace = Camera.main.ScreenToWorldPoint(clickPosition);
+        infoPos = new Vector3(clickedPositionInWorldSpace.x, clickedPositionInWorldSpace.y, 0);
+        Debug.Log("countryinfo position: x:"+infoPos.x+", y:"+infoPos.y+", z:"+infoPos.z);
+        
         //Debug.Log("Click pos: " + pos);
         //Debug.Log("MapDim: x=" + mapDim.x + " y=" + mapDim.y);
 
@@ -63,7 +68,8 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
         //Debug.Log("clicked position: "+pos.x+","+pos.y);
         //Debug.Log("InfoPanelPosLocalPosition: "+countryInfo.GetComponent<RectTransform>().localPosition.x+", "+countryInfo.GetComponent<RectTransform>().localPosition.y);
         
-        PositionCountryInfo(x, y);
+        
+        PositionCountryInfo(x, y, countryInfo.GetComponent<RectTransform>());
         
         //Debug.Log("Absoult click position on image. x=" + x + " y=" + y);
 
@@ -77,33 +83,36 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
         display.ShowClickedCountry(cint);
     }
 
-    public void PositionCountryInfo(float x, float y)
+    public void PositionCountryInfo(float x, float y, RectTransform c)
     {
         
         if (pos.x <= cameraDim.x/2 && pos.y > mapDim.y/2)
         {
             //Debug.Log("1. Quadrant");
-            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(0f,1f);
-            countryInfo.GetComponent<RectTransform>().position = infoPos;
-
+            c.pivot = new Vector2(0f,1f);
+            c.position = infoPos;
+            c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
         }
         else if(pos.x > cameraDim.x / 2 && pos.y > mapDim.y / 2)
         {
             //Debug.Log("2. Quadrant");
-            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(1f, 1f);
-            countryInfo.GetComponent<RectTransform>().position = infoPos;
+            c.pivot = new Vector2(1f, 1f);
+            c.position = infoPos;
+            c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
         }
         else if(pos.x > cameraDim.x / 2 && pos.y <= mapDim.y / 2)
         {
             //Debug.Log("3. Quadrant");
-            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(1f, 0f);
-            countryInfo.GetComponent<RectTransform>().position = infoPos;
+            c.pivot = new Vector2(1f, 0f);
+            c.position = infoPos;
+            c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
         }
         else
         {
             //Debug.Log("4. Quadrant");
-            countryInfo.GetComponent<RectTransform>().pivot = new Vector2(0f, 0f);
-            countryInfo.GetComponent<RectTransform>().position = infoPos;
+            c.pivot = new Vector2(0f, 0f);
+            c.position = infoPos;
+            c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
         }
     }
 

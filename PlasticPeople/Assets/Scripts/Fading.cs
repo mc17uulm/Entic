@@ -27,7 +27,7 @@ public class Fading : MonoBehaviour {
         return (fadeSpeed);
     }
 
-    private void OnLevelWasLoaded(int level)
+    private void OnLevelWasLoaded()
     {
         BeginFade(-1);
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[System.Serializable]
 public class CountryDisplay : MonoBehaviour {
 
     public TextMeshProUGUI nameText;
@@ -66,12 +67,17 @@ public class CountryDisplay : MonoBehaviour {
             }
             else
             {
-                Image lastClickedCountryObject = GameObject.Find("/UI/Map/" + lastClickedCountry).GetComponent<Image>();
-                lastClickedCountryObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-                countryInfo.SetActive(false);
-                lastClickedCountry = "XX";
+                HideCountryInfo();
             }
         }
 
+    }
+
+    public void HideCountryInfo()
+    {
+        countryInfo.SetActive(false);
+        Image lastClickedCountryObject = GameObject.Find("/UI/Map/" + lastClickedCountry).GetComponent<Image>();
+        lastClickedCountryObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        lastClickedCountry = "XX";
     }
 }

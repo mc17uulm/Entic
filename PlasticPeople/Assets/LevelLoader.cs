@@ -19,11 +19,16 @@ public class LevelLoader : MonoBehaviour {
     IEnumerator LoadAsynchronously (int sceneIndex)
     {
         Stopwatch watch = Stopwatch.StartNew();
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        float fadeTime = GameObject.Find("Fade").GetComponent<Fading>().BeginFade(1);
 
-        loadingScreen.SetActive(true);
+        //AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
-        bool test = true;
+        SceneManager.LoadSceneAsync(sceneIndex);
+        yield return new WaitForSeconds(fadeTime);
+
+        //loadingScreen.SetActive(true);
+
+        /*bool test = true;
         while (test)
         {
             if (!operation.isDone)
@@ -41,8 +46,8 @@ public class LevelLoader : MonoBehaviour {
                 test = false;
                 UnityEngine.Debug.Log("Load Level While: " + (watch.ElapsedMilliseconds / 1000) + " seconds");
             }
-        }
-        
+        }*/
+
     }
 	
 }

@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+
 public class SettingsMenu : MonoBehaviour {
 
     public AudioMixer audioMixer;
 
     public static bool GameIsPaused = false;
-
+    
     public GameObject pauseMenuUI;
     public GameObject blurEffect;
     public GameObject darkenEffect;
@@ -64,6 +65,7 @@ public class SettingsMenu : MonoBehaviour {
     public void Pause()
     {
         SpeedChange change = FindObjectOfType<SpeedChange>();
+        //FindObjectOfType<CountryDisplay>().HideCountryInfo();
         pauseMenuUI.SetActive(true);
         change.Pause();
         GameIsPaused = true;
