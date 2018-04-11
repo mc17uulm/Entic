@@ -28,6 +28,7 @@ namespace Logic
 
         private int start;
         private bool activated;
+        private bool executed;
 
         public Action(int id, string name, int development, Category category, double price, int points, string descr, string img, LinkedList<Effect> effects, int[] needed)
         {
@@ -44,6 +45,7 @@ namespace Logic
 
             this.start = 0;
             this.activated = false;
+            this.executed = false;
         }
 
         public void Activate()
@@ -125,6 +127,21 @@ namespace Logic
         public bool IsActivated()
         {
             return this.activated;
+        }
+
+        public bool IsFinished()
+        {
+            return (this.start == this.development);
+        }
+
+        public void Executed()
+        {
+            this.executed = true;
+        }
+
+        public bool IsExecuted()
+        {
+            return this.executed;
         }
 
     }

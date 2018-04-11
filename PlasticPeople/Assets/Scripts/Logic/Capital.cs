@@ -11,7 +11,6 @@ namespace Logic
         private double rate;
         private double change;
         private string currency;
-        private LinkedList<Action> actions;
 
         public Capital(double start, double rate)
         {
@@ -19,52 +18,29 @@ namespace Logic
             this.rate = rate;
             this.change = 0.0;
             this.currency = "EUR";
-            this.actions = new LinkedList<Action>();
         }
 
         public void Tick()
         {
             double before = this.amount;
-            
-            foreach (Action action in this.actions)
-            {
-                Debug.Log("Execute Actions");
-                /*action.Tick();
-                if (action.IsFinished())
-                {
-                    this.ExecuteAction(action);
-                }*/
-            }
 
             this.amount += this.rate;
             this.change = 1 - (this.amount / before);
         }
 
-        public void AddAction(Action action)
+        public void ExecuteEffect(Effect effect, int factor)
         {
-            this.actions.AddLast(action);
-        }
 
-        public void RemoveAction(Action action)
-        {
-            this.actions.Remove(action);
-        }
-
-        public void ExecuteAction(Action action)
-        {
-            /*switch (action.GetType())
+            switch (effect.GetOccurence())
             {
-                case Type.Once:
-                    this.amount += action.GetFactor();
+                case Occurence.once:
+                    this.amount = this.amount + (factor * effect.GetFactor());
                     break;
+                case Occurence.unlimited:
+                    this.rate = this.rate + (factor * effect.GetFactor());
+                    break;
+            }
 
-                case Type.Unlimited:
-                    this.rate += action.GetFactor();
-                    break;
-
-                default:
-                    break;
-            }*/
         }
 
         public double GetAmount()

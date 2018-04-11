@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Logic
 {
@@ -20,6 +21,7 @@ namespace Logic
         private LinkedList<Action> actions;
         private double amountBefore;
         private double productionBefore;
+        private float density;
 
         public Country(int id, string code, string name, int population, string description, double amount, double production, System.Random random)
         {
@@ -34,6 +36,7 @@ namespace Logic
             this.actions = new LinkedList<Action>();
             this.amountBefore = amount;
             this.productionBefore = production;
+            this.density = (float)(1.0f - (this.amount / this.population / 2.9f));
         }
 
         public void Tick()
@@ -41,16 +44,16 @@ namespace Logic
             this.productionBefore = this.production;
             this.amountBefore = this.amount;
             this.production = this.production + ((this.production/12) * (1.01f - this.influence));
-            foreach (Action action in this.actions)
-            {
-                Debug.Log("Execute Actions");
-                /*action.Tick();
-                if (action.IsFinished())
-                {
-                    this.ExecuteAction(action);
-                }*/
-            }
+            this.population += (int) (this.population * 0.001f);
+
+            float density = (float) (1.0f - (this.amount / this.population / 2.9f));
+            
+            Image img = GameObject.Find("/UI/Map/" + this.code).GetComponent<Image>();
+            Color c = img.color;
+            c.a = density;
+            img.color = c;
             this.amount = this.amount + (this.production/12);
+            
         }
 
         public void AddAction(Action action)
@@ -86,37 +89,7 @@ namespace Logic
             this.production = this.production - (this.production * this.influence * factor);
             return this.production;
         }
-
-        public void ExecuteAction(Action action)
-        {
-            /*switch (action.GetType())
-            {
-                case Type.Once:
-                    if (action.GetAdd())
-                    {
-                        AddToAmount(action.GetFactor());
-                    }
-                    else
-                    {
-                        RemoveAmount(action.GetFactor());
-                    }
-                    break;
-
-                case Type.Unlimited:
-                    if (action.GetAdd())
-                    {
-                        RaiseProduction(action.GetFactor());
-                    }
-                    else
-                    {
-                        ReduceProduction(action.GetFactor());
-                    }
-                    break;
-                case Type.Influence:
-                    this.influence = this.influence * action.GetFactor();
-                    break;
-            }*/
-        }
+        
 
         public int GetId()
         {
@@ -156,6 +129,11 @@ namespace Logic
         public double GetProduction()
         {
             return this.production;
+        }
+
+        public float GetDensity()
+        {
+            return this.density;
         }
 
         public string PrintWaste()
@@ -211,6 +189,20 @@ namespace Logic
         public LinkedList<Action> GetActions()
         {
             return this.actions;
+        }
+
+        public void ExecuteEffect(Effect effect, int factor, float ffp)
+        {
+            switch (effect.GetOccurence())
+            {
+                case Occurence.once:
+                    this.amount = this.amount + (factor * (this.population * ffp) * this.influence);
+                    break;
+
+                case Occurence.unlimited:
+                    this.production = this.production + (factor * (this.population * ffp) * this.influence);
+                    break;
+            }
         }
 
     }

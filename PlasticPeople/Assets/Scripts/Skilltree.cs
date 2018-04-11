@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using Logic;
 
 public class Skilltree : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class Skilltree : MonoBehaviour
     public GameObject blurEffect;
     public GameObject darkenEffect;
     public Slider speedControl;
+    public TextMeshProUGUI lobbyText;
 
     public void Resume()
     {
@@ -28,6 +31,7 @@ public class Skilltree : MonoBehaviour
     {
         skilltreeUI.SetActive(true);
         SpeedChange change = FindObjectOfType<SpeedChange>();
+        //lobbyText.text = "HEHEH";
         change.Pause();
         GameIsPaused = true;
         blurEffect.SetActive(true);

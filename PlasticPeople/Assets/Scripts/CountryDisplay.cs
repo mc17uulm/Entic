@@ -16,6 +16,7 @@ public class CountryDisplay : MonoBehaviour {
     public TextMeshProUGUI rateText;
     public GameObject countryInfo;
     private string lastClickedCountry = "XX";
+    private float lastDensity = 1.0f;
 
     public void ShowClickedCountry(int id)
     {
@@ -23,6 +24,13 @@ public class CountryDisplay : MonoBehaviour {
         if (id != 255)
         {
             Logic.Country country = Game.play.GetCountry(id);
+
+            int tmp = (int) (255 * country.GetDensity());
+            Debug.Log("TMP: " + tmp);
+            byte density = (byte) tmp;
+            Debug.Log("Byte: " + density);
+
+            Debug.Log("Density: " + country.GetDensity());
 
             nameText.text = country.GetName();
             codeText.text = country.GetCode();
@@ -37,18 +45,21 @@ public class CountryDisplay : MonoBehaviour {
             {
                 //Debug.Log("First time clicked");
                 GameObject clickedCountry = GameObject.Find("/UI/Map/" + country.GetCode());
-                clickedCountry.GetComponent<Image>().color = new Color32(152, 152, 152, 255);
+                clickedCountry.GetComponent<Image>().color = new Color(0.5960785f, 0.5960785f, 0.5960785f, country.GetDensity());
                 lastClickedCountry = country.GetCode();
+                lastDensity = country.GetDensity();
             }
             else
             {
                 //Debug.Log("Last time you clicked: "+lastClickedCountry);
                 Image lastClickedCountryObject = GameObject.Find("/UI/Map/" + lastClickedCountry).GetComponent<Image>();
-                lastClickedCountryObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                Color c = lastClickedCountryObject.GetComponent<Image>().color;
+                lastClickedCountryObject.GetComponent<Image>().color = new Color(1, 1, 1, lastDensity);
                 //Debug.Log("The GameObject you clicked was: "+GameObject.Find("/UI/Map/" + country.GetCode()).name);
                 Image clickedCountry = GameObject.Find("/UI/Map/" + country.GetCode()).GetComponent<Image>();
-                clickedCountry.GetComponent<Image>().color = new Color32(152, 152, 152, 255);
+                clickedCountry.GetComponent<Image>().color = new Color(0.5960785f, 0.5960785f, 0.5960785f, country.GetDensity());
                 lastClickedCountry = country.GetCode();
+                lastDensity = country.GetDensity();
             }
 
 
@@ -77,7 +88,7 @@ public class CountryDisplay : MonoBehaviour {
     {
         countryInfo.SetActive(false);
         Image lastClickedCountryObject = GameObject.Find("/UI/Map/" + lastClickedCountry).GetComponent<Image>();
-        lastClickedCountryObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        lastClickedCountryObject.GetComponent<Image>().color = new Color(1, 1, 1, lastDensity);
         lastClickedCountry = "XX";
     }
 }

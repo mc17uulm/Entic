@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Collections;
 using System.Globalization;
 using UnityEngine;
 using Logic;
 using System.IO;
 using System.Diagnostics;
-using Newtonsoft.Json;
-using System.Data;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel;
 
 public class Game : MonoBehaviour {
 
@@ -33,7 +34,7 @@ public class Game : MonoBehaviour {
         InfoPanel panel = FindObjectOfType<InfoPanel>();
         Newsticker news = FindObjectOfType<Newsticker>();
         System.Random random = new System.Random();
-        ReadInActions(File.ReadAllText(Application.streamingAssetsPath + "/actions.json"));
+
         foreach (Country country in countryarr)
         {
             try
@@ -57,6 +58,7 @@ public class Game : MonoBehaviour {
             }
         }
         play = new Play(countrylist);
+        play.SetActions(ReadInActions());
         last = DateTime.Now;
         print = DateTime.Parse("2019-01-01 00:00:00");
         change = FindObjectOfType<SpeedChange>();
@@ -68,10 +70,11 @@ public class Game : MonoBehaviour {
         c = false;
         double now = watch.ElapsedMilliseconds;
         UnityEngine.Debug.Log("Load Awake: " + (now / 1000) + " seconds");
+        play.Tick();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if((change.factor != 0) && (!c) && (last.AddSeconds(1.0/7/ change.GetFactor()) <= DateTime.Now))
         {
             c = true;
@@ -94,20 +97,15 @@ public class Game : MonoBehaviour {
         }
 	}
 
-    public LinkedList<Logic.Action> ReadInActions(string json)
+    public LinkedList<Logic.Action> ReadInActions()
     {
-        LinkedList<Logic.Action> o = new LinkedList<Logic.Action>();
+        string json = File.ReadAllText(Application.streamingAssetsPath + "/actions.json");
+        LinkedList<Logic.Action> o = Newtonsoft.Json.JsonConvert.DeserializeObject<LinkedList<Logic.Action>>(json);
 
-        /*UnityEngine.Debug.Log(json);
-        DataSet data = JsonConvert.DeserializeObject<DataSet>(json);
-        DataTable table = data.Tables["Items"];
-
-        foreach(DataRow row in table.Rows)
+        foreach(Logic.Action a in o)
         {
-            UnityEngine.Debug.Log(row["name"]);
-            UnityEngine.Debug.Log(row["effects"]);
-            UnityEngine.Debug.Log(row["needs"]);
-        }*/
+            UnityEngine.Debug.Log(a.GetName() + ": " + a.IsActivated());
+        }
 
         return o;
     }

@@ -1,5 +1,4 @@
-{
-  "Items": [
+[
     {
       "id": 1,
       "name": "Deposit on one-way plastic bottles",
@@ -239,4 +238,3 @@
       "needs": [ 1, 8, 9 ]
     }
   ]
-}
