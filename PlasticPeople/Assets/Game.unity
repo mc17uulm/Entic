@@ -5134,7 +5134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -198.8, y: 496.8}
+  m_AnchoredPosition: {x: -198.79999, y: 496.8}
   m_SizeDelta: {x: 130, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416276857
@@ -11423,7 +11423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1019234364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17535,6 +17535,7 @@ MonoBehaviour:
   darkenEffect: {fileID: 0}
   speedControl: {fileID: 0}
   lobbyText: {fileID: 1462010599}
+  action: {fileID: 0}
 --- !u!1 &1414403709
 GameObject:
   m_ObjectHideFlags: 0
@@ -17937,11 +17938,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -20995,6 +20996,7 @@ MonoBehaviour:
   darkenEffect: {fileID: 1872873794}
   speedControl: {fileID: 526553605}
   lobbyText: {fileID: 1462010599}
+  action: {fileID: 246964295}
 --- !u!95 &1697238136
 Animator:
   serializedVersion: 3
@@ -25221,7 +25223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -198.8, y: 380.9}
+  m_AnchoredPosition: {x: -198.79999, y: 380.9}
   m_SizeDelta: {x: 130, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959368505

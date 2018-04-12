@@ -32,7 +32,7 @@ namespace Logic
             this.description = description;
             this.amount = amount;
             this.production = production;
-            this.influence = (double) random.NextDouble();
+            this.influence = (double) random.NextDouble() + 0.2f;
             this.actions = new LinkedList<Action>();
             this.amountBefore = amount;
             this.productionBefore = production;
@@ -43,7 +43,7 @@ namespace Logic
         {
             this.productionBefore = this.production;
             this.amountBefore = this.amount;
-            this.production = this.production + ((this.production/12) * (1.01f - this.influence));
+            this.production = this.production + ((this.production/12) * (1.0f - this.influence));
             this.population += (int) (this.population * 0.001f);
 
             float density = (float) (1.0f - (this.amount / this.population / 2.9f));
@@ -53,7 +53,6 @@ namespace Logic
             c.a = density;
             img.color = c;
             this.amount = this.amount + (this.production/12);
-            
         }
 
         public void AddAction(Action action)

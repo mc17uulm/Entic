@@ -16,6 +16,7 @@ public class Skilltree : MonoBehaviour
     public GameObject darkenEffect;
     public Slider speedControl;
     public TextMeshProUGUI lobbyText;
+    public GameObject action;
 
     public void Resume()
     {
@@ -30,6 +31,33 @@ public class Skilltree : MonoBehaviour
     public void Pause()
     {
         skilltreeUI.SetActive(true);
+        Image[] l = action.GetComponentsInChildren<Image>();
+        Debug.Log("Length: " + l.Length);
+        LinkedList<Action> actions = Game.play.GetActions();
+        HashSet<int> unique = new HashSet<int>();
+        foreach (Action a in actions)
+        {
+            if (a.IsFinished())
+            {
+                unique.Add(a.GetId());
+            }
+        }
+        int[] developed = new int[unique.Count];
+        unique.CopyTo(developed);
+        foreach (Image im in l)
+        {
+            string[] parts = im.sprite.name.Split('-');
+            foreach (Action a in actions)
+            {
+                if (parts[0] == a.GetId().ToString())
+                {
+                    if (a.Unlocked(developed))
+                    {
+                        im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-1");
+                    }
+                }
+            }
+        }
         SpeedChange change = FindObjectOfType<SpeedChange>();
         change.Pause();
         lobbyText.text = Game.play.GetLobby().PrintStatus();

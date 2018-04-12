@@ -68,6 +68,15 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
                         ShowDeveloped(action);
                         break;
                 }
+                headerText.text = action.GetName();
+                descrText.text = action.GetDescr();
+                costs.text = action.PrintCosts();
+                string eff = action.PrintEffects();
+                Debug.Log("Back: " + eff);
+                effects.text = eff;
+                Debug.Log("After: " + effects.text);
+                status.text = "<b>Status: " + action.GetState().ToString() + "</b>";
+                requirements.text = action.PrintRequirements(actions);
                 infoBox.SetActive(true);
             }
         }
@@ -88,30 +97,24 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
     public void ShowDeactivated(Action action)
     {
         buy.interactable = false;
-        headerText.text = action.GetName();
-        descrText.text = action.GetDescr();
-        costs.text = action.PrintCosts();
-        string eff = action.PrintEffects();
-        Debug.Log("Back: " + eff);
-        effects.text = eff;
-        Debug.Log("After: " + effects.text);
-        status.text = "<b>Status: " + action.GetState().ToString() + "</b>";
-        requirements.text = action.PrintRequirements(actions);
     }
 
     public void ShowNormal(Action action)
     {
-
+        buy.interactable = true;
     }
 
     public void ShowInDevelopment(Action action)
     {
+        buy.interactable = true;
 
     }
 
     public void ShowDeveloped(Action action)
     {
-
+        buy.interactable = false;
+        Sprite developed = Resources.Load<Sprite>("/Actions" + action.GetId() + "-2");
+        buy.GetComponent<Image>().sprite = developed;
     }
 
 	// Use this for initialization

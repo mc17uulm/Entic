@@ -5,9 +5,6 @@ using TMPro;
 
 public class ActionInfoBox : MonoBehaviour {
 
-    public TextMeshProUGUI header;
-    public TextMeshProUGUI descr;
-    public TextMeshProUGUI info;
     public GameObject infoBox;
 
     public void SetActive(bool value)
@@ -18,11 +15,6 @@ public class ActionInfoBox : MonoBehaviour {
     public void Close()
     {
         infoBox.SetActive(false);
-    }
-
-    public void ChangeHeader(string text)
-    {
-        header.text = text;
     }
 
 	// Use this for initialization

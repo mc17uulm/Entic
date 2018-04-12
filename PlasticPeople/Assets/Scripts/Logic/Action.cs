@@ -12,7 +12,7 @@ namespace Logic
     {
         Politics,
         Society,
-        Sience
+        Science
     }
 
     public class Action
