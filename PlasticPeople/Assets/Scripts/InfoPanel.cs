@@ -18,14 +18,14 @@ public class InfoPanel : MonoBehaviour {
     {
         string exponential = string.Format("{0:E2}", sum);
         string[] parts = exponential.Split('E');
-        string amount = parts[0] + " * 10<sup>" + Int32.Parse(parts[1].Substring(1)) + "</sup>";
+        string amount = parts[0] + " · 10<sup>" + Int32.Parse(parts[1].Substring(1)) + "</sup>";
 
         double t = Math.Round(change / sum, 2);
         string prefix = "", number = "", c = "";
         if (change < 0)
         {
             prefix = "<color=#b51818>-</color>";
-            number = change.ToString("#,0,, Mio").Remove(0, 1);
+            number = change.ToString("#,0,, million").Remove(0, 1);
             c = t.ToString().Remove(0, 1) + "%";
             Color color = new Color();
             ColorUtility.TryParseHtmlString("#b51818", out color);
@@ -35,7 +35,7 @@ public class InfoPanel : MonoBehaviour {
         else
         {
             prefix = "<color=#18b518>+</color>";
-            number = change.ToString("#,0,, Mio");
+            number = change.ToString("#,0,, million");
             c = t.ToString() + "%";
             Color color = new Color();
             ColorUtility.TryParseHtmlString("#18b518", out color);
@@ -52,24 +52,43 @@ public class InfoPanel : MonoBehaviour {
     {
         string exponential = string.Format("{0:E2}", sum);
         string[] parts = exponential.Split('E');
-        string amount = Math.Round((Double.Parse(parts[0])*100), 0) + " * 10<sup>" + (Int32.Parse(parts[1].Substring(1))-2) + "</sup>";
+        string amount = Math.Round((Double.Parse(parts[0])*100), 0) + " · 10<sup>" + (Int32.Parse(parts[1].Substring(1))-2) + "</sup>";
 
         double t = Math.Round(change / sum, 3);
         string prefix = "", number = "", c = "";
-        if(change < 0)
+        if(change < 0.0 && change > -1000000000.0)
         {
             prefix = "<color=#18b518>-</color>";
-            number = change.ToString("#,0,, Mio").Remove(0,1);
+            number = change.ToString("#,0,, million").Remove(0,1);
             c = t.ToString().Remove(0, 1) + "%";
             Color color = new Color();
             ColorUtility.TryParseHtmlString("#18b518", out color);
             wasteIndicator.color = color;
             wasteIndicator.transform.Rotate(180, 0, 0);
         }
+        else if(change < -1000000000.0)
+        {
+            prefix = "<color=#18b518>-</color>";
+            number = change.ToString("#,0,, billion").Remove(0, 1);
+            c = t.ToString().Remove(0, 1) + "%";
+            Color color = new Color();
+            ColorUtility.TryParseHtmlString("#18b518", out color);
+            wasteIndicator.color = color;
+            wasteIndicator.transform.Rotate(180, 0, 0);
+        }
+        else if(change > 1000000000.0)
+        {
+            prefix = "<color=#b51818>+</color>";
+            number = change.ToString("#,0,, billion");
+            c = t.ToString() + "%";
+            Color color = new Color();
+            ColorUtility.TryParseHtmlString("#b51818", out color);
+            wasteIndicator.color = color;
+        }
         else
         {
             prefix = "<color=#b51818>+</color>";
-            number = change.ToString("#,0,, Mio");
+            number = change.ToString("#,0,, million");
             c = t.ToString() + "%";
             Color color = new Color();
             ColorUtility.TryParseHtmlString("#b51818", out color);
