@@ -65,6 +65,11 @@ namespace Logic
             {
                 this.start += 1;
             }
+            else
+            {
+                Game.play.AddNews(new News("Action developed", "The development of " + this.name + " is finished!", NewsType.Action));
+                this.state = ActionClick.State.Developed;
+            }
         }
 
         public int GetId()
@@ -190,7 +195,7 @@ namespace Logic
 
         public string PrintCosts()
         {
-            return this.price + " Euro<br>" + this.points + " points<br>" + this.development + " months";
+            return this.price.ToString("N") + " Euro<br>" + this.points + " points<br>" + this.development + " months";
         }
 
         public string PrintEffects()

@@ -56,6 +56,13 @@ namespace Logic
             return this.change;
         }
 
+        public int Buy(int value)
+        {
+            this.amount -= value;
+            return this.amount;
+
+        }
+
         public double Change(int value)
         {
             this.amount += value;

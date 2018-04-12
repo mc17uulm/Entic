@@ -32,7 +32,7 @@ public class Skilltree : MonoBehaviour
     {
         skilltreeUI.SetActive(true);
         Image[] l = action.GetComponentsInChildren<Image>();
-        Debug.Log("Length: " + l.Length);
+        //Debug.Log("Length: " + l.Length);
         LinkedList<Action> actions = Game.play.GetActions();
         HashSet<int> unique = new HashSet<int>();
         foreach (Action a in actions)
@@ -53,7 +53,18 @@ public class Skilltree : MonoBehaviour
                 {
                     if (a.Unlocked(developed))
                     {
-                        im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-1");
+                        if ((!a.IsExecuted()) && (!a.IsInDevelopment())){
+                            im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-1");
+                            a.ChangeState(ActionClick.State.Clickable);
+                        }
+                        else if (a.IsInDevelopment())
+                        {
+                            im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-3");
+                        }
+                        else if (a.IsExecuted())
+                        {
+                            im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-2");
+                        }
                     }
                 }
             }
@@ -64,6 +75,7 @@ public class Skilltree : MonoBehaviour
         GameIsPaused = true;
         blurEffect.SetActive(true);
         darkenEffect.SetActive(true);
+        Game.play.SetActions(actions);
     }
 }
 

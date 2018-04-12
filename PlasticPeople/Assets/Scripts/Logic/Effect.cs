@@ -71,7 +71,7 @@ namespace Logic
             string[] good = { "#18b518", "#b51818" };
             string[] color = good;
             string unity = "";
-            Debug.Log("Effect: " + this.value);
+            //Debug.Log("Effect: " + this.value);
             switch (this.value)
             {
                 case Value.Capital:
@@ -109,9 +109,9 @@ namespace Logic
                 prefix = "<color=" + color[1] + ">-</color>";
             }
 
-            Debug.Log("Prefix: " + prefix);
+            //Debug.Log("Prefix: " + prefix);
             o = prefix + factor.ToString("N") + " " + unity + "<br>";
-            Debug.Log("Out: " + o);
+            //Debug.Log("Out: " + o);
             return o;
         }
 

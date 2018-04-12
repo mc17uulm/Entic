@@ -2958,7 +2958,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 21300000, guid: fc26fc8a4ed87c34da74f7ea7a98fa50, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: d39c958c05dc3794d8af205f0351ffcb, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -3418,6 +3418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 0
+  y: 0
 --- !u!1 &206895261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3954,6 +3955,8 @@ MonoBehaviour:
   effects: {fileID: 938938766}
   status: {fileID: 1220043811}
   requirements: {fileID: 1831069869}
+  lobbyText: {fileID: 1462010599}
+  selected: {fileID: 0}
 --- !u!1 &249485323
 GameObject:
   m_ObjectHideFlags: 0
@@ -17048,10 +17051,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1294411303}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 0
+  m_MinValue: 1
+  m_MaxValue: 365
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -20693,6 +20696,7 @@ GameObject:
   - component: {fileID: 1693419569}
   - component: {fileID: 1693419568}
   - component: {fileID: 1693419567}
+  - component: {fileID: 1693419570}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -20793,6 +20797,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1693419565}
+--- !u!114 &1693419570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1693419565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19bbc6c90f9e54f4ea106edd3ae5d1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1693712839
 GameObject:
   m_ObjectHideFlags: 0
@@ -21033,6 +21048,8 @@ MonoBehaviour:
   wasteText: {fileID: 75726527}
   rateText: {fileID: 1621468339}
   countryInfo: {fileID: 1483530342}
+  lastClickedId: 255
+  active: 0
 --- !u!114 &1697238138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21044,6 +21061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617a0fb2bd1a20440b45152be198e040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tree: {fileID: 0}
+  display: {fileID: 0}
 --- !u!1 &1697679876
 GameObject:
   m_ObjectHideFlags: 0

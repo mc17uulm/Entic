@@ -43,7 +43,9 @@ namespace Logic
         {
             this.productionBefore = this.production;
             this.amountBefore = this.amount;
-            this.production = this.production + ((this.production/12) * (1.0f - this.influence));
+            double tmp = ((this.production / 12) * (1.0f - this.influence));
+            //Debug.Log(this.name + ": " + tmp);
+            this.production = this.production + tmp;
             this.population += (int) (this.population * 0.001f);
 
             float density = (float) (1.0f - (this.amount / this.population / 2.9f));
@@ -202,6 +204,18 @@ namespace Logic
                     this.production = this.production + (factor * (this.population * ffp) * this.influence);
                     break;
             }
+        }
+
+        public void ChangeInfluence()
+        {
+            double f = Game.random.NextDouble() * 2.01;
+            double n = this.influence * f;
+            if(n > 1.2)
+            {
+                n = 1.2;
+            }
+            Debug.Log("New Influence: " + n);
+            this.influence = n;
         }
 
     }

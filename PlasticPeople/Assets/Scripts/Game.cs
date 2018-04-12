@@ -18,9 +18,10 @@ public class Game : MonoBehaviour {
     public static SpeedChange change;
     public static Newsticker news;
     public static ActionInfoBox infoBox;
-    public int i;
+    public int i, y;
     private bool c;
     private Stopwatch watch;
+    public static System.Random random;
 
 
 	// Use this for initialization
@@ -35,7 +36,7 @@ public class Game : MonoBehaviour {
         InfoPanel panel = FindObjectOfType<InfoPanel>();
         Newsticker news = FindObjectOfType<Newsticker>();
         infoBox = FindObjectOfType<ActionInfoBox>();
-        System.Random random = new System.Random();
+        random = new System.Random();
 
         foreach (Country country in countryarr)
         {
@@ -59,19 +60,20 @@ public class Game : MonoBehaviour {
                 UnityEngine.Debug.Log(e.Message);
             }
         }
-        play = new Play(countrylist);
+        play = new Play(countrylist, news);
         play.SetActions(ReadInActions());
         last = DateTime.Now;
         print = DateTime.Parse("2019-01-01 00:00:00");
         change = FindObjectOfType<SpeedChange>();
         i = 1;
+        y = 1;
         panel.changeWaste(amount, production);
         panel.changeCapital(30000000, 2500000);
-        change.yearBar.maxValue = DateTime.DaysInMonth(print.Year, print.Month);
+        //change.yearBar.maxValue = DateTime.DaysInMonth(print.Year, print.Month);
         news.AddNews(new News("Start", "Producing this much of plastic waste will exterminate humans til 2070.", NewsType.Emergency));
         c = false;
         double now = watch.ElapsedMilliseconds;
-        UnityEngine.Debug.Log("Load Awake: " + (now / 1000) + " seconds");
+        //UnityEngine.Debug.Log("Load Awake: " + (now / 1000) + " seconds");
         play.Tick();
     }
 
@@ -82,15 +84,20 @@ public class Game : MonoBehaviour {
             c = true;
             int daysInMonth = DateTime.DaysInMonth(print.Year, print.Month);
             change.changeDate(print.ToString("dd.MM.yyyy"));
-            change.yearBar.maxValue = daysInMonth;
-            change.yearBar.value = i;
+            //change.yearBar.maxValue = daysInMonth;
+            change.yearBar.value = y;
             if (i == daysInMonth)
             {
+                if(y == 365)
+                {
+                    y = 1;
+                }
                 i = 1;
                 play.Tick();
             }
             else
             {
+                y++;
                 i++;
             }
             print = print.AddDays(1);

@@ -16,10 +16,14 @@ public class CountryDisplay : MonoBehaviour {
     public TextMeshProUGUI rateText;
     public GameObject countryInfo;
     private string lastClickedCountry = "XX";
+    public int lastClickedId = 255;
     private float lastDensity = 1.0f;
+    public bool active = false;
 
     public void ShowClickedCountry(int id)
     {
+        active = true;
+        lastClickedId = id;
         Debug.Log("ID: " + id);
         if (id != 255)
         {
@@ -86,9 +90,20 @@ public class CountryDisplay : MonoBehaviour {
 
     public void HideCountryInfo()
     {
+        active = false;
         countryInfo.SetActive(false);
         Image lastClickedCountryObject = GameObject.Find("/UI/Map/" + lastClickedCountry).GetComponent<Image>();
         lastClickedCountryObject.GetComponent<Image>().color = new Color(1, 1, 1, lastDensity);
         lastClickedCountry = "XX";
+    }
+
+    public bool IsActive()
+    {
+        return this.active;
+    }
+
+    public int GetLastClicked()
+    {
+        return this.lastClickedId;
     }
 }

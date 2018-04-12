@@ -79,8 +79,7 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
 
         //Debug.Log("Color: " + c.r*255);
 
-        CountryDisplay display = FindObjectOfType<CountryDisplay>();
-        display.ShowClickedCountry(cint);
+        Game.play.GetCountryDisplay().ShowClickedCountry(cint);
     }
 
     public void PositionCountryInfo(float x, float y, RectTransform c)
