@@ -4513,7 +4513,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349165085}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -11643,7 +11643,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.787
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1048831779
@@ -25915,9 +25915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedab9678acbd3447b7ba28b25d21676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header: {fileID: 957686835}
-  descr: {fileID: 427222877}
-  info: {fileID: 969578176}
   infoBox: {fileID: 2017213597}
 --- !u!1 &2022129133
 GameObject:
