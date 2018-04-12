@@ -17,6 +17,7 @@ public class Game : MonoBehaviour {
     public static DateTime print;
     public static SpeedChange change;
     public static Newsticker news;
+    public static ActionInfoBox infoBox;
     public int i;
     private bool c;
     private Stopwatch watch;
@@ -33,6 +34,7 @@ public class Game : MonoBehaviour {
         float amount = 0, production = 0;
         InfoPanel panel = FindObjectOfType<InfoPanel>();
         Newsticker news = FindObjectOfType<Newsticker>();
+        infoBox = FindObjectOfType<ActionInfoBox>();
         System.Random random = new System.Random();
 
         foreach (Country country in countryarr)

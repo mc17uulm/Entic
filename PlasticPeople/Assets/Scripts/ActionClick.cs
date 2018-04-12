@@ -9,28 +9,39 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
 
     private LinkedList<Action> actions;
     private GameObject lastClicked;
+    public GameObject blurEffect;
+    public GameObject darkenEffect;
+    public ActionInfoBox infoBox;
     public Sprite clicked;
     public Sprite normal;
 
     public void OnPointerClick(PointerEventData data)
     {
-        Debug.Log("Clicked on Action");
 
         // Der Name des Objektes
         string element = data.pointerEnter.name;
+        Debug.Log("Clicked on Action: " + element);
 
-        /**Action selected;
+        blurEffect.SetActive(true);
+        darkenEffect.SetActive(true);
+
+        actions = Game.play.GetActions();
+        Skilltree tree = FindObjectOfType<Skilltree>();
+        ActionInfoBox infoBox = tree.GetInfoBox();
+        
         foreach(Action action in actions)
         {
-            if (action.GetName().Equals(element))
+            if (action.GetId().ToString() == element)
             {
-                selected = action;
+                Debug.Log("Ja: " + action.GetName());
+                infoBox.SetActive(true);
+                infoBox.ChangeHeader(action.GetName());
             }
             else
             {
                 throw new System.Exception("Clickable Element without matching data");
             }
-        }*/
+        }
 
         if(lastClicked == null)
         {
@@ -49,7 +60,6 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
 
 	// Use this for initialization
 	void Awake () {
-        actions = new LinkedList<Action>();
         lastClicked = null;
 	}
 	

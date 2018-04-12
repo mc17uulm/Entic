@@ -98,6 +98,11 @@ namespace Logic
             this.actions.Remove(action);
         }
 
+        public LinkedList<Action> GetActions()
+        {
+            return this.actions;
+        }
+
         public Country GetCountry(int id)
         {
             foreach(Country country in this.countries)

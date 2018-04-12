@@ -16,6 +16,7 @@ public class Skilltree : MonoBehaviour
     public GameObject darkenEffect;
     public Slider speedControl;
     public TextMeshProUGUI lobbyText;
+    public ActionInfoBox infoBox;
 
     public void Resume()
     {
@@ -27,11 +28,17 @@ public class Skilltree : MonoBehaviour
         darkenEffect.SetActive(false);
     }
 
+    public ActionInfoBox GetInfoBox()
+    {
+        return infoBox;
+    }
+
     public void Pause()
     {
         skilltreeUI.SetActive(true);
         SpeedChange change = FindObjectOfType<SpeedChange>();
         //lobbyText.text = "HEHEH";
+        infoBox = FindObjectOfType<ActionInfoBox>();
         change.Pause();
         GameIsPaused = true;
         blurEffect.SetActive(true);

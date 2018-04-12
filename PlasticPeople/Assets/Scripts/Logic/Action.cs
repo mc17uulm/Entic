@@ -61,6 +61,11 @@ namespace Logic
             }
         }
 
+        public int GetId()
+        {
+            return this.id;
+        }
+
         public string GetName()
         {
             return this.name;
