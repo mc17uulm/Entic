@@ -58,5 +58,10 @@ namespace Logic
             return this.change;
         }
 
+        public double Change(double value)
+        {
+            this.amount += value;
+            return this.amount;
+        }
     }
 }

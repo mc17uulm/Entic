@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Internal.Filters;
 using UnityEngine;
 
 namespace Logic
@@ -53,6 +54,12 @@ namespace Logic
         public double GetChange()
         {
             return this.change;
+        }
+
+        public double Change(int value)
+        {
+            this.amount += value;
+            return this.amount;
         }
 
         public string PrintStatus()

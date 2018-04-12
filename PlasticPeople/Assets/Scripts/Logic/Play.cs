@@ -103,6 +103,19 @@ namespace Logic
             return this.actions;
         }
 
+        public void Buy(Action action)
+        {
+            this.capital.Change(action.GetPrice());
+            this.lobby.Change(action.GetPoints());
+            foreach (Action a in this.actions)
+            {
+                if (a.GetId() == action.GetId())
+                {
+                    a.Activate();
+                }
+            }
+        }
+
         public Country GetCountry(int id)
         {
             foreach(Country country in this.countries)
@@ -123,6 +136,11 @@ namespace Logic
                 this.ExecuteEffect(effect);
             }
             action.Executed();
+        }
+
+        public Lobby GetLobby()
+        {
+            return this.lobby;
         }
 
         public void ExecuteEffect(Effect effect)
