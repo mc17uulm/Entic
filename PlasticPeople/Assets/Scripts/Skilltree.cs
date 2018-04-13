@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -37,7 +38,7 @@ public class Skilltree : MonoBehaviour
         HashSet<int> unique = new HashSet<int>();
         foreach (Action a in actions)
         {
-            if (a.IsFinished())
+            if (a.GetState().Equals(ActionClick.State.Developed))
             {
                 unique.Add(a.GetId());
             }
@@ -53,17 +54,28 @@ public class Skilltree : MonoBehaviour
                 {
                     if (a.Unlocked(developed))
                     {
-                        if ((!a.IsExecuted()) && (!a.IsInDevelopment())){
+                        //if((a.GetPrice() <= Game.play.GetCapital().GetAmount()) && (a.GetPoints() <= Game.play.GetLobby().GetAmount())) { 
+                        if (a.GetState().Equals(ActionClick.State.Clickable))
+                        {
                             im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-1");
                             a.ChangeState(ActionClick.State.Clickable);
                         }
-                        else if (a.IsInDevelopment())
+                        else if (a.GetState().Equals(ActionClick.State.InDevelopement))
                         {
                             im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-3");
                         }
-                        else if (a.IsExecuted())
+                        else if (a.GetState().Equals(ActionClick.State.Developed))
                         {
                             im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-2");
+                        }
+                        if ((a.GetState().Equals(ActionClick.State.Clickable)) && ((a.GetPrice() > Game.play.GetCapital().GetAmount()) ||
+                            (a.GetPoints() > Game.play.GetLobby().GetAmount())))
+                        {
+                            im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-0");
+                        }
+                        else
+                        {
+
                         }
                     }
                 }

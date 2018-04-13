@@ -1,0 +1,75 @@
+[
+    {
+      "message": "Ship accident: A huge cargo ship had a fatal accident and all its containers full of plastic wrapping, toys, packaging, etc. are floating in the sea. Bad news for everone who wants to save the world! ",
+	  "change": "amount",
+      "amount": 7000000,
+	  "factor": 1
+    },
+    {
+      "message": "A huge plastic-comet hit the world.",
+	  "change": "capital",
+      "amount": 100000000,
+	  "factor": 10
+    },
+	{
+	  "message": "One of the biggest plastic manufacturer building exploded and spreaded plastic trash everywhere.",
+	  "change": "amount",
+	  "amount": 4000000,
+	  "factor": 7
+	},
+	{
+	  "message": "Hurricane Theresa swirls up a coastal garbage dump.",
+	  "change": "amount",
+	  "amount": 2000000,
+	  "factor": 4
+	},
+	{
+	  "message": "Garbage dump starts slipping due to strong rainfalls.",
+	  "change": "amount",
+	  "amount": 1000000,
+	  "factor": 3
+	},
+	{
+	   "message": "The litter service is on general strike. Piling garbage everywhere!!!",
+	   "change": "amount",
+	   "amount": 2000000,
+	   "factor": 2
+	},
+	{
+	   "message": "An offshore oil rig exploded!",
+	   "change": "amount",
+	   "amount": 3000000,
+	   "factor": 6
+	},
+	{
+	   "message": "An earthquake destroys a highly radioactive atomic waste disposal site.",
+	   "change": "amount",
+	   "amount": 4000000,
+	   "factor": 8
+	},
+	{
+		"message": "Countries dump radioactive material in the sea.",
+		"change": "amount",
+		"amount": 2000000,
+		"factor": 5
+	},
+	{
+		"message": "Trump's tweet 'Recycling does not exist' has a negative impact. People are mercilessly throwing their trash out of the window.",
+		"change": "amount",
+		"amount": 1000000,
+		"factor": 7
+	},
+	{
+		"message": "Atomic war.",
+		"change": "amount",
+		"amount": 20000000,
+		"factor": 9
+	},
+	{
+		"message": "A rich sheik wants to help you save the world. Here have some money!",
+		"change": "capital",
+		"amount": 10000000,
+		"factor": 5
+	}
+	
+]

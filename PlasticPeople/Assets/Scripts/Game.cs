@@ -86,14 +86,21 @@ public class Game : MonoBehaviour {
             change.changeDate(print.ToString("dd.MM.yyyy"));
             //change.yearBar.maxValue = daysInMonth;
             change.yearBar.value = y;
-            if (i == daysInMonth)
+            //UnityEngine.Debug.Log(y);
+            if ((i == daysInMonth) && (y == 365))
             {
-                if(y == 365)
-                {
-                    y = 1;
-                }
+                y = 1;
                 i = 1;
                 play.Tick();
+            }
+            else if ((i == daysInMonth) && (y != 365))
+            {
+                i = 1;
+                play.Tick();
+            }
+            else if ((i != daysInMonth) && (y >= 365))
+            {
+                y = 1;
             }
             else
             {
@@ -103,6 +110,21 @@ public class Game : MonoBehaviour {
             print = print.AddDays(1);
             last = DateTime.Now;
             c = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            play.Win();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            play.Lose();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Environment.Exit(0);
         }
 	}
 
@@ -117,6 +139,11 @@ public class Game : MonoBehaviour {
         }
 
         return o;
+    }
+
+    public DateTime GetPrint()
+    {
+        return print;
     }
     
 }

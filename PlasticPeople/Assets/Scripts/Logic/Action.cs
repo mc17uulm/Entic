@@ -55,13 +55,17 @@ namespace Logic
 
         public void Activate()
         {
-            this.activated = true;
-            this.state = ActionClick.State.InDevelopement;
+            if (this.state != ActionClick.State.Developed)
+            {
+                this.activated = true;
+                this.state = ActionClick.State.InDevelopement;
+            }
+            
         }
 
         public void DevelopTick()
         {
-            if (start != this.development)
+            if (start <= this.development)
             {
                 this.start += 1;
             }
@@ -85,6 +89,11 @@ namespace Logic
         public float GetProgress()
         {
             return (this.start / this.development);
+        }
+
+        public int GetStart()
+        {
+            return this.start;
         }
         
         public Category GetCategory()
@@ -146,6 +155,11 @@ namespace Logic
                     }
                 }
                 o = (o && i);
+            }
+            Debug.Log("Unlocked: " + this.name + " with: " + o + " and needs.l: " + this.needs.Length);
+            if (o && (this.state.Equals(ActionClick.State.Deactivated)))
+            {
+                this.state = ActionClick.State.Clickable;
             }
             return o;
         }

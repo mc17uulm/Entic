@@ -43,7 +43,7 @@ namespace Logic
         {
             this.productionBefore = this.production;
             this.amountBefore = this.amount;
-            double tmp = ((this.production / 12) * (1.0f - this.influence));
+            double tmp = ((this.production / 12) * (1.0f - this.influence)*0.7);
             //Debug.Log(this.name + ": " + tmp);
             this.production = this.production + tmp;
             this.population += (int) (this.population * 0.001f);

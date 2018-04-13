@@ -28,10 +28,12 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
     public TextMeshProUGUI effects;
     public TextMeshProUGUI status;
     public TextMeshProUGUI requirements;
+    public Skilltree tree;
     public Action active;
 
     public TextMeshProUGUI lobbyText;
-    public GameObject selected;
+    private GameObject selected;
+    public GameObject action;
 
     public void OnPointerClick(PointerEventData data)
     {
@@ -40,6 +42,8 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
         selected = data.pointerEnter.gameObject;
         string element = data.pointerEnter.name;
         //Debug.Log("Clicked on Action: " + element);
+
+        tree = FindObjectOfType<Skilltree>();
 
         blurEffect.SetActive(true);
         darkenEffect.SetActive(true);
@@ -95,10 +99,58 @@ public class ActionClick : MonoBehaviour, IPointerClickHandler {
 
     public void Buy()
     {
-        Game.play.Buy(active);
-        lobbyText.text = Game.play.GetLobby().PrintStatus();
-        selected.GetComponent<Image>().sprite = Resources.Load<Sprite>("Actions/" + active.GetId() + "-3"); 
-        infoBox.SetActive(false);
+        Debug.Log("Buy: " + active.GetName());
+        if (Game.play.Buy(active))
+        {
+            Image[] l = action.GetComponentsInChildren<Image>();
+            lobbyText.text = Game.play.GetLobby().PrintStatus();
+            //selected.GetComponent<Image>().sprite = Resources.Load<Sprite>("Actions/" + active.GetId() + "-3");
+            LinkedList<Action> actions = Game.play.GetActions();
+            HashSet<int> unique = new HashSet<int>();
+            foreach (Action a in actions)
+            {
+                if (a.GetState().Equals(ActionClick.State.Developed))
+                {
+                    unique.Add(a.GetId());
+                }
+            }
+            int[] developed = new int[unique.Count];
+            unique.CopyTo(developed);
+            foreach (Image im in l)
+            {
+                string[] parts = im.sprite.name.Split('-');
+                foreach (Action a in actions)
+                {
+                    if (parts[0] == a.GetId().ToString())
+                    {
+                        if (a.Unlocked(developed))
+                        {
+                            //if((a.GetPrice() <= Game.play.GetCapital().GetAmount()) && (a.GetPoints() <= Game.play.GetLobby().GetAmount())) { 
+                            if (a.GetState().Equals(ActionClick.State.Clickable))
+                            {
+                                im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-1");
+                                a.ChangeState(ActionClick.State.Clickable);
+                            }
+                            else if (a.GetState().Equals(ActionClick.State.InDevelopement))
+                            {
+                                im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-3");
+                            }
+                            else if (a.GetState().Equals(ActionClick.State.Developed))
+                            {
+                                im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-2");
+                            }
+
+                            if ((a.GetState().Equals(ActionClick.State.Clickable)) && ((a.GetPrice() > Game.play.GetCapital().GetAmount()) ||
+                                (a.GetPoints() > Game.play.GetLobby().GetAmount())))
+                            {
+                                im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-0");
+                            }
+                        }
+                    }
+                }
+            }
+            infoBox.SetActive(false);
+        }
     }
 
     public void ShowDeactivated(Action action)

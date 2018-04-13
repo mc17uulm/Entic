@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 namespace Logic
@@ -21,6 +23,11 @@ namespace Logic
         private Newsticker news;
         public Skilltree tree;
         public CountryDisplay display;
+        public progresstest prog;
+
+        public static LinkedList<Action> endActions;
+        public static Capital endCapital;
+        public static DateTime endTime;
 
         public Play(LinkedList<Country> countries, Newsticker news)
         {
@@ -32,6 +39,7 @@ namespace Logic
             this.panel = FindObjectOfType<InfoPanel>();
             this.tree = FindObjectOfType<Skilltree>();
             this.display = FindObjectOfType<CountryDisplay>();
+            this.prog = FindObjectOfType<progresstest>();
             this.population = 0;
         }
 
@@ -40,23 +48,25 @@ namespace Logic
             //Debug.Log("Tick!");
 
             // Ab hier auskommentieren um Logik nicht laufen zu lassen
-            foreach(Action action in this.actions)
+            foreach (Action action in this.actions)
             {
-                if (action.IsActivated())
+                if (action.GetState() == ActionClick.State.InDevelopement)
                 {
                     action.DevelopTick();
                 }
-                if (action.IsFinished())
+                if (action.GetState().Equals(ActionClick.State.Developed))
                 {
                     this.ExecuteAction(action);
                 }
             }
 
+            this.prog.Tick();
+
             double newAmount = 0.0f;
             double newProduction = 0.0f;
 
             int now = 0;
-            foreach(Country country in this.countries)
+            foreach (Country country in this.countries)
             {
                 country.Tick();
                 newAmount += country.GetAmount();
@@ -65,19 +75,19 @@ namespace Logic
             }
             this.population = now;
 
-            if(newAmount < this.amount)
+            if (newAmount < this.amount)
             {
                 // weniger Plastik
             }
-            else if(newAmount == this.amount)
+            else if (newAmount == this.amount)
             {
                 // gleich viel Plastik
             }
             else
             {
-               // mehr Plastik
+                // mehr Plastik
             }
-            
+
             this.capital.Tick();
             this.lobby.Tick();
 
@@ -91,6 +101,17 @@ namespace Logic
 
             this.amount = newAmount;
             this.production = newProduction;
+
+            if ((this.amount > 20000000000) || (this.production > 1000000000))
+            {
+                Lose();
+            }
+            else if ((this.amount < 7000000) && (this.production < 100000))
+            {
+                Win();
+            }
+
+
 
         }
 
@@ -134,12 +155,13 @@ namespace Logic
             }
         }
 
-        public void Buy(Action action)
+        public bool Buy(Action action)
         {
-            if(this.capital.GetAmount() >= action.GetPrice())
+            if (this.capital.GetAmount() >= action.GetPrice())
             {
                 if (this.lobby.GetAmount() >= action.GetPoints())
                 {
+                    Debug.Log("Capital before: " + this.capital.GetAmount());
                     this.capital.Buy(action.GetPrice());
                     this.lobby.Buy(action.GetPoints());
                     foreach (Action a in this.actions)
@@ -150,9 +172,13 @@ namespace Logic
                             this.news.AddNews(new News("Action in development", "Action \"" + action.GetName() + "\" is in development", NewsType.Action));
                         }
                     }
+                    Debug.Log("Capital after: " + this.capital.GetAmount());
+
+                    return true;
                 }
             }
-            
+
+            return false;
         }
 
         public void AddNews(News news)
@@ -162,7 +188,7 @@ namespace Logic
 
         public Country GetCountry(int id)
         {
-            foreach(Country country in this.countries)
+            foreach (Country country in this.countries)
             {
                 if (country.GetId() == id)
                 {
@@ -226,13 +252,44 @@ namespace Logic
             }
             else
             {
-                float ffp = (float) effect.GetFactor() / this.population;
+                float ffp = (float)effect.GetFactor() / this.population;
 
-                foreach(Country country in this.countries)
+                foreach (Country country in this.countries)
                 {
                     country.ExecuteEffect(effect, f, ffp);
                 }
             }
+        }
+
+        public void Lose()
+        {
+            endCapital = this.capital;
+            endActions = this.actions;
+            endTime = Game.print;
+            SceneManager.LoadScene(3);
+        }
+
+        public void Win()
+        {
+            endCapital = this.capital;
+            endActions = this.actions;
+            endTime = Game.print;
+            SceneManager.LoadScene(2);
+        }
+
+        public LinkedList<Action> GetEndActions()
+        {
+            return endActions;
+        }
+
+        public Capital GetEndCapital()
+        {
+            return endCapital;
+        }
+
+        public DateTime GetEndTime()
+        {
+            return endTime;
         }
 
     }

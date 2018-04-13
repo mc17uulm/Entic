@@ -15473,6 +15473,7 @@ GameObject:
   - component: {fileID: 1324425256}
   - component: {fileID: 1324425255}
   - component: {fileID: 1324425254}
+  - component: {fileID: 1324425258}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -15558,6 +15559,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1324425258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324425253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651c1116d31b3d7448b4e1a874b9529e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitle: {fileID: 238349942}
+  money: {fileID: 1389929317}
+  action: {fileID: 1814210608}
 --- !u!1 &1389929315
 GameObject:
   m_ObjectHideFlags: 0
@@ -15915,7 +15930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.003479, y: -722}
+  m_AnchoredPosition: {x: 0.0034790002, y: -722}
   m_SizeDelta: {x: 333.5, y: 333.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595989417
@@ -19791,7 +19806,7 @@ GameObject:
   - component: {fileID: 1814210609}
   - component: {fileID: 1814210608}
   m_Layer: 5
-  m_Name: money (1)
+  m_Name: actions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1241,7 +1241,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e7705743e300d53428a09effb594a6d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fe8c3ec5934d554ca450139e2e47c62, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3955,8 +3955,9 @@ MonoBehaviour:
   effects: {fileID: 938938766}
   status: {fileID: 1220043811}
   requirements: {fileID: 1831069869}
+  tree: {fileID: 0}
   lobbyText: {fileID: 1462010599}
-  selected: {fileID: 0}
+  action: {fileID: 246964295}
 --- !u!1 &249485323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4758,7 +4759,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Support
+  m_Text: 
 --- !u!222 &386526233
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17537,7 +17538,7 @@ MonoBehaviour:
   blurEffect: {fileID: 0}
   darkenEffect: {fileID: 0}
   speedControl: {fileID: 0}
-  lobbyText: {fileID: 1462010599}
+  lobbyText: {fileID: 0}
   action: {fileID: 0}
 --- !u!1 &1414403709
 GameObject:
@@ -20720,8 +20721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -242.40001, y: -83.39999}
-  m_SizeDelta: {x: 193.96, y: 30}
+  m_AnchoredPosition: {x: 292.8, y: 63.597015}
+  m_SizeDelta: {x: 72.34, y: 72.386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1693419567
 MonoBehaviour:
@@ -20783,8 +20784,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 67221ba48e3388a488e84105884e5a5e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -21063,6 +21064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tree: {fileID: 0}
   display: {fileID: 0}
+  prog: {fileID: 0}
 --- !u!1 &1697679876
 GameObject:
   m_ObjectHideFlags: 0
@@ -23041,8 +23043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -225.92001, y: -543.78}
-  m_SizeDelta: {x: 451.82, y: 324.6}
+  m_AnchoredPosition: {x: -375.46, y: -661}
+  m_SizeDelta: {x: 750.93, y: 324.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1831069869
 MonoBehaviour:
@@ -23100,7 +23102,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 260
+  m_textAlignment: 257
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0

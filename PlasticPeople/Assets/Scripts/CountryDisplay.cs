@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
-public class CountryDisplay : MonoBehaviour {
+public class CountryDisplay : MonoBehaviour
+{
 
     public TextMeshProUGUI nameText;
     public Image countryImage;
@@ -29,9 +30,9 @@ public class CountryDisplay : MonoBehaviour {
         {
             Logic.Country country = Game.play.GetCountry(id);
 
-            int tmp = (int) (255 * country.GetDensity());
+            int tmp = (int)(255 * country.GetDensity());
             Debug.Log("TMP: " + tmp);
-            byte density = (byte) tmp;
+            byte density = (byte)tmp;
             Debug.Log("Byte: " + density);
 
             Debug.Log("Density: " + country.GetDensity());

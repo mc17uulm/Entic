@@ -104,7 +104,7 @@ namespace Logic
             }
             string o = "";
             string prefix = "<color=" + color[0] + ">+</color>";
-            if (this.type.Equals(type == Type.reduce))
+            if (this.type.Equals(Type.reduce))
             {
                 prefix = "<color=" + color[1] + ">-</color>";
             }

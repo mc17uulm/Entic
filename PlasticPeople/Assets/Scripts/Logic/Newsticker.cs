@@ -50,6 +50,11 @@ namespace Logic
             infoText.text = this.MakeNewsString(this.news.First.Value);
         }
 
+        public void PrintNewsFeed()
+        {
+            newsFeed.text = this.PrintNews();
+        }
+
         private string MakeNewsString(News news)
         {
             string o = "";
