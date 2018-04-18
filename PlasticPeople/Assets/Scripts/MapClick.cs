@@ -84,31 +84,32 @@ public class MapClick : MonoBehaviour, IPointerClickHandler {
 
     public void PositionCountryInfo(float x, float y, RectTransform c)
     {
-        
-        if (pos.x <= cameraDim.x/2 && pos.y > mapDim.y/2)
+        Vector2  center = new Vector2((cameraDim.x/2), (cameraDim.y/2));
+        Debug.Log("xpos clicked:" + pos.x + " ypos clicked: " + pos.y + " camera dimensions: " + cameraDim.x + ", " + cameraDim.y);
+        if (pos.x <= center.x && pos.y > center.y)
         {
-            //Debug.Log("1. Quadrant");
+            Debug.Log("1. Quadrant");
             c.pivot = new Vector2(0f,1f);
             c.position = infoPos;
             c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
         }
-        else if(pos.x > cameraDim.x / 2 && pos.y > mapDim.y / 2)
+        else if(pos.x > center.x && pos.y > center.y)
         {
-            //Debug.Log("2. Quadrant");
+            Debug.Log("2. Quadrant");
             c.pivot = new Vector2(1f, 1f);
             c.position = infoPos;
             c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
         }
-        else if(pos.x > cameraDim.x / 2 && pos.y <= mapDim.y / 2)
+        else if(pos.x > center.x && pos.y <= center.y)
         {
-            //Debug.Log("3. Quadrant");
+            Debug.Log("3. Quadrant");
             c.pivot = new Vector2(1f, 0f);
             c.position = infoPos;
             c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
         }
         else
         {
-            //Debug.Log("4. Quadrant");
+            Debug.Log("4. Quadrant");
             c.pivot = new Vector2(0f, 0f);
             c.position = infoPos;
             c.localPosition = new Vector3(c.localPosition.x, c.localPosition.y, 0);
