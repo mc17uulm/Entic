@@ -1,0 +1,240 @@
+[
+    {
+      "id": 1,
+      "name": "Deposit on one-way plastic bottles",
+      "development": 10,
+      "category": "politics",
+      "price": 25000000,
+      "points": 4,
+      "descr": "Implements a deposit on one-way plastic bottles to reduce new plastic waste",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 2500000
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 2,
+      "name": "Ban one-way plastic bottles",
+      "development": 24,
+      "category": "politics",
+      "price": 85000000,
+      "points": 9,
+      "descr": "A ban of all one-way plastic bottles is an effective way to reduce new plastic waste. But many companies benefit from these bottles. Expect a huge resits in politics!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurence": "once",
+          "factor": 17000000
+        },
+        {
+          "type": "reduce",
+          "on": "capital",
+          "occurence": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": [ 1, 4 ]
+    },
+    {
+      "id": 3,
+      "name": "Ban microplastic in drugstore items",
+      "development": 14,
+      "category": "politics",
+      "price": 10000000,
+      "points": 2,
+      "descr": "Microplastic in different articles are a massiv problem for the enviroment and the health. Some scientist lead back some sorts of cancer on micro plastics!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 2500000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 4,
+      "name": "Tax on plastic wrapping",
+      "development": 10,
+      "category": "politics",
+      "price": 35000000,
+      "points": 2,
+      "descr": "Many products are wrapped with plastic. But there are alternatives and the plastic wrapping is not allways necessary. So tax them!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 17000000
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 5,
+      "name": "Ban on plastic bags",
+      "development": 48,
+      "category": "politics",
+      "price": 65000000,
+      "points": 8,
+      "descr": "Plastic bags are used every day and mostly only once. But there are better alternatives like hemp or jute!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 8500000
+        }
+      ],
+      "needs": [ 4 ]
+    },
+    {
+      "id": 6,
+      "name": "Law for recycling of plastic waste",
+      "development": 54,
+      "category": "politics",
+      "price": 57000000,
+      "points": 7,
+      "descr": "Plastic waste is a valuable ressource. You can recycle new and old plastic waste",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 4000000
+        },
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 2500000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 7,
+      "name": "Ban on plastic wrapping",
+      "development": 30,
+      "category": "politics",
+      "price": 37000000,
+      "points": 8,
+      "descr": "A tax on plastic wrapping is not efficient enought. But don't forget: with a ban you lose the taxes!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 36000000
+        },
+        {
+          "type": "reduce",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": [ 4, 1 ]
+    },
+    {
+      "id": 8,
+      "name": "1. UN-Cogress: Reducing plastic waste ",
+      "development": 10,
+      "category": "politics",
+      "price": 5000000,
+      "points": 4,
+      "descr": "Bring together the leaders of the world to discuss about plastic waste. It may not reduce some plastic. But it will increase your influence on politicians and will bring you money!",
+      "img": "",
+      "effects": [
+        {
+          "type": "add",
+          "on": "lobby",
+          "occurance": "unlimited",
+          "factor": 1
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 500000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 9,
+      "name": "2. UN-Cogress: Clean the oceans",
+      "development": 10,
+      "category": "politics",
+      "price": 8000000,
+      "points": 6,
+      "descr": "Bring the topic back on the minds of politicians and the society! They need an impetus!",
+      "img": "",
+      "effects": [
+        {
+          "type": "add",
+          "on": "lobby",
+          "occurance": "unlimited",
+          "factor": 1
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 750000
+        }
+      ],
+      "needs": [ 1, 8 ]
+    },
+    {
+      "id": 10,
+      "name": "3. UN-Cogress: Develop solutions",
+      "development": 10,
+      "category": "politics",
+      "price": 10000000,
+      "points": 18,
+      "descr": "We need better ideas to solve the problems of tommorow. Collect money and influence to support scientists!",
+      "img": "",
+      "effects": [
+        {
+          "type": "add",
+          "on": "lobby",
+          "occurance": "unlimited",
+          "factor": 2
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": [ 1, 8, 9 ]
+    }
+  ]

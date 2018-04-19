@@ -1,0 +1,1570 @@
+{
+    "Items": [
+        {
+            "id": 0,
+            "code": "RO",
+            "name": "Romania",
+            "population": "19,638,000",
+            "desc": "",
+            "waste": 1855791,
+            "rate": 66180.06
+        },
+        {
+            "id": 1,
+            "code": "QA",
+            "name": "Qatar",
+            "population": "2,641,669",
+            "desc": "",
+            "waste": 249637.7205,
+            "rate": 8902.42453
+        },
+        {
+            "id": 2,
+            "code": "PS",
+            "name": "State of Palestine",
+            "population": "4,550,368",
+            "desc": "",
+            "waste": 2150048.88,
+            "rate": 76673.7008
+        },
+        {
+            "id": 3,
+            "code": "IL",
+            "name": "Israel",
+            "population": "4,550,368",
+            "desc": "",
+            "waste": 2150048.88,
+            "rate": 76673.7008
+        },
+        {
+            "id": 4,
+            "code": "PY",
+            "name": "Paraguay",
+            "population": "6,897,384",
+            "desc": "",
+            "waste": 3259013.94,
+            "rate": 116220.9204
+        },
+        {
+            "id": 5,
+            "code": "PT",
+            "name": "Portugal",
+            "population": "10,379,573",
+            "desc": "",
+            "waste": 4904348.2425,
+            "rate": 174895.80505
+        },
+        {
+            "id": 6,
+            "code": "KP",
+            "name": "North Korea",
+            "population": "25,368,620",
+            "desc": "",
+            "waste": 23973345.9,
+            "rate": 854922.4940000001
+        },
+        {
+            "id": 7,
+            "code": "PR",
+            "name": "Puerto Rico",
+            "population": "3,411,307",
+            "desc": "",
+            "waste": 1611842.5574999999,
+            "rate": 57480.52295
+        },
+        {
+            "id": 8,
+            "code": "PL",
+            "name": "Poland",
+            "population": "38,422,346",
+            "desc": "",
+            "waste": 18154558.485,
+            "rate": 647416.5301
+        },
+        {
+            "id": 9,
+            "code": "PG",
+            "name": "Papua New Guinea",
+            "population": "8,084,999",
+            "desc": "",
+            "waste": 764032.4055,
+            "rate": 27246.446630000002
+        },
+        {
+            "id": 10,
+            "code": "PH",
+            "name": "Philippines",
+            "population": "100,981,437",
+            "desc": "",
+            "waste": 143141186.9475,
+            "rate": 5104611.64035
+        },
+        {
+            "id": 11,
+            "code": "PE",
+            "name": "Peru",
+            "population": "32,553,697",
+            "desc": "",
+            "waste": 15381621.8325,
+            "rate": 548529.79445
+        },
+        {
+            "id": 12,
+            "code": "PA",
+            "name": "Panama",
+            "population": "4,034,119",
+            "desc": "",
+            "waste": 1906121.2274999998,
+            "rate": 67974.90515
+        },
+        {
+            "id": 13,
+            "code": "PK",
+            "name": "Pakistan",
+            "population": "209,970,000",
+            "desc": "",
+            "waste": 99210825,
+            "rate": 3537994.5
+        },
+        {
+            "id": 14,
+            "code": "OM",
+            "name": "Oman",
+            "population": "4,424,762",
+            "desc": "",
+            "waste": 2090700.045,
+            "rate": 74557.2397
+        },
+        {
+            "id": 15,
+            "code": "NZ",
+            "name": "New Zealand",
+            "population": "4,868,420",
+            "desc": "",
+            "waste": 460065.69,
+            "rate": 16406.5754
+        },
+        {
+            "id": 16,
+            "code": "NP",
+            "name": "Nepal",
+            "population": "28,982,771",
+            "desc": "",
+            "waste": 2738871.8595,
+            "rate": 97671.93827
+        },
+        {
+            "id": 17,
+            "code": "NO",
+            "name": "Norway",
+            "population": "5,267,146",
+            "desc": "",
+            "waste": 497745.29699999996,
+            "rate": 17750.28202
+        },
+        {
+            "id": 18,
+            "code": "NL",
+            "name": "Netherlands",
+            "population": "17,200,671",
+            "desc": "",
+            "waste": 8127317.047499999,
+            "rate": 289831.30635
+        },
+        {
+            "id": 19,
+            "code": "NI",
+            "name": "Nicaragua",
+            "population": "6,167,237",
+            "desc": "",
+            "waste": 2914019.4825,
+            "rate": 103917.94345
+        },
+        {
+            "id": 20,
+            "code": "NG",
+            "name": "Nigeria",
+            "population": "185,989,640",
+            "desc": "",
+            "waste": 175760209.79999998,
+            "rate": 6267850.868
+        },
+        {
+            "id": 21,
+            "code": "NE",
+            "name": "Niger",
+            "population": "20,672,987",
+            "desc": "",
+            "waste": 9767986.3575,
+            "rate": 348339.83095000003
+        },
+        {
+            "id": 22,
+            "code": "NC",
+            "name": "New Caledonia",
+            "population": "268,767",
+            "desc": "",
+            "waste": 25398.481499999998,
+            "rate": 905.7447900000001
+        },
+        {
+            "id": 23,
+            "code": "NA",
+            "name": "Namibia",
+            "population": "2,606,971",
+            "desc": "",
+            "waste": 246358.7595,
+            "rate": 8785.49227
+        },
+        {
+            "id": 24,
+            "code": "MY",
+            "name": "Malaysia",
+            "population": "31,899,000",
+            "desc": "",
+            "waste": 45216832.5,
+            "rate": 1612494.45
+        },
+        {
+            "id": 25,
+            "code": "MW",
+            "name": "Malawi",
+            "population": "18,091,575",
+            "desc": "",
+            "waste": 8548269.1875,
+            "rate": 304843.03875
+        },
+        {
+            "id": 26,
+            "code": "MR",
+            "name": "Mauritania",
+            "population": "4,301,018",
+            "desc": "",
+            "waste": 2032231.005,
+            "rate": 72472.1533
+        },
+        {
+            "id": 27,
+            "code": "MZ",
+            "name": "Mozambique",
+            "population": "28,829,476",
+            "desc": "",
+            "waste": 13621927.41,
+            "rate": 485776.6706
+        },
+        {
+            "id": 28,
+            "code": "MN",
+            "name": "Mongolia",
+            "population": "3,081,677",
+            "desc": "",
+            "waste": 2912184.7649999997,
+            "rate": 103852.51490000001
+        },
+        {
+            "id": 29,
+            "code": "ME",
+            "name": "Montenegro",
+            "population": "642,550",
+            "desc": "",
+            "waste": 303604.875,
+            "rate": 10826.9675
+        },
+        {
+            "id": 30,
+            "code": "MM",
+            "name": "Myanmar",
+            "population": "53,582,855",
+            "desc": "",
+            "waste": 50635797.974999994,
+            "rate": 1805742.2135
+        },
+        {
+            "id": 31,
+            "code": "ML",
+            "name": "Mali",
+            "population": "14,517,176",
+            "desc": "",
+            "waste": 6859365.659999999,
+            "rate": 244614.4156
+        },
+        {
+            "id": 32,
+            "code": "MK",
+            "name": "Macedonia",
+            "population": "2,103,721",
+            "desc": "",
+            "waste": 994008.1725,
+            "rate": 35447.69885
+        },
+        {
+            "id": 33,
+            "code": "MX",
+            "name": "Mexico",
+            "population": "123,675,325",
+            "desc": "",
+            "waste": 58436591.0625,
+            "rate": 2083929.22625
+        },
+        {
+            "id": 34,
+            "code": "MG",
+            "name": "Madagascar",
+            "population": "24,894,551",
+            "desc": "",
+            "waste": 11762675.3475,
+            "rate": 419473.18435
+        },
+        {
+            "id": 35,
+            "code": "MD",
+            "name": "Moldova",
+            "population": "2,998,235",
+            "desc": "",
+            "waste": 1416666.0374999999,
+            "rate": 50520.259750000005
+        },
+        {
+            "id": 36,
+            "code": "MA",
+            "name": "Morocco",
+            "population": "33,848,242",
+            "desc": "",
+            "waste": 31986588.689999998,
+            "rate": 1140685.7554000001
+        },
+        {
+            "id": 37,
+            "code": "LV",
+            "name": "Latvia",
+            "population": "1,953,200",
+            "desc": "",
+            "waste": 184577.4,
+            "rate": 6582.284000000001
+        },
+        {
+            "id": 38,
+            "code": "LU",
+            "name": "Luxembourg",
+            "population": "590,667",
+            "desc": "",
+            "waste": 279090.1575,
+            "rate": 9952.73895
+        },
+        {
+            "id": 39,
+            "code": "LT",
+            "name": "Lithuania",
+            "population": "2,810,865",
+            "desc": "",
+            "waste": 1328133.7125,
+            "rate": 47363.07525
+        },
+        {
+            "id": 40,
+            "code": "LS",
+            "name": "Lesotho",
+            "population": "2,203,821",
+            "desc": "",
+            "waste": 1041305.4225,
+            "rate": 37134.38385
+        },
+        {
+            "id": 41,
+            "code": "LK",
+            "name": "Sri Lanka",
+            "population": "21,444,000",
+            "desc": "",
+            "waste": 30396870,
+            "rate": 1083994.2
+        },
+        {
+            "id": 42,
+            "code": "LY",
+            "name": "Libya",
+            "population": "6,293,253",
+            "desc": "",
+            "waste": 2973562.0425,
+            "rate": 106041.31305
+        },
+        {
+            "id": 43,
+            "code": "LR",
+            "name": "Liberia",
+            "population": "4,503,000",
+            "desc": "",
+            "waste": 4255335,
+            "rate": 151751.1
+        },
+        {
+            "id": 44,
+            "code": "LB",
+            "name": "Lebanon",
+            "population": "6,006,668",
+            "desc": "",
+            "waste": 2838150.63,
+            "rate": 101212.3558
+        },
+        {
+            "id": 45,
+            "code": "LA",
+            "name": "Laos",
+            "population": "6,758,353",
+            "desc": "",
+            "waste": 9579965.3775,
+            "rate": 341634.74415
+        },
+        {
+            "id": 46,
+            "code": "KW",
+            "name": "Kuwait",
+            "population": "4,052,584",
+            "desc": "",
+            "waste": 1914845.94,
+            "rate": 68286.0404
+        },
+        {
+            "id": 47,
+            "code": "XK",
+            "name": "Kosovo",
+            "population": "1,920,079",
+            "desc": "",
+            "waste": 907237.3274999999,
+            "rate": 32353.33115
+        },
+        {
+            "id": 48,
+            "code": "KR",
+            "name": "South Korea",
+            "population": "51,446,201",
+            "desc": "",
+            "waste": 48616659.945,
+            "rate": 1733736.9737
+        },
+        {
+            "id": 49,
+            "code": "KH",
+            "name": "Cambodia",
+            "population": "15,762,370",
+            "desc": "",
+            "waste": 22343159.474999998,
+            "rate": 796787.8035
+        },
+        {
+            "id": 50,
+            "code": "KG",
+            "name": "Kyrgyzstan",
+            "population": "6,019,480",
+            "desc": "",
+            "waste": 5688408.6,
+            "rate": 202856.476
+        },
+        {
+            "id": 51,
+            "code": "KE",
+            "name": "Kenya",
+            "population": "49,125,325",
+            "desc": "",
+            "waste": 23211716.0625,
+            "rate": 827761.7262500001
+        },
+        {
+            "id": 52,
+            "code": "KZ",
+            "name": "Kazakhstan",
+            "population": "17,987,736",
+            "desc": "",
+            "waste": 8499205.26,
+            "rate": 303093.3516
+        },
+        {
+            "id": 53,
+            "code": "JP",
+            "name": "Japan",
+            "population": "126,672,000",
+            "desc": "",
+            "waste": 59852520,
+            "rate": 2134423.2
+        },
+        {
+            "id": 54,
+            "code": "JO",
+            "name": "Jordan",
+            "population": "10,011,820",
+            "desc": "",
+            "waste": 4730584.95,
+            "rate": 168699.16700000002
+        },
+        {
+            "id": 55,
+            "code": "JM",
+            "name": "Jamaica",
+            "population": "2,881,355",
+            "desc": "",
+            "waste": 1361440.2374999998,
+            "rate": 48550.83175
+        },
+        {
+            "id": 56,
+            "code": "IT",
+            "name": "Italy",
+            "population": "60,589,445",
+            "desc": "",
+            "waste": 28628512.7625,
+            "rate": 1020932.14825
+        },
+        {
+            "id": 57,
+            "code": "IS",
+            "name": "Iceland",
+            "population": "348,580",
+            "desc": "",
+            "waste": 164704.05,
+            "rate": 5873.573
+        },
+        {
+            "id": 58,
+            "code": "IQ",
+            "name": "Iraq",
+            "population": "37,202,572",
+            "desc": "",
+            "waste": 35156430.54,
+            "rate": 1253726.6764
+        },
+        {
+            "id": 59,
+            "code": "IR",
+            "name": "Iran",
+            "population": "81,000,000",
+            "desc": "",
+            "waste": 76545000,
+            "rate": 2729700
+        },
+        {
+            "id": 60,
+            "code": "IE",
+            "name": "Ireland",
+            "population": "4,761,865",
+            "desc": "",
+            "waste": 4499962.425,
+            "rate": 160474.8505
+        },
+        {
+            "id": 61,
+            "code": "IN",
+            "name": "India",
+            "population": "1,324,171,354",
+            "desc": "",
+            "waste": 1251341929.53,
+            "rate": 44624574.6298
+        },
+        {
+            "id": 62,
+            "code": "ID",
+            "name": "Indonesia",
+            "population": "261,115,456",
+            "desc": "",
+            "waste": 370131158.88,
+            "rate": 13199386.3008
+        },
+        {
+            "id": 63,
+            "code": "HU",
+            "name": "Hungary",
+            "population": "9,797,561",
+            "desc": "",
+            "waste": 4629347.5725,
+            "rate": 165088.90285
+        },
+        {
+            "id": 64,
+            "code": "HT",
+            "name": "Haiti",
+            "population": "10,847,334",
+            "desc": "",
+            "waste": 5125365.3149999995,
+            "rate": 182777.5779
+        },
+        {
+            "id": 65,
+            "code": "HR",
+            "name": "Croatia",
+            "population": "4,154,200",
+            "desc": "",
+            "waste": 1962859.5,
+            "rate": 69998.27
+        },
+        {
+            "id": 66,
+            "code": "HN",
+            "name": "Honduras",
+            "population": "9,112,867",
+            "desc": "",
+            "waste": 4305829.6575,
+            "rate": 153551.80895
+        },
+        {
+            "id": 67,
+            "code": "GY",
+            "name": "Guyana",
+            "population": "773,303",
+            "desc": "",
+            "waste": 73077.1335,
+            "rate": 2606.0311100000004
+        },
+        {
+            "id": 68,
+            "code": "GT",
+            "name": "Guatemala",
+            "population": "1,7263,239",
+            "desc": "",
+            "waste": 8156880.427499999,
+            "rate": 290885.57715
+        },
+        {
+            "id": 69,
+            "code": "GL",
+            "name": "Greenland",
+            "population": "56,483",
+            "desc": "",
+            "waste": 5337.6435,
+            "rate": 190.34771
+        },
+        {
+            "id": 70,
+            "code": "GR",
+            "name": "Greece",
+            "population": "10,768,477",
+            "desc": "",
+            "waste": 5088105.382499999,
+            "rate": 181448.83745
+        },
+        {
+            "id": 71,
+            "code": "GQ",
+            "name": "Equatorial Guinea",
+            "population": "1,221,490",
+            "desc": "",
+            "waste": 577154.025,
+            "rate": 20582.1065
+        },
+        {
+            "id": 72,
+            "code": "GW",
+            "name": "Guinea-Bissau",
+            "population": "1,815,698",
+            "desc": "",
+            "waste": 857917.3049999999,
+            "rate": 30594.511300000002
+        },
+        {
+            "id": 73,
+            "code": "GM",
+            "name": "The Gambia",
+            "population": "2,051,363",
+            "desc": "",
+            "waste": 969269.0175,
+            "rate": 34565.46655
+        },
+        {
+            "id": 74,
+            "code": "GN",
+            "name": "Guinea",
+            "population": "12,395,924",
+            "desc": "",
+            "waste": 5857074.09,
+            "rate": 208871.3194
+        },
+        {
+            "id": 75,
+            "code": "GH",
+            "name": "Ghana",
+            "population": "27,043,093",
+            "desc": "",
+            "waste": 12777861.442499999,
+            "rate": 455676.11705
+        },
+        {
+            "id": 76,
+            "code": "GE",
+            "name": "Georgia",
+            "population": "3,718,200",
+            "desc": "",
+            "waste": 1756849.5,
+            "rate": 62651.67
+        },
+        {
+            "id": 77,
+            "code": "GB",
+            "name": "United Kingdom",
+            "population": "65,648,100",
+            "desc": "",
+            "waste": 31018727.25,
+            "rate": 1106170.485
+        },
+        {
+            "id": 78,
+            "code": "GA",
+            "name": "Gabon",
+            "population": "1,979,786",
+            "desc": "",
+            "waste": 935448.885,
+            "rate": 33359.3941
+        },
+        {
+            "id": 79,
+            "code": "FR",
+            "name": "France",
+            "population": "67,201,000",
+            "desc": "",
+            "waste": 31752472.5,
+            "rate": 1132336.85
+        },
+        {
+            "id": 80,
+            "code": "FK",
+            "name": "Falkland Islands",
+            "population": "3,398",
+            "desc": "",
+            "waste": 1605.5549999999998,
+            "rate": 57.2563
+        },
+        {
+            "id": 81,
+            "code": "FJ",
+            "name": "Fiji",
+            "population": "898,760",
+            "desc": "",
+            "waste": 424664.1,
+            "rate": 15144.106
+        },
+        {
+            "id": 82,
+            "code": "FI",
+            "name": "Finland",
+            "population": "5,509,717",
+            "desc": "",
+            "waste": 520668.2565,
+            "rate": 18567.746290000003
+        },
+        {
+            "id": 83,
+            "code": "ET",
+            "name": "Ethiopia",
+            "population": "38,422,346",
+            "desc": "",
+            "waste": 18154558.485,
+            "rate": 647416.5301
+        },
+        {
+            "id": 84,
+            "code": "EE",
+            "name": "Estonia",
+            "population": "1,318,705",
+            "desc": "",
+            "waste": 623088.1124999999,
+            "rate": 22220.17925
+        },
+        {
+            "id": 85,
+            "code": "ES",
+            "name": "Spain",
+            "population": "46,354,321",
+            "desc": "",
+            "waste": 21902416.6725,
+            "rate": 781070.30885
+        },
+        {
+            "id": 86,
+            "code": "ER",
+            "name": "Eritrea",
+            "population": "4,954,645",
+            "desc": "",
+            "waste": 2341069.7624999997,
+            "rate": 83485.76825000001
+        },
+        {
+            "id": 87,
+            "code": "EG",
+            "name": "Egypt",
+            "population": "96,706,000",
+            "desc": "",
+            "waste": 91387170,
+            "rate": 3258992.2
+        },
+        {
+            "id": 88,
+            "code": "EC",
+            "name": "Ecuador",
+            "population": "16,385,068",
+            "desc": "",
+            "waste": 7741944.63,
+            "rate": 276088.3958
+        },
+        {
+            "id": 89,
+            "code": "DZ",
+            "name": "Algeria",
+            "population": "40,400,000",
+            "desc": "",
+            "waste": 38178000,
+            "rate": 1361480
+        },
+        {
+            "id": 90,
+            "code": "DO",
+            "name": "Dominican Republic",
+            "population": "10,800,857",
+            "desc": "",
+            "waste": 5103404.9325,
+            "rate": 181994.44045
+        },
+        {
+            "id": 91,
+            "code": "DK",
+            "name": "Denmark",
+            "population": "5,748,769",
+            "desc": "",
+            "waste": 543258.6705,
+            "rate": 19373.35153
+        },
+        {
+            "id": 92,
+            "code": "DJ",
+            "name": "Djibouti",
+            "population": "942,333",
+            "desc": "",
+            "waste": 445252.34249999997,
+            "rate": 15878.31105
+        },
+        {
+            "id": 93,
+            "code": "DE",
+            "name": "Germany",
+            "population": "82,800,000",
+            "desc": "",
+            "waste": 39123000,
+            "rate": 1395180
+        },
+        {
+            "id": 94,
+            "code": "CZ",
+            "name": "Czech Republic",
+            "population": "10,610,947",
+            "desc": "",
+            "waste": 5013672.4575,
+            "rate": 178794.45695
+        },
+        {
+            "id": 95,
+            "code": "",
+            "name": "",
+            "population": "",
+            "desc": "",
+            "waste": 0,
+            "rate": 0
+        },
+        {
+            "id": 96,
+            "code": "CY",
+            "name": "Cyprus",
+            "population": "1,170,125",
+            "desc": "",
+            "waste": 552884.0625,
+            "rate": 19716.60625
+        },
+        {
+            "id": 97,
+            "code": "CU",
+            "name": "Cuba",
+            "population": "11,239,224",
+            "desc": "",
+            "waste": 5310533.34,
+            "rate": 189380.92440000002
+        },
+        {
+            "id": 98,
+            "code": "CR",
+            "name": "Costa Rica",
+            "population": "4,857,274",
+            "desc": "",
+            "waste": 2295061.965,
+            "rate": 81845.0669
+        },
+        {
+            "id": 99,
+            "code": "CO",
+            "name": "Colombia",
+            "population": "49,587,941",
+            "desc": "",
+            "waste": 23430302.1225,
+            "rate": 835556.80585
+        },
+        {
+            "id": 100,
+            "code": "CG",
+            "name": "West Congo",
+            "population": "5,125,821",
+            "desc": "",
+            "waste": 4843900.845,
+            "rate": 172740.1677
+        },
+        {
+            "id": 101,
+            "code": "CD",
+            "name": " East Congo",
+            "population": "78,736,153",
+            "desc": "",
+            "waste": 74405664.585,
+            "rate": 2653408.3561
+        },
+        {
+            "id": 102,
+            "code": "CM",
+            "name": "Cameroon",
+            "population": "23,439,189",
+            "desc": "",
+            "waste": 11075016.8025,
+            "rate": 394950.33465000003
+        },
+        {
+            "id": 103,
+            "code": "CI",
+            "name": "Ivory Coast",
+            "population": "23,740,424",
+            "desc": "",
+            "waste": 22434700.68,
+            "rate": 800052.2888
+        },
+        {
+            "id": 104,
+            "code": "CN",
+            "name": "China",
+            "population": "1,403,500,365",
+            "desc": "",
+            "waste": 2652615689.85,
+            "rate": 94595924.601
+        },
+        {
+            "id": 105,
+            "code": "CL",
+            "name": "Chile",
+            "population": "17,574,003",
+            "desc": "",
+            "waste": 8303716.4174999995,
+            "rate": 296121.95055
+        },
+        {
+            "id": 106,
+            "code": "CH",
+            "name": "Switzerland",
+            "population": "8,401,120",
+            "desc": "",
+            "waste": 3969529.1999999997,
+            "rate": 141558.872
+        },
+        {
+            "id": 107,
+            "code": "CA",
+            "name": "Canada",
+            "population": "35,151,728",
+            "desc": "",
+            "waste": 3321838.296,
+            "rate": 118461.32336000001
+        },
+        {
+            "id": 108,
+            "code": "CF",
+            "name": "Central African Republic",
+            "population": "4,594,621",
+            "desc": "",
+            "waste": 2170958.4225,
+            "rate": 77419.36385000001
+        },
+        {
+            "id": 109,
+            "code": "BW",
+            "name": "Botswana",
+            "population": "2,250,260",
+            "desc": "",
+            "waste": 1063247.8499999999,
+            "rate": 37916.881
+        },
+        {
+            "id": 110,
+            "code": "BT",
+            "name": "Bhutan",
+            "population": "797,765",
+            "desc": "",
+            "waste": 376943.96249999997,
+            "rate": 13442.340250000001
+        },
+        {
+            "id": 111,
+            "code": "BN",
+            "name": "Brunei",
+            "population": "417,200",
+            "desc": "",
+            "waste": 197127,
+            "rate": 7029.820000000001
+        },
+        {
+            "id": 112,
+            "code": "BR",
+            "name": "Brazil",
+            "population": "208,733,102",
+            "desc": "",
+            "waste": 197252781.39,
+            "rate": 7034305.5374
+        },
+        {
+            "id": 113,
+            "code": "BO",
+            "name": "Bolivia",
+            "population": "11,217,864",
+            "desc": "",
+            "waste": 5300440.739999999,
+            "rate": 189021.0084
+        },
+        {
+            "id": 114,
+            "code": "BZ",
+            "name": "Belize",
+            "population": "387,879",
+            "desc": "",
+            "waste": 183272.82749999998,
+            "rate": 6535.76115
+        },
+        {
+            "id": 115,
+            "code": "BY",
+            "name": "Belarus",
+            "population": "9,498,700",
+            "desc": "",
+            "waste": 4488135.75,
+            "rate": 160053.095
+        },
+        {
+            "id": 116,
+            "code": "BA",
+            "name": "Bosnia and Herzegovina",
+            "population": "3,531,159",
+            "desc": "",
+            "waste": 1668472.6275,
+            "rate": 59500.02915
+        },
+        {
+            "id": 117,
+            "code": "BS",
+            "name": "The Bahamas",
+            "population": "391,232",
+            "desc": "",
+            "waste": 184857.12,
+            "rate": 6592.2592
+        },
+        {
+            "id": 118,
+            "code": "AZ",
+            "name": "Azerbaijan",
+            "population": "9,867,250",
+            "desc": "",
+            "waste": 4662275.625,
+            "rate": 166263.1625
+        },
+        {
+            "id": 119,
+            "code": "AT",
+            "name": "Austria",
+            "population": "8,823,054",
+            "desc": "",
+            "waste": 4168893.0149999997,
+            "rate": 148668.45990000002
+        },
+        {
+            "id": 120,
+            "code": "AU",
+            "name": "Australia",
+            "population": "24,872,800",
+            "desc": "",
+            "waste": 11752398,
+            "rate": 419106.68
+        },
+        {
+            "id": 121,
+            "code": "AM",
+            "name": "Armenia",
+            "population": "2,924,816",
+            "desc": "",
+            "waste": 1381975.5599999998,
+            "rate": 49283.149600000004
+        },
+        {
+            "id": 122,
+            "code": "AR",
+            "name": "Argentina",
+            "population": "43,847,430",
+            "desc": "",
+            "waste": 20717910.675,
+            "rate": 738829.1955
+        },
+        {
+            "id": 123,
+            "code": "AE",
+            "name": "United Arab Emirates",
+            "population": "9,269,612",
+            "desc": "",
+            "waste": 4379891.67,
+            "rate": 156192.9622
+        },
+        {
+            "id": 124,
+            "code": "AL",
+            "name": "Albania",
+            "population": "2,876,591",
+            "desc": "",
+            "waste": 1359189.2474999998,
+            "rate": 48470.55835
+        },
+        {
+            "id": 125,
+            "code": "AO",
+            "name": "Angola",
+            "population": "25,789,024",
+            "desc": "",
+            "waste": 12185313.84,
+            "rate": 434545.0544
+        },
+        {
+            "id": 126,
+            "code": "AF",
+            "name": "Afghanistan",
+            "population": "34,656,032",
+            "desc": "",
+            "waste": 32749950.24,
+            "rate": 1167908.2784
+        },
+        {
+            "id": 127,
+            "code": "BG",
+            "name": "Bulgaria",
+            "population": "7,101,859",
+            "desc": "",
+            "waste": 3355628.3775,
+            "rate": 119666.32415
+        },
+        {
+            "id": 128,
+            "code": "BD",
+            "name": "Bangladesh",
+            "population": "162,951,560",
+            "desc": "",
+            "waste": 153989224.2,
+            "rate": 5491467.572
+        },
+        {
+            "id": 129,
+            "code": "BF",
+            "name": "Burkina Faso",
+            "population": "20,107,509",
+            "desc": "",
+            "waste": 9500798.0025,
+            "rate": 338811.52665
+        },
+        {
+            "id": 130,
+            "code": "BJ",
+            "name": "Benin",
+            "population": "10,872,298",
+            "desc": "",
+            "waste": 5137160.805,
+            "rate": 183198.2213
+        },
+        {
+            "id": 131,
+            "code": "BE",
+            "name": "Belgium",
+            "population": "11,358,357",
+            "desc": "",
+            "waste": 5366823.6825,
+            "rate": 191388.31545
+        },
+        {
+            "id": 132,
+            "code": "BI",
+            "name": "Burundi",
+            "population": "10,524,117",
+            "desc": "",
+            "waste": 4972645.2825,
+            "rate": 177331.37145
+        },
+        {
+            "id": 133,
+            "code": "ZW",
+            "name": "Zimbabwe",
+            "population": "16,150,362",
+            "desc": "",
+            "waste": 7631046.045,
+            "rate": 272133.5997
+        },
+        {
+            "id": 134,
+            "code": "ZM",
+            "name": "Zambia",
+            "population": "16,591,390",
+            "desc": "",
+            "waste": 15678863.549999999,
+            "rate": 559129.843
+        },
+        {
+            "id": 135,
+            "code": "ZA",
+            "name": "South Africa",
+            "population": "54,956,900",
+            "desc": "",
+            "waste": 51934270.5,
+            "rate": 1852047.53
+        },
+        {
+            "id": 136,
+            "code": "YE",
+            "name": "Yemen",
+            "population": "27,584,213",
+            "desc": "",
+            "waste": 26067081.285,
+            "rate": 929587.9781000001
+        },
+        {
+            "id": 137,
+            "code": "VU",
+            "name": "Vanuatu",
+            "population": "270,402",
+            "desc": "",
+            "waste": 127764.94499999999,
+            "rate": 4556.2737
+        },
+        {
+            "id": 138,
+            "code": "VN",
+            "name": "Vietnam",
+            "population": "94,569,072",
+            "desc": "",
+            "waste": 134051659.55999999,
+            "rate": 4780466.5896000005
+        },
+        {
+            "id": 139,
+            "code": "VE",
+            "name": "Venezuela",
+            "population": "31,568,179",
+            "desc": "",
+            "waste": 14915964.577499999,
+            "rate": 531923.81615
+        },
+        {
+            "id": 140,
+            "code": "UZ",
+            "name": "Uzbekistan",
+            "population": "32,979,000",
+            "desc": "",
+            "waste": 15582577.5,
+            "rate": 555696.15
+        },
+        {
+            "id": 141,
+            "code": "US",
+            "name": "United States",
+            "population": "325,719,178",
+            "desc": "",
+            "waste": 307804623.21,
+            "rate": 10976736.2986
+        },
+        {
+            "id": 142,
+            "code": "UY",
+            "name": "Uruguay",
+            "population": "3,444,006",
+            "desc": "",
+            "waste": 1627292.835,
+            "rate": 58031.5011
+        },
+        {
+            "id": 143,
+            "code": "UA",
+            "name": "Ukraine",
+            "population": "42,418,235",
+            "desc": "",
+            "waste": 20042616.037499998,
+            "rate": 714747.25975
+        },
+        {
+            "id": 144,
+            "code": "UG",
+            "name": "Uganda",
+            "population": "41,487,965",
+            "desc": "",
+            "waste": 3920612.6925,
+            "rate": 139814.44205
+        },
+        {
+            "id": 145,
+            "code": "TZ",
+            "name": "Tanzania",
+            "population": "55,572,201",
+            "desc": "",
+            "waste": 5251572.9945,
+            "rate": 187278.31737000003
+        },
+        {
+            "id": 146,
+            "code": "TW",
+            "name": "Taiwan",
+            "population": "23,550,077",
+            "desc": "",
+            "waste": 11127411.3825,
+            "rate": 396818.79745
+        },
+        {
+            "id": 147,
+            "code": "TR",
+            "name": "Turkey",
+            "population": "80,810,525",
+            "desc": "",
+            "waste": 76365946.125,
+            "rate": 2723314.6925
+        },
+        {
+            "id": 148,
+            "code": "TN",
+            "name": "Tunisia",
+            "population": "11,304,482",
+            "desc": "",
+            "waste": 5341367.745,
+            "rate": 190480.5217
+        },
+        {
+            "id": 149,
+            "code": "TT",
+            "name": "Trinidad and Tobago",
+            "population": "1,353,895",
+            "desc": "",
+            "waste": 127943.0775,
+            "rate": 4562.62615
+        },
+        {
+            "id": 150,
+            "code": "TL",
+            "name": "East Timor",
+            "population": "1,167,242",
+            "desc": "",
+            "waste": 110304.369,
+            "rate": 3933.6055400000005
+        },
+        {
+            "id": 151,
+            "code": "TM",
+            "name": "Turkmenistan",
+            "population": "5,662,544",
+            "desc": "",
+            "waste": 2675552.04,
+            "rate": 95413.8664
+        },
+        {
+            "id": 152,
+            "code": "TJ",
+            "name": "Tajikistan",
+            "population": "8,734,951",
+            "desc": "",
+            "waste": 825452.8695,
+            "rate": 29436.784870000003
+        },
+        {
+            "id": 153,
+            "code": "TH",
+            "name": "Thailand",
+            "population": "68,863,514",
+            "desc": "",
+            "waste": 97614031.095,
+            "rate": 3481050.6327
+        },
+        {
+            "id": 154,
+            "code": "TG",
+            "name": "Togo",
+            "population": "7,965,055",
+            "desc": "",
+            "waste": 752697.6975,
+            "rate": 26842.23535
+        },
+        {
+            "id": 155,
+            "code": "TD",
+            "name": "Chad",
+            "population": "13,670,084",
+            "desc": "",
+            "waste": 1291822.938,
+            "rate": 46068.18308
+        },
+        {
+            "id": 156,
+            "code": "SYR",
+            "name": "Syria",
+            "population": "38,422,346",
+            "desc": "",
+            "waste": 18154558.485,
+            "rate": 647416.5301
+        },
+        {
+            "id": 157,
+            "code": "SZ",
+            "name": "Swaziland",
+            "population": "1,343,098",
+            "desc": "",
+            "waste": 126922.76100000001,
+            "rate": 4526.2402600000005
+        },
+        {
+            "id": 158,
+            "code": "SE",
+            "name": "Sweden",
+            "population": "10,120,242",
+            "desc": "",
+            "waste": 956362.8690000001,
+            "rate": 34105.215540000005
+        },
+        {
+            "id": 159,
+            "code": "SI",
+            "name": "Slovenia",
+            "population": "2,065,895",
+            "desc": "",
+            "waste": 976135.3875,
+            "rate": 34810.33075
+        },
+        {
+            "id": 160,
+            "code": "SK",
+            "name": "Slovakia",
+            "population": "5,435,343",
+            "desc": "",
+            "waste": 513639.9135,
+            "rate": 18317.105910000002
+        },
+        {
+            "id": 161,
+            "code": "SR",
+            "name": "Suriname",
+            "population": "558,368",
+            "desc": "",
+            "waste": 263828.88,
+            "rate": 9408.5008
+        },
+        {
+            "id": 162,
+            "code": "RS",
+            "name": "Serbia",
+            "population": "7,058,322",
+            "desc": "",
+            "waste": 667011.429,
+            "rate": 23786.545140000002
+        },
+        {
+            "id": 163,
+            "code": "SO",
+            "name": "Somalia",
+            "population": "14,317,996",
+            "desc": "",
+            "waste": 6765253.109999999,
+            "rate": 241258.23260000002
+        },
+        {
+            "id": 164,
+            "code": "",
+            "name": "",
+            "population": "",
+            "desc": "",
+            "waste": 0,
+            "rate": 0
+        },
+        {
+            "id": 165,
+            "code": "SV",
+            "name": "El Salvador",
+            "population": "6,344,722",
+            "desc": "",
+            "waste": 599576.229,
+            "rate": 21381.713140000003
+        },
+        {
+            "id": 166,
+            "code": "SL",
+            "name": "Slovenia",
+            "population": "2,065,895",
+            "desc": "",
+            "waste": 976135.3875,
+            "rate": 34810.33075
+        },
+        {
+            "id": 167,
+            "code": "SN",
+            "name": "Senegal",
+            "population": "15,411,614",
+            "desc": "",
+            "waste": 1456397.523,
+            "rate": 51937.139180000006
+        },
+        {
+            "id": 168,
+            "code": "SS",
+            "name": "South Sudan",
+            "population": "12,230,730",
+            "desc": "",
+            "waste": 1155803.9849999999,
+            "rate": 41217.5601
+        },
+        {
+            "id": 169,
+            "code": "SD",
+            "name": "Sudan",
+            "population": "39,578,828",
+            "desc": "",
+            "waste": 3740199.2460000003,
+            "rate": 133380.65036
+        },
+        {
+            "id": 170,
+            "code": "SA",
+            "name": "Saudi Arabia",
+            "population": "33,000,000",
+            "desc": "",
+            "waste": 15592500,
+            "rate": 556050
+        },
+        {
+            "id": 171,
+            "code": "SH",
+            "name": "Saint Helena",
+            "population": "5,633",
+            "desc": "",
+            "waste": 532.3185000000001,
+            "rate": 18.983210000000003
+        },
+        {
+            "id": 172,
+            "code": "RW",
+            "name": "Rwanda",
+            "population": "11,262,564",
+            "desc": "",
+            "waste": 5321561.489999999,
+            "rate": 189774.2034
+        },
+        {
+            "id": 173,
+            "code": "RU",
+            "name": "Russia",
+            "population": "144,526,636",
+            "desc": "",
+            "waste": 68288835.50999999,
+            "rate": 2435273.8166
+        }
+    ]
+}

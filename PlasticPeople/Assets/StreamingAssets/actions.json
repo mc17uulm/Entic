@@ -1,0 +1,655 @@
+[
+    {
+      "id": 1,
+      "name": "Deposit on one-way plastic bottles",
+      "development": 10,
+      "category": "politics",
+      "price": 25000000,
+      "points": 4,
+      "descr": "Implements a deposit on one-way plastic bottles to reduce new plastic waste",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 2500000
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 2,
+      "name": "Ban one-way plastic bottles",
+      "development": 24,
+      "category": "politics",
+      "price": 85000000,
+      "points": 9,
+      "descr": "A ban of all one-way plastic bottles is an effective way to reduce new plastic waste. But many companies benefit from these bottles. Expect a huge resits in politics!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurence": "once",
+          "factor": 17000000
+        },
+        {
+          "type": "reduce",
+          "on": "capital",
+          "occurence": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": [ 1, 4 ]
+    },
+    {
+      "id": 3,
+      "name": "Ban microplastic in drugstore items",
+      "development": 14,
+      "category": "politics",
+      "price": 10000000,
+      "points": 2,
+      "descr": "Microplastic in different articles are a massiv problem for the enviroment and the health. Some scientist lead back some sorts of cancer on micro plastics!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 2500000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 4,
+      "name": "Tax on plastic wrapping",
+      "development": 10,
+      "category": "politics",
+      "price": 35000000,
+      "points": 2,
+      "descr": "Many products are wrapped with plastic. But there are alternatives and the plastic wrapping is not allways necessary. So tax them!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 17000000
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 5,
+      "name": "Ban on plastic bags",
+      "development": 48,
+      "category": "politics",
+      "price": 65000000,
+      "points": 8,
+      "descr": "Plastic bags are used every day and mostly only once. But there are better alternatives like hemp or jute!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 8500000
+        }
+      ],
+      "needs": [ 4 ]
+    },
+    {
+      "id": 6,
+      "name": "Law for recycling of plastic waste",
+      "development": 54,
+      "category": "politics",
+      "price": 57000000,
+      "points": 7,
+      "descr": "Plastic waste is a valuable ressource. You can recycle new and old plastic waste",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 4000000
+        },
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 2500000
+        }
+      ],
+      "needs": [ 30 ]
+    },
+    {
+      "id": 7,
+      "name": "Ban on plastic wrapping",
+      "development": 30,
+      "category": "politics",
+      "price": 37000000,
+      "points": 8,
+      "descr": "A tax on plastic wrapping is not efficient enough. But don't forget: with a ban you lose the taxes!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 36000000
+        },
+        {
+          "type": "reduce",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": [ 4, 1 ]
+    },
+    {
+      "id": 8,
+      "name": "1. UN-Cogress: Prevent plastic waste",
+      "development": 10,
+      "category": "politics",
+      "price": 5000000,
+      "points": 4,
+      "descr": "Bring together the leaders of the world to discuss about plastic waste. It may not reduce some plastic. But it will increase your influence on politicians and will bring you money!",
+      "img": "",
+      "effects": [
+        {
+          "type": "add",
+          "on": "lobby",
+          "occurance": "unlimited",
+          "factor": 1
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 500000
+        }
+      ],
+      "needs": []
+    },
+    {
+      "id": 9,
+      "name": "2. UN-Cogress: Clean the oceans",
+      "development": 10,
+      "category": "politics",
+      "price": 8000000,
+      "points": 6,
+      "descr": "Bring the topic back on the minds of politicians and the society! They need an impetus!",
+      "img": "",
+      "effects": [
+        {
+          "type": "add",
+          "on": "lobby",
+          "occurance": "unlimited",
+          "factor": 1
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 750000
+        }
+      ],
+      "needs": [ 1, 8 ]
+    },
+    {
+      "id": 10,
+      "name": "3. UN-Cogress: Develop solutions",
+      "development": 10,
+      "category": "politics",
+      "price": 10000000,
+      "points": 18,
+      "descr": "We need better ideas to solve the problems of tommorow. Collect money and influence to support scientists!",
+      "img": "",
+      "effects": [
+        {
+          "type": "add",
+          "on": "lobby",
+          "occurance": "unlimited",
+          "factor": 2
+        },
+        {
+          "type": "add",
+          "on": "capital",
+          "occurance": "unlimited",
+          "factor": 1000000
+        }
+      ],
+      "needs": [ 1, 8, 9 ]
+    },
+	{
+      "id": 11,
+      "name": "Regulate jettison",
+      "development": 5,
+      "category": "politics",
+      "price": 500000,
+      "points": 2,
+      "descr": "Waste generated on ships gets thrown into the ocean. Establish regulations regarding ship waste to counteract the littering of the oceans!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 10000000
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 12,
+      "name": "Ban coffee capsules",
+      "development": 6,
+      "category": "politics",
+      "price": 10000000,
+      "points": 3,
+      "descr": "Coffee capsules cause a lot of unnecessary trash. Ban them!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 15000000
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 13,
+      "name": "Companies have to pay for the disposal costs of their packaging",
+      "development": 5,
+      "category": "politics",
+      "price": 7500000,
+      "points": 5,
+      "descr": "Make companies pay for littering our planet! On the one hand you get more and more money to save our world, on the other hand... it could be possible that they use less plastic packaging! Win-win-situation!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 17000000
+        },
+		{
+		  "type": "add",
+		  "on": "capital",
+		  "occurance":"unlimited",
+		  "factor":2000000
+      }],
+      "needs": []
+    },
+	{
+      "id": 14,
+      "name": "Develop plastic eating bacteria",
+      "development": 20,
+      "category": "science",
+      "price": 10000000,
+      "points": 2,
+      "descr": "Spend a lot of money and get your reward: Your all purpose weapon, a gigantic plastic waste eating bacteria. Problem solved?!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 1
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 15,
+      "name": "Let plastic degrade faster",
+      "development": 12,
+      "category": "science",
+      "price": 7500000,
+      "points": 2,
+      "descr": "",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "",
+          "factor": 1
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 16,
+      "name": "Research in non-plastic materials",
+      "development": 10,
+      "category": "science",
+      "price": 5000000,
+      "points": 4,
+      "descr": "Research in other materials to supplant plastic from the world.",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "",
+          "factor": 1
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 17,
+      "name": "Ocean Cleanup Project",
+      "development": 10,
+      "category": "science",
+      "price": 19000000,
+      "points": 4,
+      "descr": "The Ocean Cleanup is a foundation that develops technologies to extract plastic pollution from the oceans and prevent more plastic debris from entering ocean waters. Support them and clean the oceans!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 1
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 18,
+      "name": "Seekuh",
+      "development": 10,
+      "category": "science",
+      "price": 500000,
+      "points": 4,
+      "descr": "The Seekuh is the wolrds first certified waste collection vessel and collects coastal garbage. Support and help to collect even more!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 1
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 19,
+      "name": "Seabin",
+      "development": 10,
+      "category": "science",
+      "price": 600000,
+      "points": 4,
+      "descr": "The seabin is a floating rubbish bin that is located in the water. Through up and down motions it collects garbage from the sea through a catch bag. Sounds good, doesnt it?",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 1
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 20,
+      "name": "WWF/Greenpeace",
+      "development": 5,
+      "category": "society",
+      "price": 1000000,
+      "points": 4,
+      "descr": "",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 1
+        }
+      ],
+      "needs": []
+    },
+	{
+      "id": 21,
+      "name": "Radio commercials",
+      "development": 5,
+      "category": "society",
+      "price": 1000000,
+      "points": 1,
+      "descr": "Show the people the littering of our planet and cause an awareness for using less plastic and recycling. First step: Radio commercial!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 30000
+        },
+		{
+		  "type": "reduce",
+		  "on": "production",
+		  "occurance": "unlimited",
+		  "factor": 60000
+      }],
+      "needs": []
+    },
+	{
+      "id": 22,
+      "name": "Poster commercials",
+      "development": 10,
+      "category": "society",
+      "price": 1500000,
+      "points": 2,
+      "descr": "The radio commercial was not enough? You can have posters and billboards designed for your request and get more people to live their life more consciously.",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 50000
+        },
+		{
+		  "type": "reduce",
+		  "on": "amount",
+		  "occurance": "unlimited",
+		  "factor": 80000
+      }],
+      "needs": [ 21 ]
+    },
+	{
+      "id": 23,
+      "name": "TV commercials",
+      "development": 15,
+      "category": "society",
+      "price": 2000000,
+      "points": 3,
+      "descr": "You don't think that radio commercials and billboards are enough? There's only one option left: TV commercials!",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "unlimited",
+          "factor": 100000
+        },
+		{
+		  "type": "reduce",
+		  "on": "amount",
+		  "occurance": "unlimited",
+		  "factor": 150000
+      }],
+      "needs": [ 21,22 ]
+    },
+	{
+      "id": 24,
+      "name": "Environment day in school",
+      "development": 5,
+      "category": "society",
+      "price": 1000000,
+      "points": 4,
+      "descr": "Our kids are our future! Hold an environment day in schools worldwide to show them how bad plastic is for our environment and to get them to do something about that ",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "once",
+          "factor": 500000
+        },
+		{
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 500000
+        }
+		
+      ],
+      "needs": []
+    },
+	{
+      "id": 25,
+      "name": "Campaign 1: No plastic cups",
+      "development": 5,
+      "category": "society",
+      "price": 1000000,
+      "points": 2,
+      "descr": "",
+      "img": "",
+      "effects": [
+		{
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 1200000
+        }
+		
+      ],
+      "needs": []
+    },
+	{
+      "id": 26,
+      "name": "Campaign 2: Clean your hood",
+      "development": 3,
+      "category": "society",
+      "price": 1000000,
+      "points": 1,
+      "descr": "",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "once",
+          "factor": 1000000
+        }
+		
+      ],
+      "needs": []
+    },
+	{
+      "id": 27,
+      "name": "'Free of packaging' - stores",
+      "development": 3,
+      "category": "society",
+      "price": 10000000,
+      "points": 1,
+      "descr": "Support stores that are free of packaging and get other stores to become packaging free, e.g. through offering bonuses.",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "unlimited",
+          "factor": 4000000
+        }
+		
+      ],
+      "needs": []
+    },
+	{
+      "id": 28,
+      "name": "International Coastal Cleanup",
+      "development": 2,
+      "category": "society",
+      "price": 2000000,
+      "points": 1,
+      "descr": "International Coastal Cleanup is a movement regarding collecting the trash littering the coastline. Make the Cleanup grow, so that more and more people help collecting. ",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "amount",
+          "occurance": "once",
+          "factor": 3000000
+        }
+		
+      ],
+      "needs": []
+    },
+	{
+      "id": 29,
+      "name": "Ban non-rechargeable batteries",
+      "development": 3,
+      "category": "politics",
+      "price": 1000000,
+      "points": 1,
+      "descr": " Replace batteries by battery packs and avoid unnecessary trash caused by one-way batteries. After that change, nobody needs them anymore! ",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "once",
+          "factor": 8500000
+        }
+		
+      ],
+      "needs": []
+    },
+	{
+      "id": 30,
+      "name": "Recycling worldwide",
+      "development": 3,
+      "category": "politics",
+      "price": 1000000,
+      "points": 1,
+      "descr": "Get the people to recycle everything and everywhere in the world. An important step in the right direction, don't you think?",
+      "img": "",
+      "effects": [
+        {
+          "type": "reduce",
+          "on": "production",
+          "occurance": "unlimited",
+          "factor": 35000000
+        }
+		
+      ],
+      "needs": []
+    }
+	
+	
+  ]
