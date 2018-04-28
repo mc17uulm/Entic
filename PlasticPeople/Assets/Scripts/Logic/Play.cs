@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Linq;
 
 namespace Logic
 {
@@ -15,6 +16,7 @@ namespace Logic
         private double amount;
         private double production;
         private LinkedList<Country> countries;
+        private LinkedList<RandomEvent> events;
         private LinkedList<Action> actions;
         private Capital capital;
         private Lobby lobby;
@@ -29,9 +31,14 @@ namespace Logic
         public static Capital endCapital;
         public static DateTime endTime;
 
-        public Play(LinkedList<Country> countries, Newsticker news)
+        private System.Random random;
+        private double extra;
+        
+
+        public Play(LinkedList<Country> countries, LinkedList<RandomEvent> events, Newsticker news)
         {
             this.countries = countries;
+            this.events = events;
             this.news = news;
             this.actions = new LinkedList<Action>();
             this.capital = new Capital(30000000, 2500000);
@@ -39,11 +46,14 @@ namespace Logic
             this.panel = FindObjectOfType<InfoPanel>();
             this.tree = FindObjectOfType<Skilltree>();
             this.display = FindObjectOfType<CountryDisplay>();
-            this.prog = FindObjectOfType<progresstest>();
             this.population = 0;
+            this.prog = FindObjectOfType<progresstest>();
+
+            this.random = new System.Random();
+            this.extra = 0;
         }
 
-        public void Tick()
+        public void Tick(DateTime print)
         {
             //Debug.Log("Tick!");
 
@@ -60,58 +70,74 @@ namespace Logic
                 }
             }
 
+            if (this.random.Next(1, 712) == 365)
+            {
+                Debug.Log("Random Event");
+                int f = this.GetRandomEvent(this.random.Next(1, 55));
+                LinkedList<RandomEvent> selected = new LinkedList<RandomEvent>();
+                foreach (RandomEvent ev in this.events)
+                {
+                    if (ev.GetFactor() == f)
+                    {
+                        selected.AddLast(ev);
+                    }
+                }
+
+                this.ExecuteRandomEvent(selected.ToArray()[this.random.Next(0, selected.Count)]);
+            }
             this.prog.Tick();
 
-            double newAmount = 0.0f;
-            double newProduction = 0.0f;
-
-            int now = 0;
-            foreach (Country country in this.countries)
+            if (print.Day == 1)
             {
-                country.Tick();
-                newAmount += country.GetAmount();
-                newProduction += country.GetProduction();
-                now += country.GetPopulation();
+                double newAmount = 0.0f;
+                double newProduction = 0.0f;
+
+                int now = 0;
+                foreach (Country country in this.countries)
+                {
+                    country.Tick();
+                    newAmount += country.GetAmount();
+                    newProduction += country.GetProduction();
+                    now += country.GetPopulation();
+                }
+                this.population = now;
+
+                if (newAmount < this.amount)
+                {
+                    // weniger Plastik
+                }
+                else if (newAmount == this.amount)
+                {
+                    // gleich viel Plastik
+                }
+                else
+                {
+                    // mehr Plastik
+                }
+
+                this.capital.Tick();
+                this.lobby.Tick();
+
+                this.panel.changeWaste(newAmount, newProduction);
+                this.panel.changeCapital(this.capital.GetAmount(), this.capital.GetRate());
+
+                if (this.display.IsActive())
+                {
+                    this.display.ShowClickedCountry(this.display.GetLastClicked());
+                }
+
+                this.amount = newAmount + this.extra;
+                this.production = newProduction;
+
+                if ((this.amount > 20000000000) || (this.production > 1000000000))
+                {
+                    Lose();
+                }
+                else if ((this.amount < 7000000) && (this.production < 100000))
+                {
+                    Win();
+                }
             }
-            this.population = now;
-
-            if (newAmount < this.amount)
-            {
-                // weniger Plastik
-            }
-            else if (newAmount == this.amount)
-            {
-                // gleich viel Plastik
-            }
-            else
-            {
-                // mehr Plastik
-            }
-
-            this.capital.Tick();
-            this.lobby.Tick();
-
-            this.panel.changeWaste(newAmount, newProduction);
-            this.panel.changeCapital(this.capital.GetAmount(), this.capital.GetRate());
-
-            if (this.display.IsActive())
-            {
-                this.display.ShowClickedCountry(this.display.GetLastClicked());
-            }
-
-            this.amount = newAmount;
-            this.production = newProduction;
-
-            if ((this.amount > 20000000000) || (this.production > 1000000000))
-            {
-                Lose();
-            }
-            else if ((this.amount < 7000000) && (this.production < 100000))
-            {
-                Win();
-            }
-
-
 
         }
 
@@ -168,7 +194,7 @@ namespace Logic
                     {
                         if (a.GetId() == action.GetId())
                         {
-                            a.Activate();
+                            a.Develope();
                             this.news.AddNews(new News("Action in development", "Action \"" + action.GetName() + "\" is in development", NewsType.Action));
                         }
                     }
@@ -218,6 +244,24 @@ namespace Logic
             this.tree.Pause();
         }
 
+        public void ExecuteRandomEvent(RandomEvent e)
+        {
+            Debug.Log("Random Event: " + e.GetMsg());
+            string o = "";
+            switch (e.GetChange())
+            {
+                case Value.Amount:
+                    this.extra += e.GetAmount();
+                    o = "+ " + e.GetAmount() + " tons of plastic";
+                    break;
+                case Value.Capital:
+                    this.capital.Change(e.GetAmount());
+                    o = "+ " + e.GetAmount() + " €";
+                    break;
+            }
+            news.AddNews(new News("RandomEvent", e.GetMsg() + ": " + o, NewsType.Emergency));
+        }
+
         public void ExecuteAction(Action action)
         {
             LinkedList<Effect> effects = action.GetEffects();
@@ -225,7 +269,7 @@ namespace Logic
             {
                 this.ExecuteEffect(effect);
             }
-            action.Executed();
+            action.ChangeState(ActionClick.State.Executed);
         }
 
         public void ExecuteEffect(Effect effect)
@@ -290,6 +334,50 @@ namespace Logic
         public DateTime GetEndTime()
         {
             return endTime;
+        }
+
+        public int GetRandomEvent(int f)
+        {
+            if (f <= 10)
+            {
+                return 1;
+            }
+            else if ((f > 10) && (f <= 19))
+            {
+                return 2;
+            }
+            else if ((f > 19) && (f <= 27))
+            {
+                return 3;
+            }
+            else if ((f > 27) && (f <= 34))
+            {
+                return 4;
+            }
+            else if ((f > 34) && (f <= 40))
+            {
+                return 5;
+            }
+            else if ((f > 40) && (f <= 45))
+            {
+                return 6;
+            }
+            else if ((f > 45) && (f <= 49))
+            {
+                return 7;
+            }
+            else if ((f > 49) && (f <= 52))
+            {
+                return 8;
+            }
+            else if ((f > 52) && (f <= 54))
+            {
+                return 9;
+            }
+            else
+            {
+                return 10;
+            }
         }
 
     }

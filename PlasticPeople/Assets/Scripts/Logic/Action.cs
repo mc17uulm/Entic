@@ -31,8 +31,7 @@ namespace Logic
 
         private ActionClick.State state;
         private int start;
-        private bool activated;
-        private bool executed;
+        private int days;
 
         public Action(int id, string name, int development, Category category, double price, int points, string descr, string img, LinkedList<Effect> effects, int[] needs)
         {
@@ -49,23 +48,32 @@ namespace Logic
 
             this.state = ActionClick.State.Deactivated;
             this.start = 0;
-            this.activated = false;
-            this.executed = false;
+            this.days = development * 30;
         }
 
-        public void Activate()
+        public ActionClick.State Activate()
         {
-            if (this.state != ActionClick.State.Developed)
+            if (this.state.Equals(ActionClick.State.Deactivated))
             {
-                this.activated = true;
+                this.state = ActionClick.State.Activated;
+            }
+
+            return this.state;
+        }
+
+        public ActionClick.State Develope()
+        {
+            if (this.state.Equals(ActionClick.State.Activated))
+            {
                 this.state = ActionClick.State.InDevelopement;
             }
-            
+
+            return this.state;
         }
 
         public void DevelopTick()
         {
-            if (start <= this.development)
+            if (this.start <= this.days)
             {
                 this.start += 1;
             }
@@ -159,7 +167,7 @@ namespace Logic
             Debug.Log("Unlocked: " + this.name + " with: " + o + " and needs.l: " + this.needs.Length);
             if (o && (this.state.Equals(ActionClick.State.Deactivated)))
             {
-                this.state = ActionClick.State.Clickable;
+                this.state = ActionClick.State.Activated;
             }
             return o;
         }
@@ -169,42 +177,14 @@ namespace Logic
             return (this.start != 0);
         }
 
-        public bool IsActivated()
-        {
-            return this.activated;
-        }
-
         public bool IsFinished()
         {
             return (this.start == this.development);
         }
 
-        public void Executed()
-        {
-            this.executed = true;
-            this.state = ActionClick.State.Developed;
-            LinkedList<Action> actions = Game.play.GetActions();
-
-            foreach (int i in this.needs)
-            {
-                foreach (Action action in actions)
-                {
-                    if (action.GetId() == i)
-                    {
-                        action.ChangeState(ActionClick.State.Clickable);
-                    }
-                }
-            }
-        }
-
         public void ChangeState(ActionClick.State state)
         {
             this.state = state;
-        }
-
-        public bool IsExecuted()
-        {
-            return this.executed;
         }
 
         public string PrintCosts()

@@ -55,20 +55,20 @@ public class Skilltree : MonoBehaviour
                     if (a.Unlocked(developed))
                     {
                         //if((a.GetPrice() <= Game.play.GetCapital().GetAmount()) && (a.GetPoints() <= Game.play.GetLobby().GetAmount())) { 
-                        if (a.GetState().Equals(ActionClick.State.Clickable))
+                        if (a.GetState().Equals(ActionClick.State.Activated))
                         {
                             im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-1");
-                            a.ChangeState(ActionClick.State.Clickable);
+                            a.ChangeState(ActionClick.State.Activated);
                         }
                         else if (a.GetState().Equals(ActionClick.State.InDevelopement))
                         {
                             im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-3");
                         }
-                        else if (a.GetState().Equals(ActionClick.State.Developed))
+                        else if ((a.GetState().Equals(ActionClick.State.Developed)) || (a.GetState().Equals(ActionClick.State.Executed)))
                         {
                             im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-2");
                         }
-                        if ((a.GetState().Equals(ActionClick.State.Clickable)) && ((a.GetPrice() > Game.play.GetCapital().GetAmount()) ||
+                        if ((a.GetState().Equals(ActionClick.State.Activated)) && ((a.GetPrice() > Game.play.GetCapital().GetAmount()) ||
                             (a.GetPoints() > Game.play.GetLobby().GetAmount())))
                         {
                             im.sprite = Resources.Load<Sprite>("Actions/" + a.GetId() + "-0");

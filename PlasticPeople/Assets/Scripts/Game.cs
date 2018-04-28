@@ -18,98 +18,83 @@ public class Game : MonoBehaviour {
     public static SpeedChange change;
     public static Newsticker news;
     public static ActionInfoBox infoBox;
-    public int i, y;
-    private bool c;
-    private Stopwatch watch;
     public static System.Random random;
+    public float elapsed;
 
 
 	// Use this for initialization
 	void Awake () {
-        watch = Stopwatch.StartNew();
-        //UnityEngine.Debug.Log("Loaded Game.cs");
-        string path = Application.streamingAssetsPath + "/countries.json";
-        string countries = File.ReadAllText(path);
+        // elapsed is a help var for timing each second
+        elapsed = 0f;
+
+        // countries.json contains all country information
+        string c = Application.streamingAssetsPath + "/countries.json";
+
+        string countries = File.ReadAllText(c);
+
         Country[] countryarr = JsonHelper.FromJson<Country>(countries);
+
+        // the json is parsed into a linked list
         LinkedList<Logic.Country> countrylist = new LinkedList<Logic.Country>();
+        LinkedList<RandomEvent> eventslist = ReadInEvents();
+
         float amount = 0, production = 0;
+
+        // Load game objects
         InfoPanel panel = FindObjectOfType<InfoPanel>();
         Newsticker news = FindObjectOfType<Newsticker>();
         infoBox = FindObjectOfType<ActionInfoBox>();
+        change = FindObjectOfType<SpeedChange>();
+
+        // with random we give each country a own influence factor (between 0 and 1)
         random = new System.Random();
 
+        // Get each country from the array, create a new Country object and save it in the linked list
         foreach (Country country in countryarr)
         {
             try
             {
-                countrylist.AddLast(new Logic.Country(
-                    Int32.Parse(country.id),
-                    country.code,
-                    country.name,
-                    Int32.Parse(country.population.Replace(",", "")),
-                    country.description,
-                    float.Parse(country.waste, CultureInfo.InvariantCulture.NumberFormat),
-                    country.rate,
-                    random
+                countrylist.AddLast(new Logic.Country(Int32.Parse(country.id), country.code, country.name, Int32.Parse(country.population.Replace(",", "")), country.description, float.Parse(country.waste, CultureInfo.InvariantCulture.NumberFormat), country.rate, random
                 ));
+
+                // get the starting values for amount and production of plastic
                 amount += float.Parse(country.waste, CultureInfo.InvariantCulture.NumberFormat);
                 production += country.rate;
             }
-            catch (FormatException e)
+            catch (FormatException err)
             {
-                UnityEngine.Debug.Log(e.Message);
+                UnityEngine.Debug.Log(err.Message);
             }
         }
-        play = new Play(countrylist, news);
+
+        // create new play object in which most of the game logic  is
+        play = new Play(countrylist, eventslist, news);
         play.SetActions(ReadInActions());
+
+        // DateTime objects to map real time to ingame time
         last = DateTime.Now;
         print = DateTime.Parse("2019-01-01 00:00:00");
-        change = FindObjectOfType<SpeedChange>();
-        i = 1;
-        y = 1;
+        
+        // add starting values to map
         panel.changeWaste(amount, production);
         panel.changeCapital(30000000, 2500000);
-        //change.yearBar.maxValue = DateTime.DaysInMonth(print.Year, print.Month);
         news.AddNews(new News("Start", "Producing this much of plastic waste will exterminate humans til 2070.", NewsType.Emergency));
-        c = false;
-        double now = watch.ElapsedMilliseconds;
-        //UnityEngine.Debug.Log("Load Awake: " + (now / 1000) + " seconds");
-        play.Tick();
+        
+        // initialize game with first play tick
+        play.Tick(print);
     }
 
     // Update is called once per frame
     void Update () {
-        if((change.factor != 0) && (!c) && (last.AddSeconds(1.0/7/ change.GetFactor()) <= DateTime.Now))
+        if(change.factor != 0)
         {
-            c = true;
-            int daysInMonth = DateTime.DaysInMonth(print.Year, print.Month);
-            change.changeDate(print.ToString("dd.MM.yyyy"));
-            //change.yearBar.maxValue = daysInMonth;
-            change.yearBar.value = y;
-            //UnityEngine.Debug.Log(y);
-            if ((i == daysInMonth) && (y == 365))
+            elapsed += Time.deltaTime;
+            float factor = 1f / 7 / change.factor;
+            if(elapsed >= factor)
             {
-                y = 1;
-                i = 1;
-                play.Tick();
+                elapsed = elapsed % factor;
+                Tick();
             }
-            else if ((i == daysInMonth) && (y != 365))
-            {
-                i = 1;
-                play.Tick();
-            }
-            else if ((i != daysInMonth) && (y >= 365))
-            {
-                y = 1;
-            }
-            else
-            {
-                y++;
-                i++;
-            }
-            print = print.AddDays(1);
-            last = DateTime.Now;
-            c = false;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -128,15 +113,31 @@ public class Game : MonoBehaviour {
         }
 	}
 
+    public void Tick()
+    {
+        print = print.AddDays(1);
+        change.changeDate(print.ToString("dd.MM.yyyy"));
+        change.yearBar.value = print.DayOfYear;
+        play.Tick(print);
+    }
+
     public LinkedList<Logic.Action> ReadInActions()
     {
         string json = File.ReadAllText(Application.streamingAssetsPath + "/actions.json");
         LinkedList<Logic.Action> o = Newtonsoft.Json.JsonConvert.DeserializeObject<LinkedList<Logic.Action>>(json);
 
-        foreach(Logic.Action a in o)
+        /**foreach(Logic.Action a in o)
         {
-            UnityEngine.Debug.Log(a.GetName() + ": " + a.IsActivated());
-        }
+            UnityEngine.Debug.Log(a.GetName() + ": " + a.GetState());
+        }*/
+
+        return o;
+    }
+
+    public LinkedList<RandomEvent> ReadInEvents()
+    {
+        string json = File.ReadAllText(Application.streamingAssetsPath + "/events.json");
+        LinkedList<RandomEvent> o = Newtonsoft.Json.JsonConvert.DeserializeObject<LinkedList<RandomEvent>>(json);
 
         return o;
     }
