@@ -20,7 +20,7 @@ namespace Logic
 
         void Awake()
         {
-            Debug.Log("Awake Newsticker");
+            
         }
 
         public void AddNews(News news)

@@ -7,8 +7,7 @@ public class Support : MonoBehaviour,  IPointerClickHandler{
 
     public void OnPointerClick(PointerEventData data)
     {
-        Debug.Log("Support clicked");
-        //Game.play.Support();
+        Game.play.Support();
     }
 
 	// Use this for initialization

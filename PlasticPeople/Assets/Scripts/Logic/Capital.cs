@@ -20,11 +20,11 @@ namespace Logic
             this.currency = "EUR";
         }
 
-        public void Tick()
+        public void Tick(int days)
         {
             double before = this.amount;
 
-            this.amount += this.rate;
+            this.amount += this.rate/days;
             this.change = 1 - (this.amount / before);
         }
 

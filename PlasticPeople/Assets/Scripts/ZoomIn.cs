@@ -11,7 +11,7 @@ public class ZoomIn : MonoBehaviour
     void Start()
     {
         factor = 1.05f;
-        Debug.Log("Scale: " + transform.localScale);
+        //Debug.Log("Scale: " + transform.localScale);
         scale = transform.localScale;
     }
 
@@ -26,7 +26,7 @@ public class ZoomIn : MonoBehaviour
                 transform.localScale = new Vector3(10.0f, 10.0f, 10.0f);
             }
             scale = transform.localScale;
-            Debug.Log("Scale Now: " + transform.localScale);
+            //Debug.Log("Scale Now: " + transform.localScale);
         }
 
         if (Input.GetKey(KeyCode.KeypadMinus))
@@ -37,7 +37,7 @@ public class ZoomIn : MonoBehaviour
                 transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
             scale = transform.localScale;
-            Debug.Log("Scale Now: " + transform.localScale);
+            //Debug.Log("Scale Now: " + transform.localScale);
         }
     }
 

@@ -11,20 +11,32 @@ namespace Logic
         private int amount;
         private int rate;
         private double change;
+        private int i;
 
         public Lobby(int amount, int rate)
         {
             this.amount = amount;
             this.rate = rate;
             this.change = 0.0;
+            this.i = 0;
         }
 
-        public void Tick()
+        public void Tick(int days)
         {
-            int before = this.amount;
-
-            this.amount += this.rate;
-            this.change = 1 - (this.amount / before);
+            if(this.i == days)
+            {
+                this.i = 0;
+                this.amount += this.rate / days;
+                int before = this.amount;
+                if (before == 0)
+                {
+                    this.change = 0;
+                }
+                else
+                {
+                    this.change = 1 - (this.amount / before);
+                }
+            }
         }
 
         public void ExecuteEffect(Effect effect, int factor)

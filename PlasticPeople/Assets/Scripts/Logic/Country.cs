@@ -39,22 +39,29 @@ namespace Logic
             this.density = (float)(1.0f - (this.amount / this.population / 2.9f));
         }
 
-        public void Tick()
+        public void Tick(int days)
         {
             this.productionBefore = this.production;
             this.amountBefore = this.amount;
-            double tmp = ((this.production / 12) * (1.0f - this.influence)*0.7);
-            //Debug.Log(this.name + ": " + tmp);
-            this.production = this.production + tmp;
-            this.population += (int) (this.population * 0.001f);
+
+            // Produktion wächst pro Jahr mit einer Rate von 0,04%
+            double today = (this.production / 12 / days) * (1.0f - this.influence);
+
+            this.production = this.production + (today * 0.05f);
+            
+            this.population += (int) (this.population * 0.001f /12/ days);
 
             float density = (float) (1.0f - (this.amount / this.population / 2.9f));
+            if(this.id == 93)
+            {
+                Debug.Log("German Density: " + density);
+            }
             
             Image img = GameObject.Find("/UI/Map/" + this.code).GetComponent<Image>();
             Color c = img.color;
             c.a = density;
             img.color = c;
-            this.amount = this.amount + (this.production/12);
+            this.amount = this.amount + today;
         }
 
         public void AddAction(Action action)

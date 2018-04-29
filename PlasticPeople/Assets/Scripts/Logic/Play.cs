@@ -55,7 +55,6 @@ namespace Logic
 
         public void Tick(DateTime print)
         {
-            //Debug.Log("Tick!");
 
             // Ab hier auskommentieren um Logik nicht laufen zu lassen
             foreach (Action action in this.actions)
@@ -70,7 +69,8 @@ namespace Logic
                 }
             }
 
-            if (this.random.Next(1, 712) == 365)
+            // Statistisch 1 random event in 3 Jahren
+            if (this.random.Next(1, 1077) == 365)
             {
                 Debug.Log("Random Event");
                 int f = this.GetRandomEvent(this.random.Next(1, 55));
@@ -87,15 +87,16 @@ namespace Logic
             }
             this.prog.Tick();
 
-            if (print.Day == 1)
-            {
+            //if (print.Day == 1)
+            //{
+                int days = DateTime.DaysInMonth(print.Year, print.Month);
                 double newAmount = 0.0f;
                 double newProduction = 0.0f;
 
                 int now = 0;
                 foreach (Country country in this.countries)
                 {
-                    country.Tick();
+                    country.Tick(days);
                     newAmount += country.GetAmount();
                     newProduction += country.GetProduction();
                     now += country.GetPopulation();
@@ -115,8 +116,8 @@ namespace Logic
                     // mehr Plastik
                 }
 
-                this.capital.Tick();
-                this.lobby.Tick();
+                this.capital.Tick(days);
+                this.lobby.Tick(days);
 
                 this.panel.changeWaste(newAmount, newProduction);
                 this.panel.changeCapital(this.capital.GetAmount(), this.capital.GetRate());
@@ -129,7 +130,7 @@ namespace Logic
                 this.amount = newAmount + this.extra;
                 this.production = newProduction;
 
-                if ((this.amount > 20000000000) || (this.production > 1000000000))
+                if ((this.amount > 1500000000) || (this.production > 50000000))
                 {
                     Lose();
                 }
@@ -137,7 +138,11 @@ namespace Logic
                 {
                     Win();
                 }
-            }
+                if((print.Year - 2019) > 60)
+                {
+                    Lose();
+                }
+            //}
 
         }
 
@@ -175,6 +180,7 @@ namespace Logic
                             capital.Buy(10000000);
                             country.ChangeInfluence();
                             this.display.ShowClickedCountry(id);
+                            this.news.AddNews(new News("Support", country.GetName() + " gets supported in the fight against plastic waste", NewsType.News));
                         }
                     }
                 }
@@ -187,7 +193,7 @@ namespace Logic
             {
                 if (this.lobby.GetAmount() >= action.GetPoints())
                 {
-                    Debug.Log("Capital before: " + this.capital.GetAmount());
+                    //Debug.Log("Capital before: " + this.capital.GetAmount());
                     this.capital.Buy(action.GetPrice());
                     this.lobby.Buy(action.GetPoints());
                     foreach (Action a in this.actions)
@@ -198,7 +204,7 @@ namespace Logic
                             this.news.AddNews(new News("Action in development", "Action \"" + action.GetName() + "\" is in development", NewsType.Action));
                         }
                     }
-                    Debug.Log("Capital after: " + this.capital.GetAmount());
+                    //Debug.Log("Capital after: " + this.capital.GetAmount());
 
                     return true;
                 }

@@ -21,7 +21,6 @@ public class progresstest : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        Debug.Log("progressTest awake");
         startTime = Time.time;
         progressImage.fillAmount = 0;
         actions = new LinkedList<Logic.Action>();
@@ -31,7 +30,6 @@ public class progresstest : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log("progressTest start");
     }
 
     public void Tick()
@@ -73,7 +71,6 @@ public class progresstest : MonoBehaviour {
                 case ActionClick.State.Executed:
                     actions.Remove(a);
                     i -= a.GetDevelopment() * 30;
-                    Debug.Log("I after Development: " + i);
                     if(actions.Count == 0)
                     {
                         i = 0;
@@ -91,10 +88,6 @@ public class progresstest : MonoBehaviour {
         {
 
             float progress = i / (y*30);
-            Debug.Log("Count: " + actions.Count);
-            Debug.Log("Progress: " + progress);
-            Debug.Log("i: " + i);
-            Debug.Log("y: " + y);
 
             progressImage.fillAmount = progress;
             i += actions.Count;
@@ -105,7 +98,6 @@ public class progresstest : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        //float currentTime = (float)(Math.Truncate((double)Time.time-startTime * 100)/100);
 
     }
 }

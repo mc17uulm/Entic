@@ -63,7 +63,7 @@ public class Game : MonoBehaviour {
             }
             catch (FormatException err)
             {
-                UnityEngine.Debug.Log(err.Message);
+                UnityEngine.Debug.Log(err.Message.ToString());
             }
         }
 
