@@ -132,15 +132,16 @@ namespace Logic
 
                 if ((this.amount > 1500000000) || (this.production > 50000000))
                 {
-                    Lose();
+                    //Lose();
                 }
                 else if ((this.amount < 7000000) && (this.production < 100000))
                 {
                     Win();
                 }
+            Debug.Log(print.Year);
                 if((print.Year - 2019) > 60)
                 {
-                    Lose();
+                    //Lose();
                 }
             //}
 
