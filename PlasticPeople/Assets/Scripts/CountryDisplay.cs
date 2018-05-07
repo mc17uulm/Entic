@@ -11,10 +11,12 @@ public class CountryDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
     public Image countryImage;
     public TextMeshProUGUI populationText;
-    public TextMeshProUGUI codeText;
+    //public TextMeshProUGUI codeText;
     public Slider efficiency;
     public TextMeshProUGUI wasteText;
     public TextMeshProUGUI rateText;
+    public TextMeshProUGUI influenceText;
+    public GameObject influenceImage;
     public GameObject countryInfo;
     private string lastClickedCountry = "XX";
     public int lastClickedId = 255;
@@ -31,15 +33,21 @@ public class CountryDisplay : MonoBehaviour
             Logic.Country country = Game.play.GetCountry(id);
 
             int tmp = (int)(255 * country.GetDensity());
-            Debug.Log("TMP: " + tmp);
+            //Debug.Log("TMP: " + tmp);
             byte density = (byte)tmp;
-            Debug.Log("Byte: " + density);
+            //Debug.Log("Byte: " + density);
 
-            Debug.Log("Density: " + country.GetDensity());
+            //Debug.Log("Density: " + country.GetDensity());
 
             nameText.text = country.GetName();
-            codeText.text = country.GetCode();
+            //codeText.text = country.GetCode();
             populationText.text = "Population: " + country.PrintPopulation();
+            influenceText.text = country.PrintInfluence();
+
+            Image influence = influenceImage.GetComponent<Image>();
+            Color inf = influence.color;
+            influenceImage.GetComponent<Image>().color = new Color(inf.r, inf.g, inf.b, country.GetInfluence());
+
             efficiency.value = (float)(country.GetProduction() / country.GetPopulation() / 0.0337f * 50);
             wasteText.text = country.PrintWaste();
             rateText.text = country.PrintProduction();

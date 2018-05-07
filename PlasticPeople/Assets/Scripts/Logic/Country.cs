@@ -225,6 +225,23 @@ namespace Logic
             this.influence = n;
         }
 
+        public string PrintInfluence()
+        {
+            int p = (int)(this.influence * 100);
+            if(p > 100)
+            {
+                return "100";
+            }
+            else
+            {
+                return p + "";
+            }
+        }
+
+        public float GetInfluence()
+        {
+            return (float)this.influence;
+        }
     }
 
 }
