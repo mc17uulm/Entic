@@ -26,7 +26,7 @@ namespace Logic
             if(this.i == days)
             {
                 this.i = 0;
-                this.amount += this.rate / days;
+                this.amount += this.rate;
                 int before = this.amount;
                 if (before == 0)
                 {

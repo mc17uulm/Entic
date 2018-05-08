@@ -32,7 +32,7 @@ namespace Logic
             this.description = description;
             this.amount = amount;
             this.production = production;
-            this.influence = (double) random.NextDouble() + 0.2f;
+            this.influence = (double) random.NextDouble() + 0.05f;
             this.actions = new LinkedList<Action>();
             this.amountBefore = amount;
             this.productionBefore = production;
@@ -44,24 +44,24 @@ namespace Logic
             this.productionBefore = this.production;
             this.amountBefore = this.amount;
 
-            // Produktion wächst pro Jahr mit einer Rate von 0,04%
-            double today = (this.production / 12 / days) * (1.0f - this.influence);
+            // Produktion wächst pro Jahr mit einer Rate von 0,05%
+            double today = (this.production / 12 / days) * (1.001f - this.influence);
 
             this.production = this.production + (today * 0.05f);
-            
+            //this.production = today * 365;
+
             this.population += (int) (this.population * 0.001f /12/ days);
+            this.amount = this.amount + today;
 
             float density = (float) (1.0f - (this.amount / this.population / 2.9f));
             if(this.id == 93)
             {
-                Debug.Log("German Density: " + density);
             }
             
             Image img = GameObject.Find("/UI/Map/" + this.code).GetComponent<Image>();
             Color c = img.color;
             c.a = density;
             img.color = c;
-            this.amount = this.amount + today;
         }
 
         public void AddAction(Action action)
@@ -149,10 +149,14 @@ namespace Logic
             Debug.Log("Influence: " + this.influence);
             string o;
 
-            double rate = Math.Round((this.amount / this.amountBefore) - 1.0, 4);
+            double rate = Math.Round(((this.amount / this.amountBefore) - 1.0) * 365, 3);
+            Debug.Log("Amount: " + this.amount + " Before: " + (this.amountBefore - this.production));
+            Debug.Log("Factor: " + (this.amount / (this.amountBefore - this.production)) + "\r\n");
+            
             string exponential = string.Format("{0:E2}", this.amount);
             string[] parts = exponential.Split('E');
-            string sum = Math.Round((Double.Parse(parts[0]) * 100), 0) + " * 10<sup>" + (Int32.Parse(parts[1].Substring(1)) - 2) + "</sup>";
+            //string sum = Math.Round((Double.Parse(parts[0]) * 100), 0) + " * 10<sup>" + (Int32.Parse(parts[1].Substring(1)) - 2) + "</sup>";
+            string sum = parts[0] + " · 10<sup>" + Int32.Parse(parts[1].Substring(1)) + "</sup>";
 
             if (rate > 0)
             {
@@ -173,10 +177,15 @@ namespace Logic
         {
             string o;
 
-            double rate = Math.Round((this.production / this.productionBefore) - 1.0, 4);
+            double rate = Math.Round(((this.production / this.productionBefore) - 1.0) * 365, 3);
+
+            Debug.Log("Amount: " + this.production + " Before: " + this.productionBefore);
+            Debug.Log("Factor: " + (this.production / this.productionBefore) + "\r\n");
+
             string exponential = string.Format("{0:E2}", this.production);
             string[] parts = exponential.Split('E');
-            string prod = Math.Round((Double.Parse(parts[0]) * 100), 0) + " * 10<sup>" + (Int32.Parse(parts[1].Substring(1)) - 2) + "</sup>";
+            //string prod = Math.Round((Double.Parse(parts[0]) * 100), 0) + " * 10<sup>" + (Int32.Parse(parts[1].Substring(1)) - 2) + "</sup>";
+            string prod = parts[0] + " · 10<sup>" + Int32.Parse(parts[1].Substring(1)) + "</sup>";
 
             if (rate > 0)
             {
