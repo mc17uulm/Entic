@@ -160,14 +160,14 @@ namespace Logic
 
             if (rate > 0)
             {
-                o = "Total: <b>" + sum + "</b> tons <color=#b51818>+" + rate + "%</color>";
+                o = "Total: <b>" + sum + "</b> t <color=#b51818>+" + rate + "%</color>";
             } else if(rate == 0)
             {
-                o = "Total: <b>" + sum + "</b> tons +/-" + rate + "%";
+                o = "Total: <b>" + sum + "</b> t +/-" + rate + "%";
             }
             else
             {
-                o = "Total: <b>" + sum + "</b> tons <color=#18b518>-" + rate + "%</color>";
+                o = "Total: <b>" + sum + "</b> t <color=#18b518>-" + rate + "%</color>";
             }
 
             return o;
@@ -189,15 +189,15 @@ namespace Logic
 
             if (rate > 0)
             {
-                o = "monthly: <b>" + prod + "</b> tons <color=#b51818>+" + rate + "%</color>";
+                o = "Monthly: <b>" + prod + "</b> t <color=#b51818>+" + rate + "%</color>";
             }
             else if (rate == 0)
             {
-                o = "monthly: <b>" + prod + "</b> tons +/-" + rate + "%";
+                o = "Monthly: <b>" + prod + "</b> t +/-" + rate + "%";
             }
             else
             {
-                o = "monthly: <b>" + prod + "</b> tons <color=#18b518>-" + rate + "%</color>";
+                o = "Monthly: <b>" + prod + "</b> t <color=#18b518>-" + rate + "%</color>";
             }
 
             return o;
@@ -239,11 +239,11 @@ namespace Logic
             int p = (int)(this.influence * 100);
             if(p > 100)
             {
-                return "100";
+                return "100%";
             }
             else
             {
-                return p + "";
+                return p + "%";
             }
         }
 
