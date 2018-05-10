@@ -259,11 +259,11 @@ namespace Logic
             {
                 case Value.Amount:
                     this.extra += e.GetAmount();
-                    o = "+ " + e.GetAmount() + " tons of plastic";
+                    o = "+ " + e.GetAmount().ToString("N") + " tons of plastic";
                     break;
                 case Value.Capital:
                     this.capital.Change(e.GetAmount());
-                    o = "+ " + e.GetAmount() + " €";
+                    o = "+ " + e.GetAmount().ToString("N") + " €";
                     break;
             }
             news.AddNews(new News("RandomEvent", e.GetMsg() + ": " + o, NewsType.Emergency));
