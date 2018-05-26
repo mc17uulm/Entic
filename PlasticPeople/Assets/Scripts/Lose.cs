@@ -19,16 +19,8 @@ public class Lose : MonoBehaviour
 	    int year = Game.play.GetEndTime().Year;
 	    year = year - 2019;
 	    subtitle.text = sbt.Replace("[x]", year.ToString());
-	    int f = 0;
-	    foreach (Action a in Game.play.GetEndActions())
-	    {
-	        if (a.GetState().Equals(ActionClick.State.Developed))
-	        {
-	            f++;
-	        }
-	    }
 
-	    money.text = mny.Replace("[x]", f.ToString());
+	    money.text = mny.Replace("[x]", Game.play.GetEndActions().ToString("N"));
 	}
 	
 	// Update is called once per frame

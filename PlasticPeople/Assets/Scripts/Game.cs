@@ -99,12 +99,12 @@ public class Game : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            play.Win();
+            play.Win(false);
         }
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            play.Lose();
+            play.Lose(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

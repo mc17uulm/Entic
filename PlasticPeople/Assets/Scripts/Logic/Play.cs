@@ -27,7 +27,7 @@ namespace Logic
         public CountryDisplay display;
         public progresstest prog;
 
-        public static LinkedList<Action> endActions;
+        public static int endActions;
         public static Capital endCapital;
         public static DateTime endTime;
 
@@ -141,7 +141,7 @@ namespace Logic
             Debug.Log(print.Year);
                 if((print.Year - 2019) > 60)
                 {
-                    //Lose();
+                    Lose();
                 }
             //}
 
@@ -312,23 +312,57 @@ namespace Logic
             }
         }
 
-        public void Lose()
+        public void Lose(bool n = true)
         {
-            endCapital = this.capital;
-            endActions = this.actions;
-            endTime = Game.print;
+            if (!n)
+            {
+                endCapital = new Capital(this.random.Next(100000, 100000000), 0);
+                endActions = this.random.Next(0, 30);
+                endTime = Game.print.AddYears(this.random.Next(1, 70));
+            }
+            else
+            {
+                endCapital = this.capital;
+                int f = 0;
+                foreach (Action a in this.actions)
+                {
+                    if (a.GetState().Equals(ActionClick.State.Developed))
+                    {
+                        f++;
+                    }
+                }
+                endActions = f;
+                endTime = Game.print;
+            }
             SceneManager.LoadScene(3);
         }
 
-        public void Win()
+        public void Win(bool n = true)
         {
-            endCapital = this.capital;
-            endActions = this.actions;
-            endTime = Game.print;
+            if(!n)
+            {
+                endCapital = new Capital(this.random.Next(100000, 100000000), 0);
+                endActions = this.random.Next(0, 30);
+                endTime = Game.print.AddYears(this.random.Next(1, 70));
+            }
+            else
+            {
+                endCapital = this.capital;
+                int f = 0;
+                foreach (Action a in this.actions)
+                {
+                    if (a.GetState().Equals(ActionClick.State.Developed))
+                    {
+                        f++;
+                    }
+                }
+                endActions = f;
+                endTime = Game.print;
+            }
             SceneManager.LoadScene(2);
         }
 
-        public LinkedList<Action> GetEndActions()
+        public int GetEndActions()
         {
             return endActions;
         }
